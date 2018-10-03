@@ -27,7 +27,7 @@ function getSpreadsheet(cb) {
           from: parseInt(properties.from),
           to: parseInt(properties.to),
           status: properties.status,
-          coordinates: geometry.coordinates
+          coordinates: geometry.coordinates.map(sanitizeCoordinates)
         }));
 
       if (cb) {
