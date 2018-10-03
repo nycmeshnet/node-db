@@ -30,44 +30,6 @@ function getSpreadsheet(cb) {
           coordinates: geometry.coordinates.map(sanitizeCoordinates)
         }));
 
-      // Calculate connected nodes for each active node
-      const connectedNodes = {};
-      nodes.filter(node => node.status === "Installed").forEach(node => {
-        const connectedNodes = { [node.id]: true };
-
-        links.forEach(link => {
-          if (link.status !== "active") return;
-          if (link.from === parseInt(node.id, 10)) {
-            connectedNodes[link.to] = true;
-          }
-
-          if (link.to === parseInt(node.id, 10)) {
-            connectedNodes[link.from] = true;
-          }
-        });
-
-        node.connectedNodes = connectedNodes;
-      });
-
-      const nodeMap = {};
-
-      nodes.forEach(node => {
-        // Add links to node
-        node.links = links.filter(
-          link =>
-            link.status === "active" &&
-            (link.from === parseInt(node.id, 10) ||
-              link.to === parseInt(node.id, 10))
-        );
-
-        nodeMap[node.id] = node;
-      });
-
-      links.forEach(link => {
-        link.fromNode = nodeMap[link.from];
-        link.toNode = nodeMap[link.to];
-      });
-
       if (cb) {
         cb({ nodes, links });
       }
