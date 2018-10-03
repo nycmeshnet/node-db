@@ -1,0 +1,13 @@
+{
+  "name": "node-db",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "GPL-3.0-only",
+  "scripts": {
+    "update-data": "node src/index.js"
+  },
+  "dependencies": {
+    "dotenv": "^6.0.0",
+    "node-fetch": "^2.2.0"
+  }
+}
