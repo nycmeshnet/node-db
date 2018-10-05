@@ -19,7 +19,8 @@ function getSpreadsheet(cb) {
           notes: properties.notes,
           panoramas: getPanoramas(properties.id)
         }))
-        .filter(node => node.coordinates);
+        .filter(node => node.coordinates)
+        .filter(removeAbandoned);
 
       const links = res.features
         .filter(({ geometry }) => geometry.type === "LineString")
