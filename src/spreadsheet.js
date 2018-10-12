@@ -19,7 +19,7 @@ function getSpreadsheet(cb) {
           notes: properties.notes,
           panoramas: getPanoramas(properties.id)
         }))
-        .filter(node => node.coordinates);
+        .filter(node => !isDead(node) && node.coordinates);
 
       const links = res.features
         .filter(({ geometry }) => geometry.type === "LineString")
@@ -82,8 +82,13 @@ function sortNodes(a, b, reverse = true) {
   return 0;
 }
 
-function removeAbandoned(node) {
-  return node && node.status !== "Abandoned" && node.status !== "Unsubscribe";
+function isDead(node) {
+  return (
+    !node ||
+    node.status === "Abandoned" ||
+    node.status === "Unsubscribe" ||
+    node.status === "Not interested"
+  );
 }
 
 module.exports = getSpreadsheet;
