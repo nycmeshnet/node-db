@@ -28,7 +28,8 @@ function getSpreadsheet(cb) {
           to: parseInt(properties.to),
           status: properties.status,
           coordinates: geometry.coordinates.map(sanitizeCoordinates)
-        }));
+        }))
+        .filter(link => link.status !== "dead");
 
       if (cb) {
         cb({ nodes, links });
