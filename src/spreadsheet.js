@@ -9,30 +9,47 @@ function getSpreadsheet(cb) {
   fetch(process.env.SPREADSHEET_JSON_URL)
     .then(res => res.json())
     .then(res => {
-      const nodes = res.features
-        .filter(({ geometry }) => geometry.type === "Point")
-        .map(({ geometry, properties }) => ({
-          id: properties.id,
-          status: properties.status,
-          coordinates: sanitizeCoordinates(geometry.coordinates),
-          roofAccess: properties.roofAccess,
-          notes: properties.notes,
-          panoramas: getPanoramas(properties.id)
-        }))
+      const nodesById = {};
+      const nodes = res.nodes
+        .map(node => {
+          const nodeObj = {
+            id: node.id,
+            status: node.status,
+            coordinates: sanitizeCoordinates(node.coordinates),
+            roofAccess: node.roofAccess,
+            notes: node.notes,
+            panoramas: getPanoramas(node.id)
+          };
+          nodesById[node.id] = nodeObj;
+          return nodeObj;
+        })
         .filter(node => !isDead(node) && node.coordinates);
 
-      const links = res.features
-        .filter(({ geometry }) => geometry.type === "LineString")
-        .map(({ geometry, properties }) => ({
-          from: parseInt(properties.from),
-          to: parseInt(properties.to),
-          status: properties.status,
-          coordinates: geometry.coordinates.map(sanitizeCoordinates)
-        }))
+      const links = res.links
+        .map(link => {
+          const fromNode = nodesById[parseInt(link.from)];
+          const toNode = nodesById[parseInt(link.to)];
+          return {
+            from: fromNode.id,
+            to: toNode.id,
+            status: link.status,
+            coordinates: [fromNode.coordinates, toNode.coordinates]
+          };
+        })
         .filter(link => link.status !== "dead");
 
+      const sectors = res.sectors
+        .map(sector => ({
+          nodeId: sector.nodeId,
+          radius: sector.radius,
+          azimuth: sector.azimuth,
+          width: sector.width,
+          active: sector.active
+        }))
+        .filter(sector => sector.status !== "dead");
+
       if (cb) {
-        cb({ nodes, links });
+        cb({ nodes, links, sectors });
       }
     })
     .catch(err => {

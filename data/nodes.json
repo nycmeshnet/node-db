@@ -3613,11 +3613,12 @@
     "id": 363,
     "status": "Installed",
     "coordinates": [
-      -73.9513052,
-      40.7593447,
-      42
+      -73.99816,
+      40.75378,
+      54
     ],
-    "roofAccess": false,
+    "roofAccess": true,
+    "notes": "Apt PHD",
     "panoramas": []
   },
   {
@@ -25696,6 +25697,26 @@
     "coordinates": [
       -73.93909459999999,
       40.670775,
+      5
+    ],
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2500,
+    "coordinates": [
+      -73.9527208,
+      40.7785552,
+      5
+    ],
+    "roofAccess": false,
+    "panoramas": []
+  },
+  {
+    "id": 2501,
+    "coordinates": [
+      -73.98006099999999,
+      40.672277,
       5
     ],
     "roofAccess": true,
