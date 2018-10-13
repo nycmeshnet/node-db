@@ -13865,9 +13865,9 @@
     "id": 1350,
     "status": "Installed",
     "coordinates": [
-      -73.94744,
-      40.6873305,
-      5
+      -73.94745158,
+      40.68750962,
+      30
     ],
     "roofAccess": true,
     "notes": "hub",
@@ -25342,7 +25342,12 @@
     ],
     "roofAccess": false,
     "notes": "hub",
-    "panoramas": []
+    "panoramas": [
+      "2463.jpg",
+      "2463a.jpg",
+      "2463b.jpg",
+      "2463c.jpg"
+    ]
   },
   {
     "id": 2465,
@@ -25674,6 +25679,26 @@
       5
     ],
     "roofAccess": false,
+    "panoramas": []
+  },
+  {
+    "id": 2498,
+    "coordinates": [
+      -73.963948,
+      40.7127424,
+      5
+    ],
+    "roofAccess": false,
+    "panoramas": []
+  },
+  {
+    "id": 2499,
+    "coordinates": [
+      -73.93909459999999,
+      40.670775,
+      5
+    ],
+    "roofAccess": true,
     "panoramas": []
   }
 ]
