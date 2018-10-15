@@ -49,6 +49,13 @@
     "active": true
   },
   {
+    "nodeId": 1350,
+    "radius": 0.5,
+    "azimuth": 0,
+    "width": 360,
+    "active": true
+  },
+  {
     "nodeId": 2463,
     "radius": 1,
     "azimuth": 90,
@@ -102,6 +109,13 @@
     "radius": 1,
     "azimuth": 45,
     "width": 120,
+    "active": true
+  },
+  {
+    "nodeId": 944,
+    "radius": 0.5,
+    "azimuth": 0,
+    "width": 360,
     "active": true
   }
 ]

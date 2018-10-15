@@ -47,7 +47,7 @@ function getSectors(sectors) {
     .map(sector => ({
       nodeId: sector.nodeId,
       radius: sector.radius,
-      azimuth: sector.azimuth,
+      azimuth: sector.azimuth || 0,
       width: sector.width,
       active: sector.active
     }))
@@ -55,7 +55,6 @@ function getSectors(sectors) {
       sector =>
         sector.nodeId &&
         sector.radius &&
-        sector.azimuth &&
         sector.width &&
         sector.status !== "dead"
     );
