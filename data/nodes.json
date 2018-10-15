@@ -14538,9 +14538,9 @@
     "id": 1417,
     "status": "Installed",
     "coordinates": [
-      -73.93547048,
-      40.71338374,
-      10
+      -73.9354884,
+      40.7136172,
+      14
     ],
     "roofAccess": true,
     "notes": "hub",
@@ -15356,16 +15356,6 @@
       5
     ],
     "roofAccess": true,
-    "panoramas": []
-  },
-  {
-    "id": "Form Responses 1-1493",
-    "coordinates": [
-      -73.97310519999999,
-      40.6454763,
-      5
-    ],
-    "roofAccess": false,
     "panoramas": []
   },
   {
@@ -25717,6 +25707,56 @@
     "coordinates": [
       -73.98006099999999,
       40.672277,
+      5
+    ],
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2502,
+    "coordinates": [
+      -74.0059728,
+      40.7127753,
+      5
+    ],
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2503,
+    "coordinates": [
+      -73.984541,
+      40.7203976,
+      5
+    ],
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2504,
+    "coordinates": [
+      -73.9894995,
+      40.7200585,
+      5
+    ],
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2505,
+    "coordinates": [
+      -73.97882480000001,
+      40.6877381,
+      5
+    ],
+    "roofAccess": false,
+    "panoramas": []
+  },
+  {
+    "id": 2506,
+    "coordinates": [
+      -73.9889223,
+      40.7134154,
       5
     ],
     "roofAccess": true,

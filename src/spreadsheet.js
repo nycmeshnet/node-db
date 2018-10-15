@@ -3,51 +3,13 @@ const fs = require("fs");
 
 const PANO_PATH = "./data/panoramas/";
 
-const coordinates = {};
-
 function getSpreadsheet(cb) {
   fetch(process.env.SPREADSHEET_JSON_URL)
     .then(res => res.json())
     .then(res => {
-      const nodesById = {};
-      const nodes = res.nodes
-        .map(node => {
-          const nodeObj = {
-            id: node.id,
-            status: node.status,
-            coordinates: sanitizeCoordinates(node.coordinates),
-            roofAccess: node.roofAccess,
-            notes: node.notes,
-            panoramas: getPanoramas(node.id)
-          };
-          nodesById[node.id] = nodeObj;
-          return nodeObj;
-        })
-        .filter(node => !isDead(node) && node.coordinates);
-
-      const links = res.links
-        .map(link => {
-          const fromNode = nodesById[parseInt(link.from)];
-          const toNode = nodesById[parseInt(link.to)];
-          return {
-            from: fromNode.id,
-            to: toNode.id,
-            status: link.status,
-            coordinates: [fromNode.coordinates, toNode.coordinates]
-          };
-        })
-        .filter(link => link.status !== "dead");
-
-      const sectors = res.sectors
-        .map(sector => ({
-          nodeId: sector.nodeId,
-          radius: sector.radius,
-          azimuth: sector.azimuth,
-          width: sector.width,
-          active: sector.active
-        }))
-        .filter(sector => sector.status !== "dead");
-
+      const nodes = getNodes(res.nodes);
+      const links = getLinks(res.links);
+      const sectors = getSectors(res.sectors);
       if (cb) {
         cb({ nodes, links, sectors });
       }
@@ -55,6 +17,48 @@ function getSpreadsheet(cb) {
     .catch(err => {
       console.log(err);
     });
+}
+
+function getNodes(nodes) {
+  return nodes
+    .map(node => ({
+      id: parseInt(node.id),
+      status: node.status,
+      coordinates: sanitizeCoordinates(node.coordinates),
+      roofAccess: node.roofAccess,
+      notes: node.notes,
+      panoramas: getPanoramas(node.id)
+    }))
+    .filter(node => !isDead(node) && node.id && node.coordinates);
+}
+
+function getLinks(links) {
+  return links
+    .map(link => ({
+      from: parseInt(link.from),
+      to: parseInt(link.to),
+      status: link.status
+    }))
+    .filter(link => link.from && link.to && link.status !== "dead");
+}
+
+function getSectors(sectors) {
+  return sectors
+    .map(sector => ({
+      nodeId: sector.nodeId,
+      radius: sector.radius,
+      azimuth: sector.azimuth,
+      width: sector.width,
+      active: sector.active
+    }))
+    .filter(
+      sector =>
+        sector.nodeId &&
+        sector.radius &&
+        sector.azimuth &&
+        sector.width &&
+        sector.status !== "dead"
+    );
 }
 
 // get panoramas <id>.jpg <id>a.jpg up to <id>z.jpg
