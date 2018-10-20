@@ -42,20 +42,6 @@
     "active": true
   },
   {
-    "nodeId": 713,
-    "radius": 2,
-    "azimuth": 25,
-    "width": 120,
-    "active": false
-  },
-  {
-    "nodeId": 713,
-    "radius": 2,
-    "azimuth": 190,
-    "width": 120,
-    "active": false
-  },
-  {
     "nodeId": 731,
     "radius": 1,
     "azimuth": 40,
@@ -169,10 +155,17 @@
   },
   {
     "nodeId": 1348,
-    "radius": 1,
+    "radius": 2,
     "azimuth": 0,
-    "width": 360,
-    "active": false
+    "width": 115,
+    "active": true
+  },
+  {
+    "nodeId": 1348,
+    "radius": 2,
+    "azimuth": 120,
+    "width": 115,
+    "active": true
   },
   {
     "nodeId": 1384,
