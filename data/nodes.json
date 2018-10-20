@@ -795,8 +795,8 @@
     "id": 83,
     "status": "Installed",
     "coordinates": [
-      -75.1538531,
-      39.9498397,
+      -73.9662717,
+      40.7107468,
       5
     ],
     "roofAccess": false,
@@ -3608,7 +3608,7 @@
       54
     ],
     "roofAccess": true,
-    "notes": "Apt PHD",
+    "notes": "Zach",
     "panoramas": []
   },
   {
@@ -15368,7 +15368,8 @@
     ],
     "roofAccess": true,
     "panoramas": [
-      "1496.jpg"
+      "1496.jpg",
+      "1496a.jpg"
     ]
   },
   {
@@ -22340,7 +22341,7 @@
     "coordinates": [
       -73.910422,
       40.692283,
-      5
+      24
     ],
     "roofAccess": true,
     "panoramas": []
@@ -24075,9 +24076,10 @@
   },
   {
     "id": 2335,
+    "status": "Installed",
     "coordinates": [
-      -73.940873,
-      40.7128785,
+      -73.94084,
+      40.7128,
       21
     ],
     "roofAccess": true,
@@ -24212,7 +24214,8 @@
     ],
     "roofAccess": true,
     "panoramas": [
-      "2348.jpg"
+      "2348.jpg",
+      "2348a.jpg"
     ]
   },
   {
@@ -24427,10 +24430,14 @@
     "coordinates": [
       -73.9812812,
       40.6648802,
-      5
+      54
     ],
     "roofAccess": true,
-    "panoramas": []
+    "panoramas": [
+      "2370.jpg",
+      "2370a.jpg",
+      "2370b.jpg"
+    ]
   },
   {
     "id": 2371,
@@ -25341,7 +25348,7 @@
       72
     ],
     "roofAccess": false,
-    "notes": "hub",
+    "notes": "Rivington Hotel hub",
     "panoramas": [
       "2463.jpg",
       "2463a.jpg",
@@ -25786,6 +25793,116 @@
     "coordinates": [
       -73.9565092,
       40.7110671,
+      5
+    ],
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2509,
+    "coordinates": [
+      -73.91753109999999,
+      40.7003337,
+      5
+    ],
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2510,
+    "coordinates": [
+      -73.9781611,
+      40.7289174,
+      5
+    ],
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2511,
+    "coordinates": [
+      -73.95037889999999,
+      40.8249549,
+      5
+    ],
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2512,
+    "coordinates": [
+      -73.9553612,
+      40.6942566,
+      5
+    ],
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2513,
+    "coordinates": [
+      -73.9128935,
+      40.74758569999999,
+      5
+    ],
+    "roofAccess": false,
+    "panoramas": []
+  },
+  {
+    "id": 2514,
+    "coordinates": [
+      -77.4209235,
+      38.4641442,
+      5
+    ],
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2515,
+    "coordinates": [
+      -73.99045149999999,
+      40.744581,
+      5
+    ],
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2516,
+    "coordinates": [
+      29.1491834,
+      40.9425751,
+      5
+    ],
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2517,
+    "coordinates": [
+      -73.9517,
+      40.6859,
+      30
+    ],
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2518,
+    "coordinates": [
+      -74.017297,
+      40.7101137,
+      5
+    ],
+    "roofAccess": false,
+    "panoramas": []
+  },
+  {
+    "id": 2519,
+    "coordinates": [
+      -73.92783039999999,
+      40.6871905,
       5
     ],
     "roofAccess": true,
