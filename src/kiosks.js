@@ -26,17 +26,43 @@ function getKiosks(cb) {
 }
 
 function rowToKiosk(row) {
-  const id = row[1];
-  const lat = parseFloat(row[12]);
-  const lng = parseFloat(row[13]);
-  const street = row[16];
-  const neighborhood = row[21];
-  const borough = row[9];
-  const status = STATUS_TYPES[row[14]];
+  const [
+    sid,
+    id,
+    position,
+    created_at,
+    created_meta,
+    updated_at,
+    updated_meta,
+    meta,
+    cb_link_id,
+    borough,
+    community_board,
+    council_district,
+    latitude,
+    longitude,
+    link_installation_status,
+    smallest_ppt,
+    street_address,
+    cross_street_1,
+    cross_street_2,
+    ixn_corner,
+    postcode,
+    link_site_id,
+    link_smoke_tested_and_activated,
+    link_installation,
+    neighborhood_tabulation_area,
+    building_identification_number,
+    borough_block_lot,
+    census_tract,
+    location
+  ] = row;
+  const coordinates = [parseFloat(longitude), parseFloat(latitude)];
+  const status = STATUS_TYPES[link_installation_status];
   return {
-    id: id,
-    status: status,
-    coordinates: [lng, lat]
+    id: cb_link_id,
+    coordinates,
+    status
   };
 }
 
