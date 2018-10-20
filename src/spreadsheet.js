@@ -25,6 +25,8 @@ function getNodes(nodes) {
       id: parseInt(node.id),
       status: node.status,
       coordinates: sanitizeCoordinates(node.coordinates),
+      requestDate: node.requestDate,
+      installDate: node.installDate,
       roofAccess: node.roofAccess,
       notes: node.notes,
       panoramas: getPanoramas(node.id)
