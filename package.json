@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "GPL-3.0-only",
   "scripts": {
-    "update-data": "node src/index.js"
+    "update-data": "node src/index.js && git --no-pager diff data"
   },
   "dependencies": {
     "dotenv": "^6.0.0",
