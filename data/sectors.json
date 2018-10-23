@@ -8,9 +8,9 @@
   },
   {
     "nodeId": 329,
-    "radius": 0.75,
-    "azimuth": 225,
-    "width": 60,
+    "radius": 0.5,
+    "azimuth": 0,
+    "width": 360,
     "active": true
   },
   {
@@ -157,14 +157,14 @@
     "nodeId": 1348,
     "radius": 2,
     "azimuth": 0,
-    "width": 115,
+    "width": 120,
     "active": true
   },
   {
     "nodeId": 1348,
     "radius": 2,
     "azimuth": 120,
-    "width": 115,
+    "width": 120,
     "active": true
   },
   {
@@ -172,6 +172,6 @@
     "radius": 0.5,
     "azimuth": 170,
     "width": 60,
-    "active": false
+    "active": true
   }
 ]

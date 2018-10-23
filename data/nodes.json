@@ -24,6 +24,7 @@
       31
     ],
     "requestDate": "Sun Mar 15 2015",
+    "installDate": "Tue Oct 14 2014",
     "roofAccess": false,
     "notes": "Brian",
     "panoramas": [
@@ -219,13 +220,14 @@
   },
   {
     "id": 23,
-    "status": "Installed",
+    "status": "To be scheduled",
     "coordinates": [
       -73.9412728,
       40.7233599,
       5
     ],
     "requestDate": "Thu Apr 23 2015",
+    "installDate": "Wed Dec 09 2015",
     "roofAccess": true,
     "panoramas": []
   },
@@ -2245,6 +2247,7 @@
       5
     ],
     "requestDate": "Mon Oct 19 2015",
+    "installDate": "Sun Jun 18 2017",
     "roofAccess": true,
     "panoramas": []
   },
@@ -3753,6 +3756,7 @@
       5
     ],
     "requestDate": "Tue Jun 21 2016",
+    "installDate": "Mon Jul 09 2018",
     "roofAccess": true,
     "notes": "did diy",
     "panoramas": []
@@ -4473,6 +4477,7 @@
       5
     ],
     "requestDate": "Tue Sep 13 2016",
+    "installDate": "Sat Nov 18 2017",
     "roofAccess": true,
     "notes": "Chinatown Hub",
     "panoramas": [
@@ -4862,6 +4867,7 @@
       5
     ],
     "requestDate": "Mon Nov 21 2016",
+    "installDate": "Fri Feb 02 2018",
     "roofAccess": false,
     "panoramas": []
   },
@@ -5141,6 +5147,7 @@
       5
     ],
     "requestDate": "Wed Jan 11 2017",
+    "installDate": "Thu Aug 31 2017",
     "roofAccess": true,
     "panoramas": [
       "465.jpg",
@@ -5184,6 +5191,7 @@
       5
     ],
     "requestDate": "Sat Jan 14 2017",
+    "installDate": "Tue Jun 06 2017",
     "roofAccess": true,
     "panoramas": [
       "468.jpg",
@@ -5690,6 +5698,7 @@
       5
     ],
     "requestDate": "Wed Mar 29 2017",
+    "installDate": "Mon May 22 2017",
     "roofAccess": false,
     "panoramas": []
   },
@@ -5916,6 +5925,7 @@
       23
     ],
     "requestDate": "Thu Apr 20 2017",
+    "installDate": "Sun Jun 18 2017",
     "roofAccess": true,
     "panoramas": [
       "529.jpg"
@@ -5968,6 +5978,7 @@
       5
     ],
     "requestDate": "Fri Apr 21 2017",
+    "installDate": "Sun May 07 2017",
     "roofAccess": true,
     "panoramas": [
       "534.jpg",
@@ -5985,6 +5996,7 @@
       5
     ],
     "requestDate": "Tue Apr 25 2017",
+    "installDate": "Tue Apr 25 2017",
     "roofAccess": true,
     "panoramas": []
   },
@@ -5997,6 +6009,7 @@
       5
     ],
     "requestDate": "Fri Apr 28 2017",
+    "installDate": "Wed Jul 19 2017",
     "roofAccess": true,
     "panoramas": []
   },
@@ -6198,12 +6211,14 @@
   },
   {
     "id": 555,
+    "status": "Installed",
     "coordinates": [
       -73.9970563,
       40.7182696,
       5
     ],
     "requestDate": "Tue May 23 2017",
+    "installDate": "Mon Oct 22 2018",
     "roofAccess": false,
     "panoramas": []
   },
@@ -6216,6 +6231,7 @@
       15
     ],
     "requestDate": "Tue May 23 2017",
+    "installDate": "Wed May 31 2017",
     "roofAccess": true,
     "panoramas": [
       "556.jpg",
@@ -6277,6 +6293,7 @@
       5
     ],
     "requestDate": "Tue May 30 2017",
+    "installDate": "Tue Jun 13 2017",
     "roofAccess": true,
     "panoramas": [
       "561.jpg",
@@ -6326,6 +6343,7 @@
       22
     ],
     "requestDate": "Wed Jun 07 2017",
+    "installDate": "Sun Jun 18 2017",
     "roofAccess": true,
     "panoramas": [
       "565.jpg",
@@ -6422,6 +6440,7 @@
       5
     ],
     "requestDate": "Tue Jan 26 2016",
+    "installDate": "Sat Jun 24 2017",
     "roofAccess": true,
     "panoramas": []
   },
@@ -6586,6 +6605,7 @@
       5
     ],
     "requestDate": "Mon Jul 10 2017",
+    "installDate": "Sun Jan 14 2018",
     "roofAccess": true,
     "notes": "Kiosk bridge",
     "panoramas": [
@@ -6612,6 +6632,7 @@
       5
     ],
     "requestDate": "Thu Jul 13 2017",
+    "installDate": "Wed Aug 23 2017",
     "roofAccess": true,
     "panoramas": []
   },
@@ -6786,6 +6807,7 @@
       5
     ],
     "requestDate": "Tue Aug 08 2017",
+    "installDate": "Wed Aug 23 2017",
     "roofAccess": false,
     "panoramas": []
   },
@@ -6820,6 +6842,7 @@
       16
     ],
     "requestDate": "Sat Aug 12 2017",
+    "installDate": "Fri Jan 26 2018",
     "roofAccess": true,
     "panoramas": [
       "609.jpg",
@@ -6984,6 +7007,7 @@
       66
     ],
     "requestDate": "Fri Sep 01 2017",
+    "installDate": "Wed Sep 20 2017",
     "roofAccess": true,
     "panoramas": []
   },
@@ -8022,6 +8046,7 @@
       54
     ],
     "requestDate": "Wed Dec 06 2017",
+    "installDate": "Sat Oct 20 2018",
     "roofAccess": true,
     "notes": "Supernode 3",
     "panoramas": [
@@ -8095,7 +8120,7 @@
       21
     ],
     "requestDate": "Thu Dec 07 2017",
-    "installDate": "Tue Dec 11 2018",
+    "installDate": "Mon Dec 11 2017",
     "roofAccess": true,
     "panoramas": []
   },
@@ -8561,6 +8586,7 @@
       38
     ],
     "requestDate": "Thu Dec 14 2017",
+    "installDate": "Mon Mar 05 2018",
     "roofAccess": true,
     "panoramas": []
   },
@@ -9408,6 +9434,7 @@
       5
     ],
     "requestDate": "Fri Dec 15 2017",
+    "installDate": "Fri Jan 12 2018",
     "roofAccess": false,
     "panoramas": [
       "836.jpg"
@@ -9743,6 +9770,7 @@
       5
     ],
     "requestDate": "Fri Dec 15 2017",
+    "installDate": "Thu Mar 01 2018",
     "roofAccess": true,
     "panoramas": [
       "865.jpg"
@@ -9834,6 +9862,7 @@
       5
     ],
     "requestDate": "Fri Dec 15 2017",
+    "installDate": "Thu Mar 01 2018",
     "roofAccess": false,
     "notes": "kiosk",
     "panoramas": [
@@ -10626,6 +10655,7 @@
       38
     ],
     "requestDate": "Mon Dec 18 2017",
+    "installDate": "Fri Feb 16 2018",
     "roofAccess": true,
     "notes": "hub kiosk",
     "panoramas": [
@@ -11220,6 +11250,7 @@
       5
     ],
     "requestDate": "Wed Dec 20 2017",
+    "installDate": "Thu Feb 01 2018",
     "roofAccess": true,
     "panoramas": []
   },
@@ -12800,7 +12831,7 @@
       5
     ],
     "requestDate": "Sat Dec 30 2017",
-    "installDate": "Sun Dec 30 2018",
+    "installDate": "Sat Dec 30 2017",
     "roofAccess": false,
     "panoramas": [
       "1138.jpg"
@@ -13032,6 +13063,7 @@
       5
     ],
     "requestDate": "Wed Jan 03 2018",
+    "installDate": "Mon Jan 15 2018",
     "roofAccess": true,
     "panoramas": [
       "1158.jpg",
@@ -15209,8 +15241,9 @@
       72
     ],
     "requestDate": "Wed Jan 24 2018",
+    "installDate": "Sat Oct 20 2018",
     "roofAccess": true,
-    "notes": "St. Francis de Sales School for the Deaf, Supernode4",
+    "notes": "Supernode 4, St. Francis de Sales School for the Deaf",
     "panoramas": [
       "1348.jpg",
       "1348a.jpg",
@@ -15330,6 +15363,7 @@
       5
     ],
     "requestDate": "Fri Jan 26 2018",
+    "installDate": "Thu Mar 01 2018",
     "roofAccess": false,
     "panoramas": []
   },
@@ -15635,6 +15669,7 @@
       5
     ],
     "requestDate": "Wed Jan 31 2018",
+    "installDate": "Thu Apr 05 2018",
     "roofAccess": true,
     "panoramas": []
   },
@@ -16046,6 +16081,7 @@
       5
     ],
     "requestDate": "Fri Feb 09 2018",
+    "installDate": "Tue Mar 20 2018",
     "roofAccess": true,
     "panoramas": []
   },
@@ -19744,7 +19780,11 @@
     ],
     "requestDate": "Fri May 04 2018",
     "roofAccess": false,
-    "panoramas": []
+    "panoramas": [
+      "1744.jpg",
+      "1744a.jpg",
+      "1744b.jpg"
+    ]
   },
   {
     "id": 1745,
@@ -23584,6 +23624,7 @@
       5
     ],
     "requestDate": "Sat Jul 28 2018",
+    "installDate": "Sat Sep 08 2018",
     "roofAccess": true,
     "panoramas": [
       "2079.jpg"
@@ -25606,11 +25647,11 @@
   },
   {
     "id": 2256,
-    "status": "Installed",
+    "status": "To be scheduled",
     "coordinates": [
-      -73.9371761,
-      40.7058837,
-      18
+      -73.937,
+      40.7061,
+      20
     ],
     "requestDate": "Wed Aug 29 2018",
     "installDate": "Wed Sep 19 2018",
@@ -25834,8 +25875,8 @@
     "id": 2276,
     "coordinates": [
       -74.0008012,
-      40.6805805,
-      5
+      40.68067,
+      24
     ],
     "requestDate": "Thu Aug 30 2018",
     "roofAccess": true,
@@ -26495,6 +26536,7 @@
       21
     ],
     "requestDate": "Wed Sep 05 2018",
+    "installDate": "Mon Sep 24 2018",
     "roofAccess": true,
     "panoramas": [
       "2335.jpg",
@@ -26564,7 +26606,7 @@
     "coordinates": [
       -73.9994167,
       40.64153690000001,
-      20
+      48
     ],
     "requestDate": "Thu Sep 06 2018",
     "roofAccess": true,
@@ -27148,7 +27190,10 @@
     ],
     "requestDate": "Sun Sep 16 2018",
     "roofAccess": true,
-    "panoramas": []
+    "panoramas": [
+      "2394.jpg",
+      "2394a.jpg"
+    ]
   },
   {
     "id": 2395,
@@ -27349,7 +27394,7 @@
     "coordinates": [
       -73.9795594,
       40.7902965,
-      5
+      60
     ],
     "requestDate": "Sat Sep 22 2018",
     "roofAccess": false,
@@ -27669,7 +27714,7 @@
     "coordinates": [
       -73.9662669,
       40.6753866,
-      51
+      52
     ],
     "requestDate": "Sat Sep 29 2018",
     "roofAccess": true,
@@ -27914,11 +27959,13 @@
     "coordinates": [
       -74.00034649999999,
       40.6474197,
-      5
+      55
     ],
     "requestDate": "Sat Oct 06 2018",
     "roofAccess": true,
-    "panoramas": []
+    "panoramas": [
+      "2466.jpg"
+    ]
   },
   {
     "id": 2467,
@@ -28301,7 +28348,7 @@
     "coordinates": [
       -73.98006099999999,
       40.672277,
-      5
+      35
     ],
     "requestDate": "Sat Oct 13 2018",
     "roofAccess": true,
@@ -28481,7 +28528,10 @@
     ],
     "requestDate": "Fri Oct 19 2018",
     "roofAccess": true,
-    "panoramas": []
+    "panoramas": [
+      "2517.jpg",
+      "2517a.jpg"
+    ]
   },
   {
     "id": 2518,
@@ -28502,6 +28552,160 @@
       5
     ],
     "requestDate": "Fri Oct 19 2018",
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2520,
+    "coordinates": [
+      -73.9570602,
+      40.8040668,
+      5
+    ],
+    "requestDate": "Sat Oct 20 2018",
+    "roofAccess": false,
+    "panoramas": []
+  },
+  {
+    "id": 2521,
+    "coordinates": [
+      -73.94707,
+      40.6973335,
+      5
+    ],
+    "requestDate": "Sat Oct 20 2018",
+    "roofAccess": false,
+    "panoramas": []
+  },
+  {
+    "id": 2522,
+    "coordinates": [
+      -73.96754109999999,
+      40.69248169999999,
+      5
+    ],
+    "requestDate": "Sun Oct 21 2018",
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2523,
+    "coordinates": [
+      106.7453426,
+      -6.134221399999999,
+      5
+    ],
+    "requestDate": "Mon Oct 22 2018",
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2524,
+    "coordinates": [
+      -73.9198275,
+      40.6920476,
+      5
+    ],
+    "requestDate": "Mon Oct 22 2018",
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2525,
+    "coordinates": [
+      -73.9512481,
+      40.664778,
+      5
+    ],
+    "requestDate": "Mon Oct 22 2018",
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2526,
+    "coordinates": [
+      -73.9797316,
+      40.6481821,
+      5
+    ],
+    "requestDate": "Mon Oct 22 2018",
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2527,
+    "coordinates": [
+      -73.9775392,
+      40.7263349,
+      5
+    ],
+    "requestDate": "Tue Oct 23 2018",
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2528,
+    "coordinates": [
+      -73.9176574,
+      40.6956493,
+      5
+    ],
+    "requestDate": "Tue Oct 23 2018",
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2529,
+    "coordinates": [
+      -73.9628566,
+      40.680129,
+      5
+    ],
+    "requestDate": "Tue Oct 23 2018",
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2530,
+    "coordinates": [
+      -73.98830339999999,
+      40.7287257,
+      5
+    ],
+    "requestDate": "Tue Oct 23 2018",
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2531,
+    "coordinates": [
+      -73.9446731,
+      40.6781159,
+      5
+    ],
+    "requestDate": "Tue Oct 23 2018",
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2532,
+    "coordinates": [
+      -73.9446731,
+      40.6781159,
+      5
+    ],
+    "requestDate": "Tue Oct 23 2018",
+    "roofAccess": false,
+    "panoramas": []
+  },
+  {
+    "id": 2533,
+    "coordinates": [
+      -73.9775621,
+      40.7846707,
+      5
+    ],
+    "requestDate": "Tue Oct 23 2018",
     "roofAccess": true,
     "panoramas": []
   }
