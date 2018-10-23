@@ -6445,6 +6445,17 @@
     "panoramas": []
   },
   {
+    "id": 575,
+    "coordinates": [
+      -74.03296739999999,
+      40.7376611,
+      5
+    ],
+    "requestDate": "Mon Jun 19 2017",
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
     "id": 576,
     "status": "Installed",
     "coordinates": [
@@ -7830,6 +7841,17 @@
     "panoramas": []
   },
   {
+    "id": 694,
+    "coordinates": [
+      -73.74985869999999,
+      40.6852574,
+      5
+    ],
+    "requestDate": "Wed Nov 29 2017",
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
     "id": 695,
     "coordinates": [
       -73.94619,
@@ -8140,6 +8162,17 @@
     "coordinates": [
       -73.973112,
       40.796717,
+      5
+    ],
+    "requestDate": "Thu Dec 07 2017",
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 722,
+    "coordinates": [
+      -73.9912239,
+      40.7183194,
       5
     ],
     "requestDate": "Thu Dec 07 2017",
@@ -15368,7 +15401,7 @@
     "panoramas": []
   },
   {
-    "id": 1360,
+    "id": 1359,
     "coordinates": [
       -73.85440779999999,
       40.6967266,
@@ -15376,6 +15409,19 @@
     ],
     "requestDate": "Fri Jan 26 2018",
     "roofAccess": true,
+    "panoramas": [
+      "1359.jpg"
+    ]
+  },
+  {
+    "id": 1360,
+    "coordinates": [
+      -73.90688329999999,
+      40.8739082,
+      5
+    ],
+    "requestDate": "Fri Jan 26 2018",
+    "roofAccess": false,
     "panoramas": []
   },
   {
@@ -15703,6 +15749,17 @@
     "coordinates": [
       -73.9813889,
       40.721403,
+      5
+    ],
+    "requestDate": "Thu Feb 01 2018",
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 1390,
+    "coordinates": [
+      -73.9346392,
+      40.6888033,
       5
     ],
     "requestDate": "Thu Feb 01 2018",
@@ -16135,7 +16192,7 @@
     "panoramas": []
   },
   {
-    "id": 1429,
+    "id": 1428,
     "coordinates": [
       -73.9439269,
       40.6787604,
@@ -16143,6 +16200,17 @@
     ],
     "requestDate": "Sat Feb 10 2018",
     "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 1429,
+    "coordinates": [
+      -73.9240988,
+      40.6925983,
+      5
+    ],
+    "requestDate": "Sat Feb 10 2018",
+    "roofAccess": false,
     "panoramas": []
   },
   {
@@ -18316,6 +18384,17 @@
     "panoramas": []
   },
   {
+    "id": 1617,
+    "coordinates": [
+      -73.946699,
+      40.687641,
+      5
+    ],
+    "requestDate": "Sun Apr 08 2018",
+    "roofAccess": false,
+    "panoramas": []
+  },
+  {
     "id": 1618,
     "coordinates": [
       -73.9260259,
@@ -19120,6 +19199,17 @@
   },
   {
     "id": 1686,
+    "coordinates": [
+      -73.9335481,
+      40.7054058,
+      5
+    ],
+    "requestDate": "Wed Jul 19 2017",
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 1687,
     "coordinates": [
       -73.9228435,
       40.7017043,
@@ -20200,11 +20290,11 @@
   {
     "id": 1781,
     "coordinates": [
-      -73.9196094,
-      40.7030147,
-      26
+      -73.985131,
+      40.758895,
+      5
     ],
-    "requestDate": "Fri May 11 2018",
+    "requestDate": "Mon May 14 2018",
     "roofAccess": false,
     "panoramas": [
       "1781.jpg"
@@ -24623,7 +24713,9 @@
     ],
     "requestDate": "Wed Aug 22 2018",
     "roofAccess": true,
-    "panoramas": []
+    "panoramas": [
+      "2163.jpg"
+    ]
   },
   {
     "id": 2164,
@@ -27074,6 +27166,17 @@
     ]
   },
   {
+    "id": 2384,
+    "coordinates": [
+      -74.0044202,
+      40.6445392,
+      5
+    ],
+    "requestDate": "Wed Sep 12 2018",
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
     "id": 2385,
     "coordinates": [
       -73.967713,
@@ -27531,6 +27634,28 @@
     "coordinates": [
       -73.946485,
       40.715209,
+      5
+    ],
+    "requestDate": "Tue Sep 25 2018",
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2425,
+    "coordinates": [
+      -73.98884749999999,
+      40.6428476,
+      5
+    ],
+    "requestDate": "Tue Sep 25 2018",
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2426,
+    "coordinates": [
+      -73.9892383,
+      40.7270133,
       5
     ],
     "requestDate": "Tue Sep 25 2018",
