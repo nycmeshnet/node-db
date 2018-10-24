@@ -7,11 +7,17 @@ function getSpreadsheet(cb) {
   fetch(process.env.SPREADSHEET_JSON_URL)
     .then(res => res.json())
     .then(res => {
-      const nodes = getNodes(res.nodes);
-      const links = getLinks(res.links);
-      const sectors = getSectors(res.sectors);
       if (cb) {
-        cb({ nodes, links, sectors });
+        const allNodes = getNodes(res.nodes);
+        const filteredNodes = allNodes.filter(
+          node => !isDead(node) && node.id && node.coordinates
+        );
+        cb({
+          allNodes,
+          nodes: filteredNodes,
+          links: getLinks(res.links),
+          sectors: getSectors(res.sectors)
+        });
       }
     })
     .catch(err => {
@@ -20,18 +26,16 @@ function getSpreadsheet(cb) {
 }
 
 function getNodes(nodes) {
-  return nodes
-    .map(node => ({
-      id: parseInt(node.id),
-      status: node.status,
-      coordinates: sanitizeCoordinates(node.coordinates),
-      requestDate: node.requestDate,
-      installDate: node.installDate,
-      roofAccess: node.roofAccess,
-      notes: node.notes,
-      panoramas: getPanoramas(node.id)
-    }))
-    .filter(node => !isDead(node) && node.id && node.coordinates);
+  return nodes.map(node => ({
+    id: parseInt(node.id),
+    status: node.status,
+    coordinates: sanitizeCoordinates(node.coordinates),
+    requestDate: node.requestDate,
+    installDate: node.installDate,
+    roofAccess: node.roofAccess,
+    notes: node.notes,
+    panoramas: getPanoramas(node.id)
+  }));
 }
 
 function getLinks(links) {

@@ -7,6 +7,7 @@
     "update-data": "node src/index.js && git --no-pager diff data"
   },
   "dependencies": {
+    "date-fns": "^1.29.0",
     "dotenv": "^6.0.0",
     "node-fetch": "^2.2.0"
   }
