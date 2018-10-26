@@ -9,6 +9,7 @@ function statsForRange(nodes, rangeDays) {
 const markdownStats = (activeStats, requestStats, startDate, endDate) =>
   `---
 title: "Stats"
+images: ["/img/stats-cover.png"]
 startDate: "${startDate}"
 endDate: "${endDate}"
 dailyActive: ${JSON.stringify(activeStats, null, 0)}
