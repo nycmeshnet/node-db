@@ -57,7 +57,7 @@ function getSectors(sectors) {
       radius: sector.radius,
       azimuth: sector.azimuth || 0,
       width: sector.width,
-      active: sector.active,
+      status: sector.status,
       device: sector.device,
       installDate: sector.installDate
     }))
