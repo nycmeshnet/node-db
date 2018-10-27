@@ -28,6 +28,7 @@ function getSpreadsheet(cb) {
 function getNodes(nodes) {
   return nodes.map(node => ({
     id: parseInt(node.id),
+    name: node.name,
     status: node.status,
     coordinates: sanitizeCoordinates(node.coordinates),
     requestDate: node.requestDate,
@@ -43,7 +44,8 @@ function getLinks(links) {
     .map(link => ({
       from: parseInt(link.from),
       to: parseInt(link.to),
-      status: link.status
+      status: link.status,
+      installDate: link.installDate
     }))
     .filter(link => link.from && link.to && link.status !== "dead");
 }
@@ -55,7 +57,9 @@ function getSectors(sectors) {
       radius: sector.radius,
       azimuth: sector.azimuth || 0,
       width: sector.width,
-      active: sector.active
+      active: sector.active,
+      device: sector.device,
+      installDate: sector.installDate
     }))
     .filter(
       sector =>
