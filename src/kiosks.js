@@ -2,9 +2,9 @@ const fetch = require("node-fetch");
 const fs = require("fs");
 
 const STATUS_TYPES = {
-  "Link Active!": "active",
-  "Link Pending Activation": "pending",
-  "Link Installed; Connecting Power and Fiber": "installed"
+  Live: "active",
+  "Ready for Activation": "pending",
+  Installed: "installed"
 };
 
 function getKiosks(cb) {
@@ -14,7 +14,11 @@ function getKiosks(cb) {
     .then(res => res.json())
     .then(res => {
       const { data } = res;
-      const kiosks = data.map(rowToKiosk);
+      const kiosks = data.map(rowToKiosk).sort((a, b) => {
+        const idA = parseInt(a.id.replace("LINK-", ""));
+        const idB = parseInt(b.id.replace("LINK-", ""));
+        return idA - idB;
+      });
 
       if (cb) {
         cb(kiosks);

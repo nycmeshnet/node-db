@@ -26947,7 +26947,10 @@
     ],
     "requestDate": 1536438338337,
     "roofAccess": true,
-    "panoramas": []
+    "panoramas": [
+      "2359.jpg",
+      "2359a.jpg"
+    ]
   },
   {
     "id": 2360,
@@ -28920,7 +28923,10 @@
     ],
     "requestDate": 1540403998541,
     "roofAccess": true,
-    "panoramas": []
+    "panoramas": [
+      "2537.jpg",
+      "2537a.jpg"
+    ]
   },
   {
     "id": 2538,
