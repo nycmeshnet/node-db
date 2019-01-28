@@ -5,7 +5,7 @@
   "license": "GPL-3.0-only",
   "scripts": {
     "update-data":
-      "node src/index.js && git --no-pager diff data/nodes.json data/links.json data/sectors.json data/kiosks.json"
+      "node src/index.js"
   },
   "dependencies": {
     "date-fns": "^1.29.0",
