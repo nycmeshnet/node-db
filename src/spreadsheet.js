@@ -77,9 +77,12 @@ function getPanoramas(nodeId) {
   let panLetter = "";
   for (let i = 0; i < 27; i++) {
     const fname = nodeId + panLetter + ".jpg";
+    const fname_jpeg = nodeId + panLetter + ".jpeg";
     const fname_png = nodeId + panLetter + ".png";
     if (fs.existsSync(PANO_PATH + fname)) {
       panoramas.push(fname);
+    } else if (fs.existsSync(PANO_PATH + fname_jpeg)) {
+      panoramas.push(fname_jpeg);
     } else if (fs.existsSync(PANO_PATH + fname_png)) {
       panoramas.push(fname_png);
     } else {
