@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+.land {
+  fill: #ddd;
+}
+
+.state-borders {
+  fill: none;
+  stroke: #fff;
+}
+
+.node-arc {
+  fill: none;
+}
+
+.node:hover .node-arc {
+  stroke: #f00;
+}
+
+.node-cell {
+  fill: none;
+  stroke: #000;
+  stroke-opacity: 0.1;
+  pointer-events: all;
+}
+
+</style>
+<svg width="960" height="600"></svg>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="https://d3js.org/topojson.v1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/d3-geo-voronoi@2"></script>
+<script>
+
+// const urls = {
+//   map: "data/us.json",
+//   nodes: "data/nodes_update_1.csv",
+//   links: "data/links_update.csv"
+// };
+
+var svg = d3.select("svg"),
+    width = +svg.attr("width"),
+    height = +svg.attr("height");
+
+// var padding = 50
+  
+var center = [-73.9571, 40.69]
+
+// var nyc = [-73.9571, 40.7081]
+
+// var nyc = "data/nyc.json"
+
+var projection = d3.geoMercator()
+    // .translate([width / 2, height / 2])
+    // .fitExtent([[padding,padding],[width-padding,height-padding]])
+    .center(center)
+    // .parallels([33, 45])
+    // .rotate([96, -39])
+    .scale(75000);
+
+// var path_2 = d3.geoPath()
+//   .projection(d3.geoAlbers()
+//   .parallels([33, 45])
+//   .rotate([96, -39])
+//   .fitSize([width, height], nyc));
+
+var radius = d3.scaleSqrt()
+    .domain([0, 100])
+    .range([0, 14]);
+
+var path = d3.geoPath()
+    .projection(projection)
+    .pointRadius(1);
+
+// var voronoi = d3.Voronoi()
+//     .extent([[-1, -1], [width + 1, height + 1]]);
+
+// load the airport and flight data together
+const promises = [
+  d3.json("data/us.json"),
+  d3.csv("data/nodes_update_1.csv", typeNode),
+  d3.csv("data/links_update_formatted_20221117.csv",  typeLink)
+];
+
+// new format for loading data w promises in d3 v7 (this results in nooo map)
+Promise.all(promises).then(function(data){
+  // data is now both datasets from your 3 files
+  // console.log(data)
+  
+  //to get the first dataset - boundaries
+  // console.log(data[0])
+  
+  //to get the second - nodes
+  // console.log(data[1])
+  
+    //to get the third - links
+  // console.log(data[2])
+});
+
+// Below is the old d3 v3 format for loading data... 
+// d3.queue()
+//     .defer(d3.json, "data/us.json")
+//     // .defer(d3.json, "data/nyc_boroughs.geojson", drawOutline)
+//     .defer(d3.csv, "data/nodes_update_1.csv", typeNode)
+//     .defer(d3.csv, "data/links_update.csv", typeLink)
+//     .await(ready);
+
+function ready(us, nodes, links) {
+  var nodeByID = d3.map(nodes, function(d) { return d.Id; });
+  // console.log(nodeByID)
+// console.log(links)
+  links.forEach(function(link) {
+    var source = nodeByID.get(link.From),
+        target = nodeByID.get(link.To);
+    source.arcs.coordinates.push([source, target]);
+    target.arcs.coordinates.push([target, source])
+    // console.log(source.arcs.coordinates);
+  });
+
+  nodes = nodes
+      // .filter(function(d) { return d.arcs.coordinates.length; });
+      .filter(function(d) { return d.Status = "Installed"; });
+
+  svg.append("path")
+      .datum(topojson.feature(us, us.objects.land))
+      .attr("class", "land")
+      .attr("d", path);
+
+  svg.append("path")
+      .datum(topojson.mesh(us, us.objects.states, function(a, b) { return a !== b; }))
+      .attr("class", "state-borders")
+      .attr("d", path);
+
+  svg.append("path")
+      .datum({type: "MultiPoint", coordinates: nodes})
+      .attr("class", "node-dots")
+      .attr("d", path);
+
+  var node = svg.selectAll(".node")
+    .data(nodes)
+    .enter().append("g")
+      .attr("class", "node");
+
+  node.append("title")
+      .text(function(d) { return d.Id + "\n" + d.arcs.coordinates.length + " links"; });
+
+  node.append("path")
+      .attr("class", "node-arc")
+      .attr("d", function(d) { return path(d.arcs); });
+
+
+  // d3 v7 appears to have broken the d3.voronoi package. geo-voronoi is the upgraded version?
+  node.append("path")
+      .data(voronoi.polygons(nodes.map(projection)))
+      .attr("class", "node-cell")
+      .attr("d", function(d) { return d ? "M" + d.join("L") + "Z" : null; });
+}
+
+function typeNode(d) {
+  // console.log(d)
+  d[0] = +d.lon;
+  d[1] = +d.lat;
+  // console.log(d)
+  d.arcs = {type: "MultiLineString", coordinates: []};
+  // console.log(d)
+  return d;
+  
+}
+
+function typeLink(d) {
+  // console.log(d)
+  // calculate this count somehow
+
+  d.COUNT = +d.COUNT;
+  // console.log(d)
+  return d;
+}
+
+</script>
