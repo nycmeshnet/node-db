@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>NYCMesh Timeline</title>
+		<script type="text/javascript" src="./d3.js"></script>
+		<link rel="stylesheet" href="styles.css">
+	</head>
+	<body>
+		<div class="header">
+			<header>
+				<br>
+				 <nav>
+					<ul>
+						<li><a id="title" href="test_webpage.html">NYCMesh</a></li>
+						<li><a id="other" href="about.html">about</a></li>
+						<li><a id="other" href="test_view.html">connectivities</a></li>
+						<li><a id="other" href="analysis.html">analysis</a></li>
+					</ul>
+				 </nav>
+			</header>
+		</div>
+		<br>
+		<main>
+			<section>
+				<div>
+					<h1 id="meshWeb">nyc mesh</h1>		
+				</div>
+				<div class="descriptions">
+					<p>
+						Could be interesting to put in “planned” vs “active”, “interested”
+						Could show “interested” request date, how long people have been waiting
+						Show which ones were requested, waiting the longest, and is in a gap area
+						Narrative wise, we could still start with a map to establish and then go into slices we want to talk about.
+						In this case still image of map is okay
+						Date: unix time; put in javascript parsing (built in) and parse it into redouble date. Date.time.parse or something like that
+						
+						
+						For this week’s assignment, can individually come up with 3 different narratives
+						
+						
+						
+						
+						Oct 21, 2022 Notes
+						
+						Github
+						Start with a Simple starting point
+						Json files:
+						Unique objects
+						Point data with installation date and time (time new nodes added)
+						Directional relationship as new nodes were added to network (strength of network as well as directional, spinning web over time)
+												
+					</p>
+				</div>
+			</section>
+		<aside>
+			<!--
+			<div>
+				<img id="openingShot" src="panoramas/120036j.jpg">
+			</div>
+			-->
+		</aside>
+		</main>
+		<br class="bigBreak">
+		<main>
+				<section>
+					<div class="sectionText">
+						<h1> one</h1>
+					</div>
+				</section>
+				<aside class="asidePlain">
+					<div class="descriptions">
+						<p> Below, each node appears within the scatterplot. Drag your mouse over
+							nodes and click on a node that appears red. Check out that view!
+						</p>
+					</div>
+				</aside>
+			</main>
+			<script type="text/javascript">
+				d3.json('nodes_cleanedsorted.json')
+				.then(function(dataset){
+
+				//Width and height of svg
+				var w = 1500;
+				var h = 750;
+				var r = 10;
+				var padding = 40;
+				
+				
+				//Create scale functions
+				xScale = d3.scaleLinear()
+							.domain([
+								d3.min(dataset, function(d) { return d.requestDate; }),  
+								d3.max(dataset, function(d) { return d.requestDate; })
+							])
+							.range([padding, w - padding]);
+
+				yScale = d3.scaleLinear()
+							.domain([
+								d3.min(dataset, function(d) { return d.Elevation; }), 
+								d3.max(dataset, function(d) { return d.Elevation; })
+							])
+							.range([h - padding, padding]);
+			
+				//Define X axis
+				xAxis = d3.axisBottom()
+							.scale(xScale)
+							.ticks(9)
+
+				//Define Y axis
+				yAxis = d3.axisLeft()
+							.scale(yScale)
+							.ticks(10);
+
+				//Create SVG element
+				var svg = d3.select("body")
+							.append("svg")
+							.attr("class", "scatterplot")
+							.attr("width", w)
+							.attr("height", h);
+						
+				// Generate rectangles
+				svg.selectAll("rect")
+					.data(dataset)
+					.enter()
+					.append("rect")
+					.attr("x", function(d) {
+							return xScale(d.requestDate);
+					})
+					.attr("y", function(d) {
+							return yScale(d.Elevation);
+					})
+					.attr("width", function(d) {
+							return r;
+					})
+					.attr("height", function(d) {
+							return r;
+					})
+					.attr("fill", '#a8a8a8')
+					.style("fill-opacity", 0.25)
+					.on("mouseover",function(d){
+						var xPosition = xScale(d.requestDate);
+						var yPosition = yScale(d.Elevation);
+							
+						if (d.panoramas != '') {
+							// Adjust color when selecting
+							d3.select(this).attr("fill","#f15f53")
+							.style("fill-opacity", 0.75)
+						} else {
+							// Adjust color when selecting
+							d3.select(this).attr("fill","#a1bff0")
+								.style("fill-opacity", 0.75);
+						}
+						
+						//TODO: show tooltip here
+						svg.append("text")
+							.attr("id", "tooltip")
+							.attr("x", xPosition - r )
+							.attr("y", yPosition)
+							.attr("font-size", "18px")
+							.attr("font-family", "sans-serif")
+							.attr("font-weight", "light")
+							.attr("fill", '#d3d3d3')
+							.text(d.Elevation +"'");
+					})
+					.on("mouseout",function(d){
+						d3.select(this)
+							.transition()
+							.attr("fill",'#a8a8a8')
+							.attr("width", function(d){
+								return r;
+							})
+							.attr("height", function(d){
+								return r;
+							})
+							.style("fill-opacity", 0.25)
+							
+							d3.select("#tooltip")
+								.remove();
+					});
+					
+					/*
+					//Create X axis
+					svg.append("g")
+						.attr("class", "xAxis")
+						.attr("transform", "translate(0," + (h - padding) + ")")
+						.call(xAxis);
+					
+					//Create Y axis
+					svg.append("g")
+						.attr("class", "yAxis")
+						.attr("transform", "translate(" + (padding) + ",0)")
+						.call(yAxis);
+					*/			
+
+					d3.selectAll("rect")
+						.on("click", function(d){
+							
+							// Create variables
+							var xPosition = xScale(d.requestDate);
+							var yPosition = yScale(d.Elevation);
+							var imaSize = r * 200;
+							var panos = svg.append("g");
+
+							console.log('working!');
+							console.log(d.id[2]);
+							// Insert images on click
+							panos.append("image")
+								.attr("xlink:href", function(){
+									if (d.panoramas == ''){
+										
+									} else{
+										return 'panoramas/' + d.id + '.jpg';
+									}
+								})
+								.attr("id", "panos")
+								.attr("width", imaSize)
+								.attr("height", imaSize)
+								.attr("x", xPosition - imaSize/2)
+								.attr("y", yPosition - imaSize/2);
+
+							d3.select("#panos")
+								.transition()
+								.duration(2000)
+								.remove();
+							})
+						});
+			</script>
+			<script type="text/javascript">
+				
+				function formatNodesById(dataset){
+					var formatted ={}
+					for(var i in dataset){
+						//console.log(dataset[i])
+						var id = dataset[i].id
+						//adding a underscore here to make sure it reads well, number keys run into issues
+						var stringId = "_"+id
+						//this is the x and y position of the node taken from code below
+						formatted[stringId]={x:dataset[i].requestDate,y:dataset[i].Elevation}
+					}
+					return formatted
+				}
+				
+			
+				
+				//NEW link new file
+				Promise.all([d3.json('nodes_cleanedsorted.json'),d3.json("links.json")])
+				.then(function(data){
+					//NEW link new data and set old data as first item in data array and links to 2nd
+				var dataset = data[0]
+				var links = data[1]
+				
+				//Width and height of svg
+				var w = 500;
+				var h = 500;
+				var r = 5;
+				var padding = 40;
+				
+				
+				
+				//Create scale functions
+				xScale = d3.scaleLinear()
+							.domain([
+								d3.min(dataset, function(d) { return d.requestDate; }),  
+								d3.max(dataset, function(d) { return d.requestDate; })
+							])
+							.range([padding, w - padding]);
+	
+				yScale = d3.scaleLinear()
+							.domain([
+								d3.min(dataset, function(d) { return d.Elevation; }), 
+								d3.max(dataset, function(d) { return d.Elevation; })
+							])
+							.range([h - padding, padding]);
+			
+				//Define X axis
+				xAxis = d3.axisBottom()
+							.scale(xScale)
+							.ticks(9)
+	
+				//Define Y axis
+				yAxis = d3.axisLeft()
+							.scale(yScale)
+							.ticks(10);
+	
+				//Create SVG element
+				var svg = d3.select("body")
+							.append("svg")
+							.attr("class", "scatterplot")
+							.attr("width", w)
+							.attr("height", h);
+				
+						
+				// Generate circles
+				svg.selectAll("rect")
+					.data(dataset)
+					.enter()
+					.append("rect")
+					.attr("x", function(d) {
+							return xScale(d.requestDate);
+					})
+					.attr("y", function(d) {
+							return yScale(d.Elevation);
+					})
+					.attr("width", function(d) {
+							return r;
+					})
+					.attr("height", function(d) {
+							return r;
+					})
+					.attr("fill", 'grey')
+					.style("fill-opacity", 0.25)
+					.on("mouseover",function(d){
+						var xPosition = xScale(d.requestDate);
+						var yPosition = yScale(d.Elevation);
+							
+						// Adjust color when selecting
+						d3.select(this).attr("fill","#f15f53")
+							.attr("width", function(d) {
+								return r*2;
+							})
+							.attr("height", function(d) {
+								return r*2;
+							})
+							.style("fill-opacity", 0.75);
+						
+						//TODO: show tooltip here
+						svg.append("text")
+							.attr("id", "tooltip")
+							.attr("x", xPosition + r*4)
+							.attr("y", yPosition)
+							.attr("text-anchor", "left")
+							.attr("font-size", "18px")
+							.attr("font-family", "sans-serif")
+							.attr("font-weight", "light")
+							.attr("fill", "#f15f53")
+							.text(d.Elevation +"'");
+					})
+					.on("mouseout",function(d){
+						d3.select(this)
+								.transition()
+								.attr("fill","grey")
+								.attr("width", function(d){
+									return r;
+								})
+								.attr("height", function(d){
+									return r;
+								})
+								.style("fill-opacity", 0.25)
+						
+						d3.select("#tooltip")
+								.remove();
+					});
+					
+					//Create X axis
+					svg.append("g")
+						.attr("class", "xAxis")
+						.attr("transform", "translate(0," + (h - padding) + ")")
+						.call(xAxis);
+					
+					//Create Y axis
+					svg.append("g")
+						.attr("class", "yAxis")
+						.attr("transform", "translate(" + (padding) + ",0)")
+						.call(yAxis);
+				
+					//NEW see function above for formatting x and y of links
+					var formattedNodes = formatNodesById(dataset)
+					//console.log(formattedNodes)
+				
+					//NEW now draw links
+					for(var i in links){
+						//console.log(links[i])
+						var from = links[i].from
+						var fromPosition = formattedNodes["_"+from]
+						var to = links[i].to
+						var toPosition = formattedNodes["_"+to]
+					
+						//NEW I had to put this check here because there were some node ids from the links file that are not in nodes file.
+						if(toPosition!=undefined && fromPosition!=undefined){
+							//console.log(fromPosition,toPosition)
+							drawLink(fromPosition, toPosition,svg,xScale,yScale)
+							//break
+						}
+					}
+					
+					// Create label
+					svg.append("text")
+						.attr("class", "descriptions")
+						.attr("text-anchor", "end")
+						.attr("x", w/2)
+						.attr("y", h - 5)
+						.text("Date Req");
+						})
+					
+					function drawLink(from, to,svg,xScale,yScale){
+						
+						// TODO: to make a curve - you will need to add a 'midpoint', I added a placehold midpoint to demonstrate
+						var lineData = [[xScale(from.x),yScale(from.y)],[xScale(to.x),yScale(from.y)],[xScale(to.x),yScale(to.y)]]
+						//var lineData = [[xScale(from.x),yScale(from.y)],[xScale(to.x),yScale(to.y)]]
+						
+						//console.log(from)
+						var line = d3.line().curve(d3.curveNatural);
+						var pathOfLine = line(lineData);
+						
+						svg.append("path")
+									.attr("class", "arc")
+									.attr("d", pathOfLine)
+									.attr("stroke","gold")
+									.attr("fill", "transparent")
+									.attr("opacity",.125);
+					}
+			</script>
+		</main>
+	</body>
+</html>
