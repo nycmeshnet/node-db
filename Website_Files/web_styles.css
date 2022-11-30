@@ -11,6 +11,7 @@ section {
 }
 
 aside {
+   background-image: url(/Scatterplot/)
     display: flex;
     flex-direction: column;
     width: 40%;
