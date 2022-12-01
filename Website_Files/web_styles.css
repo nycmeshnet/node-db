@@ -1,5 +1,17 @@
 /*** OVERALL: Layout rules ***/
 
+html{
+    height: 100%;
+    overflow: hidden;
+}
+
+body{
+  position: relative;
+  height: 100%;
+  overflow: auto;
+  box-sizing: border-box;
+}
+
 main {
     display: flex;
 }
@@ -15,7 +27,6 @@ aside {
     flex-direction: column;
     width: 40%;
 }
-
 
 
 /*** NAVIGATION: Menu formatting ***/
@@ -90,12 +101,6 @@ a:hover   {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-/* .sticky {
-    position: fixed;
-    top: 15px;
- } */
-
-
 
 /*** IDS: Unique object formatting in webpage ***/
 
@@ -138,6 +143,19 @@ a:hover   {
     width:79%; 
     height:100%;
     margin-left: 1%;
+}
+
+#forceText{
+    position:sticky;
+    top: 50px;
+    width:100%;
+    align-self: flex-start;
+}
+
+#forceChart {
+    position:absolute;
+    width:80%;
+    /* margin-right: 60%; */
 }
 
 

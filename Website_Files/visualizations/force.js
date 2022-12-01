@@ -25,7 +25,7 @@
 		  linkStrength,
 		  colors = d3.schemeTableau10, // an array of color strings, for the node groups
 		  width = 1280, // outer width, in pixels
-		  height = 720, // outer height, in pixels
+		  height = 800, // outer height, in pixels
 		  invalidation // when this promise resolves, stop the simulation
 		} = {}) {
 		  // Compute values.
@@ -68,8 +68,7 @@
 		    .force("link", forceLink)
 			.force("charge", forceNode)
 			// .force("center", d3.forceCenter(width / 2, height / 2))
-		    // .force("charge", forceNode)
-		    .force("center", d3.forceCenter())
+		    .force("center", d3.forceCenter().strength(.9))
   			.force("collide", d3.forceCollide().radius(3.5))
   			// .force("collide", d3.forceCollide().radius(d => d.r + 1)) // use the node's actual radius as buffer
 		    .on("tick", ticked);
@@ -191,14 +190,14 @@ Promise.all([d3.csv('data/nodes_linksOnly_NTAjoin_20221130.csv'),d3.csv("data/li
         nodeGroup: d => d.boroughCode,
         // nodeTitle: d => `${d.id}\n`,
 		nodeTitle: d => d.neighborhood,
-		nodeRadius: d => d.point_radius,
+		nodeRadius: d => Math.abs(d.point_radius),
 		// nodeRadius: 2.5,
         linkStrokeWidth: l => Math.sqrt(l.value),
         width: 1280,
-        height: 720,
+        height: 800,
         // invalidation // a promise to stop the simulation when the cell is re-run
     })
     // console.log(chart);
     // d3.select('#chart').append(chart);
-    document.querySelector('#chart').appendChild(chart);
+    document.querySelector('#forceChart').appendChild(chart);
     })

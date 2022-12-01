@@ -42,7 +42,7 @@
 		</aside>
 		</main>
 		<br class="bigBreak">
-		<main>
+		<main id="forceText" >
 				<section>
 					<div class="sectionText">
 						<h1> Centrality & Decentrality </h1>
@@ -50,16 +50,20 @@
 				</section>
 				<aside class="asidePlain">
 					<div class="descriptions">
-						<p> This visualization shows the clusters within the network structure of NYC Mesh as they relate to location, time, and hierarchy. The different node colors indicate which borough the node is located in: Blue is Manhattan, Yellow is Brooklyn, and Red is queens. The size of nodes indicate building height: the larger the node, the taller the building that the node is attached to. Additionally, each node appears on the network in the chronological order at which the associated router was added to the WiFi network. 
+						<p> This visualization shows the clusters within the network structure of NYC Mesh as they relate to location, time, and hierarchy. 
+							The different node colors indicate which borough the node is located in: Blue is Manhattan, Yellow is Brooklyn, and Red is Queens. 
+							The size of nodes indicate building height: the larger the node, the taller the building that the node is attached to. 
+							Additionally, each node appears on the network in the chronological order at which the associated router was added to the WiFi network. 
 						</p>
+						<p>Try clicking and holding on a node to disentangle its web of local connections.</p>
 					</div>
 				</aside>
 		</main>
 		<br class="bigBreak">
 		<main>
-				<section>
-					<div id="chart"></div>
-				</section>
+
+					<div id="forceChart"></div>
+
 			<script  src="visualizations/force.js"></script>
 		</main>
 	</body>
