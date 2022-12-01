@@ -77,7 +77,7 @@ d3.json('data/nodes_cleanedsorted.json')
 					.attr("y", h-(padding/2))
 					.text("Year")
 
-				// Y axis label:
+				// Add Y axis label:
 				svg.append("text")
 					.attr("id", "axisLabels")
 					.attr("text-anchor", "end")
