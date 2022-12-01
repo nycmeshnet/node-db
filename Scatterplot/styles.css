@@ -1,0 +1,98 @@
+
+main {
+
+    display: flex;
+}
+
+section {
+    flex-direction: column;
+    width: 60%;
+    height: auto;
+}
+
+aside {
+    background-color: #f15f53;
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+
+.bigBreak {
+    line-height: 100px;
+}
+
+.asidePlain {
+    background-color: white;
+}
+
+#meshWeb {
+    margin-left: 5%;
+    text-transform: uppercase;
+    word-wrap:break-word;
+    font-size: 75px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.yAxis {
+    color: grey;
+}
+
+.xAxis {
+    color: grey;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    min-height: 10vh;
+    font-size: 20px;
+}
+
+ul {
+    display: flex;  
+    justify-content: space-around;
+    list-style: none;   
+}
+
+#title {
+    color: black;
+    text-decoration: none;
+    text-decoration-line: overline;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#other {
+    color: black;
+    text-decoration: none;
+    font-weight: lighter;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#openingShot {
+   max-width: 80%;
+   margin: 10%;
+}
+
+.divisions {
+    margin: 20%;
+    color: grey;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.sectionText {
+    transform: rotate(-90deg);
+    margin-top: 10%;
+    margin-left: 90%;
+    font-weight: bold;
+    font-size: 20px;
+    color: grey;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.descriptions {
+    margin: 10%;
+    font-size: 20px;
+    color: grey;
+    font-family: Arial, Helvetica, sans-serif;
+}
