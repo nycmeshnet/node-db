@@ -1,4 +1,5 @@
-d3.json('nodes_cleanedsorted.json')
+// Reference data from html locations
+d3.json('data/nodes_cleanedsorted.json')
 .then(function(dataset){	
 //Width and height of svg, as well as squares
 var padding = 40;
@@ -15,7 +16,7 @@ Scale = d3.scaleLinear()
 
 
 //Create SVG element
-var svg = d3.select("#first-svg")
+var svg = d3.select("#grid-svg")
             .append("svg")
             .attr("class", "firstVis")
             .attr("width", numPerRow * size)
@@ -89,9 +90,8 @@ d3.selectAll("rect")
             // Create variables
             var imaSize = size * 20;
             var panos = svg.append("g");
-            var latlong = svg.append("g");
 
-            console.log('working!');
+            //console.log('working!');
             // Swap circles
             panos.append("image")
                 .attr("xlink:href", function(){

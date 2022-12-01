@@ -1,4 +1,4 @@
-d3.json('nodes_cleanedsorted.json')
+d3.json('data/nodes_cleanedsorted.json')
 				.then(function(dataset){
 	
 				//Width and height of svg

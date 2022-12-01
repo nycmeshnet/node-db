@@ -14,7 +14,7 @@ function formatNodesById(dataset){
 		
 			
 			//NEW link new file
-            Promise.all([d3.json('nodes_cleanedsorted.json'),d3.json("links.json")])
+            Promise.all([d3.json('data/nodes_cleanedsorted.json'),d3.json("data/links.json")])
 			.then(function(data){
 				//NEW link new data and set old data as first item in data array and links to 2nd
 			var dataset = data[0]
@@ -23,7 +23,7 @@ function formatNodesById(dataset){
 			//Width and height of svg
 			var w = 1900;
 			var h = 750;
-      		var r = 5;
+			var r = 5;
 			var padding = 40;
 			
 			
@@ -54,7 +54,7 @@ function formatNodesById(dataset){
 						.ticks(10);
 
 			//Create SVG element
-			var svg = d3.select("#third-svg")
+			var svg = d3.select("#connectivity-svg")
 						.append("svg")
 						.attr("class", "scatterplot")
 						.attr("width", w)
