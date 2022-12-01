@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8' />
+  <title>nycMesh network map</title>
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+  <script src='../d3.js'></script>
+<script src="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
+<link href="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css" rel="stylesheet" />
+  <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.2/mapbox-gl-geocoder.min.js'></script>
+  <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.2/mapbox-gl-geocoder.css' type='text/css' />
+  <style>
+    body { margin:0; padding:0; }
+    #map { position:absolute; top:0; bottom:0; width:100%; }
+  </style>
+</head>
+<body>
+
+<div id='map'></div>
+
+<script>
+
+ // Set bounds to New York, New York
+var bounds = [
+[-74.1502, 40.55], // Southwest coordinates (Staten Island center point)
+[-73.7824, 40.85]  // Northeast coordinates (New Rochelle center point)
+];
+
+mapboxgl.accessToken = 'pk.eyJ1IjoibWpoMjI0MSIsImEiOiJjbDZhNWdtdWcwemYwM2Nyejg4azR6MjdtIn0.jcFs6eofGMkSv7Gokq_b6A';
+var map = new mapboxgl.Map({
+  container: 'map',
+  style: 'mapbox://styles/mjh2241/clabvz18o002o16tdj4u9l7vy', // mjh mapbox custom
+  center: [-73.9571, 40.685],//(Williamsburg Bk map center of gravity)
+  zoom: 11,
+  maxBounds: bounds, // Sets bounds as max
+  pitch:40,
+  bearing:29
+});
+
+map.addControl(new mapboxgl.NavigationControl());
+
+map.on("load",function(){
+    d3.selectAll(".mapboxgl-ctrl-logo").remove()
+    d3.selectAll(".mapboxgl-ctrl-attrib").remove()
+})
+</script>
+</body>
+</html>
