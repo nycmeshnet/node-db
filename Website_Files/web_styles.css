@@ -68,6 +68,12 @@ a:hover   {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.divisionsText {
+    margin: 20%;
+    color: grey;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 .sectionText {
     transform: rotate(-90deg);
     margin-top: 7%;
