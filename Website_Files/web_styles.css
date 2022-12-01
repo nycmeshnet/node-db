@@ -1,6 +1,6 @@
+/*** OVERALL: Layout rules ***/
 
 main {
-
     display: flex;
 }
 
@@ -11,35 +11,14 @@ section {
 }
 
 aside {
-   background-image: url(/Scatterplot/)
     display: flex;
     flex-direction: column;
     width: 40%;
 }
 
-.bigBreak {
-    line-height: 100px;
-}
 
-.asidePlain {
-    background-color: white;
-}
 
-#meshWeb {
-    margin-left: 5%;
-    text-transform: uppercase;
-    word-wrap:break-word;
-    font-size: 75px;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-
-.yAxis {
-    color: grey;
-}
-
-.xAxis {
-    color: grey;
-}
+/*** NAVIGATION: Menu formatting ***/
 
 header {
     display: flex;
@@ -57,8 +36,6 @@ ul {
 #title {
     color: black;
     text-decoration: none;
-    text-decoration-line: overline;
-    font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -69,9 +46,20 @@ ul {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-#openingShot {
-   max-width: 80%;
-   margin: 10%;
+a:hover   {
+    font-weight:bold;
+} 
+
+
+
+/*** CLASSES: Unique formatted sections in webpage ***/
+
+.asideUnique {
+    background-color: #f15f53;
+}
+
+.wideBreak {
+    line-height: 50px;
 }
 
 .divisions {
@@ -81,12 +69,11 @@ ul {
 }
 
 .sectionText {
-   
-    margin-top: 10%;
+    transform: rotate(-90deg);
+    margin-top: 7%;
     margin-left: 90%;
     font-weight: bold;
     font-size: 20px;
-    color: grey;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -94,5 +81,73 @@ ul {
     margin: 10%;
     font-size: 20px;
     color: grey;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+/*** IDS: Unique object formatting in webpage ***/
+
+#meshWeb {
+    color: black;
+    margin-left: 5%;
+    text-transform: uppercase;
+    font-size: 75px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#openingShot {
+    transform: rotate(-90deg);
+    max-width: 100%;
+    margin-top: -20%;
+}
+
+#solidColor {
+    width: 100;;
+    background-color: #f15f53;
+}
+
+#second-svg {
+}
+
+#axisLabels {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    text-transform:lowercase;
+}
+
+
+/*** OVERALL: Formatting for the graphs ***/
+
+.yAxis {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+
+}
+
+.xAxis {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+
+#toolTip {
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-transform: lowercase;
+}
+
+.xLabel {
+    font-size: 20px;
+    font-weight:lighter;
+    text-transform: lowercase;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.yLabel {
+    font-size: 20px;
+    font-weight:lighter;
+    text-transform: lowercase;
     font-family: Arial, Helvetica, sans-serif;
 }

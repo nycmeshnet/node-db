@@ -5,7 +5,7 @@ d3.json('data/nodes_cleanedsorted.json')
 				var w = 1900;
 				var h = 900;
 				var r = 7.5;
-				var padding = 40;
+				var padding = 60;
 				
 				
 				//Create scale functions
@@ -49,7 +49,7 @@ d3.json('data/nodes_cleanedsorted.json')
 							.tickFormat(d3.format("d"));
 	
 				//Create SVG element
-				var svg = d3.select("#second-svg")
+				var svg = d3.select("#height-svg")
 							.append("svg")
 							.attr("class", "secondVis")
 							.attr("width", w)
@@ -71,22 +71,25 @@ d3.json('data/nodes_cleanedsorted.json')
 
 				// Add X axis label:
 				svg.append("text")
-					.attr("id", "xAxisLabel")
+					.attr("id", "axisLabels")
 					.attr("text-anchor", "end")
 					.attr("x", w/2)
-					.attr("y", h)
+					.attr("y", h-(padding/2))
 					.text("Year")
 
 				// Y axis label:
 				svg.append("text")
+					.attr("id", "axisLabels")
 					.attr("text-anchor", "end")
 					.attr("transform", "rotate(-90)")
-					.attr("x", padding - 50)
-					.attr("y", padding)
+					.attr("x", (-h + padding)/2)
+					.attr("y", padding/2)
 					.text("Height of Node")
-
+				
+				svg.selectAll("path")
+							.remove();
 					
-				// Generate rectangles
+				// Generate rectangles, placing them on the Y axis before animating across time
 				svg.append('g')
 						.selectAll("squares")
 						.data(dataset)
@@ -158,7 +161,8 @@ d3.json('data/nodes_cleanedsorted.json')
 								   d3.select("#toolTip")
 										  .remove();
 							});
-				
+
+				// Create animation, moving across time in the X dimension
 				svg.selectAll("rect")
 						.transition()
 						.delay(function(d, i){
