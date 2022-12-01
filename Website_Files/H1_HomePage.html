@@ -5,6 +5,10 @@
 		<title>The NYC Mesh WiFi Network</title>
 		<script type="text/javascript" src="./d3.js"></script>
 		<link rel="stylesheet" href="web_styles.css">
+		<script src="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
+		<link href="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css" rel="stylesheet" />
+		<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.2/mapbox-gl-geocoder.min.js'></script>
+		<link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.2/mapbox-gl-geocoder.css' type='text/css' />
 	</head>
 	<body>
 		<div class="header">
@@ -46,15 +50,14 @@
 				</div>
 			</section>
 		<aside>
-			
 
-				</p>
-			</p>
+			
 		</aside>
 		</main>
-		<br class="bigBreak">
+		<br class="wideBreak">
 		<main>
 				<section>
+					<div id="map"></div>
 					<div class="sectionText">
 						<h1> Map of NYC Mesh Ecosystem</h1>
 					</div>
@@ -64,15 +67,14 @@
 						
 						<p> Profit-seeking ISPs such as Spectrum and Optimum have a stranglehold on internet infrastructure, allowing them to charge high prices, provide poor service, and distribute uneven quality—especially for lower income New Yorkers. NYC Mesh intervenes in this market by connecting to the internet backbone (a data center in Chinatown), and distributing internet directly to NYC Mesh members without having to go through an ISP. 
 						</p>
-						<p> This map shows the current ecosystem of the NYC Mesh Network. Red dots represent Mesh WiFi nodes, hubs, and supernodes, and blue linkages represent distribution of the internet from one node to another. Each node is a router attached to a NYCMesh’ member’s rooftop, installed by volunteers at the price of a suggested donation. Supernodes or hubs are types of nodes that can support more traffic distributing connections and access to surrounding smaller nodes over time.
+						<p> Mesh nodes must be mounted strategically to maximize height. 
+							Below, each node appears within the scatterplot. Drag your mouse over
+							nodes and click on a node that appears red. Check out that view!
 						</p>
 					</div>
 				</aside>
-			</main>
-			<script></script>
-				
-			</script>
 		</main>
+		<script  src="visualizations/mapbox_home.js"></script>
 	</body>
 </html>
 

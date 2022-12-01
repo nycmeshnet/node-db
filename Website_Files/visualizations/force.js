@@ -1,14 +1,3 @@
-<!DOCTYPE html>
-
-<head>
-	<meta charset="UTF-8">
-	<script src="https://d3js.org/d3.v7.min.js"></script>
-</head>
-
-<body>
-	<div id="chart"></div>
-<script>
-
         function ForceGraph({
 		  nodes, // an iterable of node objects (typically [{id}, …])
 		  links // an iterable of link objects (typically [{source, target}, …])
@@ -213,7 +202,3 @@ Promise.all([d3.csv('data/nodes_linksOnly_NTAjoin_20221130.csv'),d3.csv("data/li
     // d3.select('#chart').append(chart);
     document.querySelector('#chart').appendChild(chart);
     })
-
-</script>
-</body>
-</html>

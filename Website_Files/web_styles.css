@@ -90,6 +90,11 @@ a:hover   {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+/* .sticky {
+    position: fixed;
+    top: 15px;
+ } */
+
 
 
 /*** IDS: Unique object formatting in webpage ***/
@@ -121,6 +126,20 @@ a:hover   {
     font-size: 30px;
     text-transform:lowercase;
 }
+
+#map-container {
+    height: 450px;
+}
+
+#map { 
+    position:relative; 
+    top:0; 
+    bottom:0; 
+    width:79%; 
+    height:100%;
+    margin-left: 1%;
+}
+
 
 
 /*** OVERALL: Formatting for the graphs ***/
