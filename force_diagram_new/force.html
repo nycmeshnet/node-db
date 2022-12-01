@@ -21,8 +21,7 @@
 		  nodeStroke = "#fff", // node stroke color
 		  nodeStrokeWidth = 1, // node stroke width, in pixels
 		  nodeStrokeOpacity = 1, // node stroke opacity
-		  nodeRadius = d => d.point_radius, // node radius, in pixels
-		//   nodeRadius = 3, // node radius, in pixels
+		  nodeRadius, // given d in nodes, returns the elevation of the node (z)
 		  nodeStrength,
 		  linkSource = ({
 		    source
@@ -47,12 +46,15 @@
 		  if (nodeTitle === undefined) nodeTitle = (_, i) => N[i];
 		  const T = nodeTitle == null ? null : d3.map(nodes, nodeTitle);
 		  const G = nodeGroup == null ? null : d3.map(nodes, nodeGroup).map(intern);
+		  const R = nodeRadius == null ? null : d3.map(nodes, nodeRadius).map(intern);
 		  const W = typeof linkStrokeWidth !== "function" ? null : d3.map(links, linkStrokeWidth);
 		  const L = typeof linkStroke !== "function" ? null : d3.map(links, linkStroke);
 
 		  // Replace the input nodes and links with mutable objects for the simulation.
 		  nodes = d3.map(nodes, (_, i) => ({
-		    id: N[i]
+		    id: N[i],
+			radius: R[i], 
+			neighborhood: T[i]
 		  }));
 		  links = d3.map(links, (_, i) => ({
 		    source: LS[i],
@@ -66,7 +68,7 @@
 		  const color = nodeGroup == null ? null : d3.scaleOrdinal(nodeGroups, colors);
 
 		  // Construct the forces.
-		  const forceNode = d3.forceManyBody().strength(-2.5);
+		  const forceNode = d3.forceManyBody().strength(-3.5);
 		  const forceLink = d3.forceLink(links).id(({
 		    index: i
 		  }) => N[i]);
@@ -79,7 +81,7 @@
 			// .force("center", d3.forceCenter(width / 2, height / 2))
 		    // .force("charge", forceNode)
 		    .force("center", d3.forceCenter())
-  			.force("collide", d3.forceCollide().radius(3))
+  			.force("collide", d3.forceCollide().radius(3.5))
   			// .force("collide", d3.forceCollide().radius(d => d.r + 1)) // use the node's actual radius as buffer
 		    .on("tick", ticked);
 
@@ -106,7 +108,8 @@
 		    .selectAll("circle")
 		    .data(nodes)
 		    .join("circle")
-		    .attr("r", nodeRadius)
+		    .attr("r", function(d){
+				return d.radius})
 		    .call(drag(simulation));
 
 		  if (W) link.attr("stroke-width", ({
@@ -130,7 +133,10 @@
 		    return value !== null && typeof value === "object" ? value.valueOf() : value;
 		  }
 
+
+
 		  function ticked() {
+
 		    link
 		      .attr("x1", d => d.source.x)
 		      .attr("y1", d => d.source.y)
@@ -140,7 +146,6 @@
 		    node
 		      .attr("cx", d => d.x)
 		      .attr("cy", d => d.y);
-			//   .attr("r", d => d.point_radius);
 		  }
 
 		  function drag(simulation) {
@@ -175,7 +180,7 @@
 		}
 
 //load NYC mesh data jsons reformatted as CSV
-Promise.all([d3.csv('data/BOTH_NODES_XYZ_neighborhoodsJoin_20221130.csv'),d3.csv("data/lineLinks_cleaned_final_20221130.csv")])
+Promise.all([d3.csv('data/nodes_linksOnly_NTAjoin_20221130.csv'),d3.csv("data/links_cleaned_20221130.csv")])
 .then(function(data){
 
     //NEW link new data and set old data as first item in data array and links to 2nd
@@ -183,7 +188,7 @@ Promise.all([d3.csv('data/BOTH_NODES_XYZ_neighborhoodsJoin_20221130.csv'),d3.csv
     var links = data[1]
     // console.log(data)
 
-	console.log(nodes)
+	// console.log(nodes)
 
     var dataset = {
     nodes: nodes,
@@ -195,10 +200,10 @@ Promise.all([d3.csv('data/BOTH_NODES_XYZ_neighborhoodsJoin_20221130.csv'),d3.csv
     const chart = ForceGraph(dataset, {
         nodeId: d => d.id,
         nodeGroup: d => d.boroughCode,
-        nodeTitle: d => `${d.id}\n`,
-		// TODO : scale node radii by elevation (Z)
-		// nodeRadius: d => d.point_radius,
-		nodeRadius: 2.5,
+        // nodeTitle: d => `${d.id}\n`,
+		nodeTitle: d => d.neighborhood,
+		nodeRadius: d => d.point_radius,
+		// nodeRadius: 2.5,
         linkStrokeWidth: l => Math.sqrt(l.value),
         width: 1280,
         height: 720,
