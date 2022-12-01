@@ -98,7 +98,7 @@ d3.selectAll("rect")
                     if (d.panoramas == ''){
                         
                     } else{
-                        return 'panoramas/' + d.id + '.jpg';
+                        return '../data/panoramas/' + d.id + '.jpg';
                     }
                 })
                 .attr("id", "panos")
