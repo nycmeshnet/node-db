@@ -163,12 +163,19 @@ a:hover   {
 }
 
 #titleImage {
-    margin:50%;
-    max-width: 20%;
+    margin:10%;
+    margin-left:40%;
+    max-width: 40%;
 }
 
 #enterClick {
-
+    position: fixed;
+    top:10em;
+    left:5em;
+    color: black;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40px;
 }
 
 
