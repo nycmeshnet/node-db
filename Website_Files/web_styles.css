@@ -134,15 +134,17 @@ a:hover   {
 
 #map-container {
     height: 450px;
+    width: 90%;
+    /* flex-shrink: 50%;
+    align-self: flex-start; */
 }
 
 #map { 
     position:relative; 
-    top:0; 
-    bottom:0; 
-    width:79%; 
+    width:100%; 
     height:100%;
-    margin-left: 1%;
+    /* margin-left: 1%; */
+    /* padding:3%; */
 }
 
 #forceText{

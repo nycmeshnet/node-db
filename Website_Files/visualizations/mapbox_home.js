@@ -15,7 +15,7 @@ var map = new mapboxgl.Map({
   bearing:29
 });
 
-map.addControl(new mapboxgl.NavigationControl());
+// map.addControl(new mapboxgl.NavigationControl());
 
 map.on("load",function(){
     d3.selectAll(".mapboxgl-ctrl-logo").remove()

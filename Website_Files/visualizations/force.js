@@ -50,6 +50,7 @@
 		    target: LT[i]
 		  }));
 
+
 		  // Compute default domains.
 		  if (G && nodeGroups === undefined) nodeGroups = d3.sort(G);
 
@@ -174,16 +175,11 @@ Promise.all([d3.csv('data/nodes_linksOnly_NTAjoin_20221130.csv'),d3.csv("data/li
     //NEW link new data and set old data as first item in data array and links to 2nd
     var nodes = data[0]
     var links = data[1]
-    // console.log(data)
-
-	// console.log(nodes)
 
     var dataset = {
     nodes: nodes,
     links: links
     };
-
-    // console.log(links[0].source)
 
     const chart = ForceGraph(dataset, {
         nodeId: d => d.id,
@@ -197,7 +193,5 @@ Promise.all([d3.csv('data/nodes_linksOnly_NTAjoin_20221130.csv'),d3.csv("data/li
         height: 800,
         // invalidation // a promise to stop the simulation when the cell is re-run
     })
-    // console.log(chart);
-    // d3.select('#chart').append(chart);
     document.querySelector('#forceChart').appendChild(chart);
     })
