@@ -157,6 +157,7 @@ a:hover   {
 #forceChart {
     position:absolute;
     width:80%;
+    cursor: pointer;
     /* margin-right: 60%; */
 }
 
