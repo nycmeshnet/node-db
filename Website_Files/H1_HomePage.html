@@ -17,10 +17,10 @@
 				<nav>
 					<ul>
 						<li><a id="title" href="H1_HomePage.html">1. The NYC Mesh Ecosystem</a></li>
-						<li><a id="other" href="H2.html">2. The Network Structure</a></li>
-						<li><a id="other" href="H3.html">3. The Growth Over Time </a></li>
-						<li><a id="other" href="H4.html">4. The Connections Over Time </a></li>
-						<li><a id="other" href="H5.html">5. Takeaways</a></li>
+						<li><a id="title" href="H2.html">2. The Network Structure</a></li>
+						<li><a id="title" href="H3.html">3. The Growth Over Time </a></li>
+						<li><a id="title" href="H4.html">4. The Connections Over Time </a></li>
+						<li><a id="title" href="H5.html">5. Takeaways</a></li>
 					</ul>
 				</nav>
 			</header>
@@ -52,20 +52,19 @@
 				</div>
 			</section>
 		<aside>
-
 			
+			<div id="map" id="map-container">
+			</div>
 		</aside>
 		</main>
 		<br class="wideBreak">
 		<main>
-				<section>
-					<div class="sectionText">
-						<h1> Map of NYC Mesh Ecosystem</h1>
-					</div>
-					<div id="map" id="map-container">
+				<section class="sectionRotatedTitle">
+					<div>
+						<h1 id="viz-title"> Map of NYC Mesh Ecosystem</h1>
 					</div>
 				</section>
-				<aside class="asidePlain">
+				<aside class="asideCaption">
 					<div class="descriptions">
 						
 						<p> Profit-seeking ISPs such as Spectrum and Optimum have a stranglehold on internet infrastructure, allowing them to charge high prices, provide poor service, and distribute uneven quality—especially for lower income New Yorkers. NYC Mesh intervenes in this market by connecting to the internet backbone (a data center in Chinatown), and distributing internet directly to NYC Mesh members without having to go through an ISP. 
@@ -74,8 +73,8 @@
 
 					</div>
 				</aside>
+				<script src="visualizations/mapbox_home.js"></script>
 		</main>
-		<script  src="visualizations/mapbox_home.js"></script>
 	</body>
 </html>
 

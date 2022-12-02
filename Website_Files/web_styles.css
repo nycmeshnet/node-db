@@ -59,17 +59,15 @@ ul {
 
 a:hover   {
     font-weight:bold;
+    text-decoration: overline;
+    text-decoration-color: #f15f53;
 } 
 
 
 
 /*** CLASSES: Unique formatted sections in webpage ***/
 
-.asideUnique {
-    background-color: #f15f53;
-}
-
-.wideBreak {
+.bigBreak {
     line-height: 50px;
 }
 
@@ -85,21 +83,27 @@ a:hover   {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.sectionText {
-    transform: rotate(-90deg);
-    margin-top: 7%;
-    margin-left: 90%;
-    font-weight: bold;
-    font-size: 20px;
-    font-family: Arial, Helvetica, sans-serif;
+.sectionRotatedTitle {
+    flex-direction: column;
+    width: 20%;
+    height: auto;
+}
+
+.asideCaption {
+    flex-direction: column;
+    width: 90%;
+    height: auto;
 }
 
 .descriptions {
-    margin: 10%;
+    margin-left: 5%;
+    margin-right: 10%;
+    margin-top: 10%;
     font-size: 20px;
     color: grey;
     font-family: Arial, Helvetica, sans-serif;
 }
+
 
 
 /*** IDS: Unique object formatting in webpage ***/
@@ -123,8 +127,6 @@ a:hover   {
     background-color: #f15f53;
 }
 
-#second-svg {
-}
 
 #axisLabels {
     font-family: Arial, Helvetica, sans-serif;
@@ -133,34 +135,41 @@ a:hover   {
 }
 
 #map-container {
-    height: 450px;
-    width: 90%;
+    height: 70vh;
+    width: 98%;
     /* flex-shrink: 50%;
     align-self: flex-start; */
 }
 
 #map { 
     position:relative; 
-    width:100%; 
-    height:100%;
-    /* margin-left: 1%; */
-    /* padding:3%; */
+    width:95%; 
+    height:90%;
+    margin-left: 1%;
 }
 
-#forceText{
-    position:sticky;
-    top: 50px;
-    width:100%;
-    align-self: flex-start;
+#side-high-low {
+    margin-top: 15%;
+    max-width: 80%;
 }
 
-#forceChart {
-    position:absolute;
-    width:80%;
-    cursor: pointer;
-    /* margin-right: 60%; */
+
+#viz-title {
+    margin-top: 65%;
+    margin-bottom: 50%;
+    font-family: Arial, Helvetica, sans-serif;
+    transform: rotate(-90deg);
+    text-transform: uppercase;
 }
 
+#titleImage {
+    margin:50%;
+    max-width: 20%;
+}
+
+#enterClick {
+
+}
 
 
 /*** OVERALL: Formatting for the graphs ***/

@@ -21,8 +21,8 @@ function formatNodesById(dataset){
 			var links = data[1]
 			
 			//Width and height of svg
-			var w = 1900;
-			var h = 750;
+			var w = 1400;
+			var h = 650;
 			var r = 10;
 			var padding = 40;
 			
@@ -42,11 +42,21 @@ function formatNodesById(dataset){
 							d3.max(dataset, function(d) { return d.z; })
 						])
 						.range([h - padding, padding]);
+
+
+			//Create scale functions
+			xScaleDisplay = d3.scaleLinear()
+						.domain([
+							d3.min(dataset, function(d) { return d.Date_Year; }),  
+							d3.max(dataset, function(d) { return d.Date_Year; })
+						])
+						.range([padding*2, w - padding]);
 	
 			//Define X axis
 			xAxis = d3.axisBottom()
-						.scale(xScale)
-						.ticks(9)
+						.scale(xScaleDisplay)
+						.ticks(6)
+						.tickFormat(d3.format("d"));
 
 			//Define Y axis
 			yAxis = d3.axisLeft()
@@ -78,8 +88,8 @@ function formatNodesById(dataset){
 			svg.append("text")
 				.attr("id", "axisLabels")
 				.attr("text-anchor", "end")
-				.attr("x", w/2)
-				.attr("y", h-(padding/2))
+				.attr("x", w/2 + 40)
+				.attr("y", h-(padding/7))
 				.text("Year")
 
 			// Add Y axis label:
@@ -104,9 +114,7 @@ function formatNodesById(dataset){
 				.attr("cx", function(d) {
 						return xScale(d.requestDate);
 				})
-				.attr("cy", function(d) {
-						return yScale(d.z);
-				})
+				.attr("cy", h-padding)
 				.attr("r", function(d) {
 						return r;
 				})
@@ -129,7 +137,6 @@ function formatNodesById(dataset){
 				})
                 .on("mouseout",function(d){
 						d3.select(this)
-
 							.attr("r", function(d){
 								return r;
 							})
@@ -143,6 +150,16 @@ function formatNodesById(dataset){
 							.remove();
 				});
 
+				// Create animation, moving across time in the X dimension
+				svg.selectAll("circle")
+						.transition()
+						.delay(function(d, i){
+							return (i*8);
+						})
+						.duration(200)
+						.attr("cy", function(d){
+							return yScale(d.z);
+						})
 
 				d3.selectAll(".connectivityRect")
 					.on("click", function(d){

@@ -2,8 +2,8 @@ d3.json('data/nodes_cleanedsorted.json')
 				.then(function(dataset){
 	
 				//Width and height of svg
-				var w = 1900;
-				var h = 900;
+				var w = 1400;
+				var h = 650;
 				var r = 7.5;
 				var padding = 60;
 				
@@ -74,7 +74,7 @@ d3.json('data/nodes_cleanedsorted.json')
 					.attr("id", "axisLabels")
 					.attr("text-anchor", "end")
 					.attr("x", w/2)
-					.attr("y", h-(padding/2))
+					.attr("y", h-(padding/4))
 					.text("Year")
 
 				// Add Y axis label:
@@ -82,7 +82,7 @@ d3.json('data/nodes_cleanedsorted.json')
 					.attr("id", "axisLabels")
 					.attr("text-anchor", "end")
 					.attr("transform", "rotate(-90)")
-					.attr("x", (-h + padding)/2)
+					.attr("x", (-h + padding)/3)
 					.attr("y", padding/2)
 					.text("Height of Node")
 				
