@@ -1,0 +1,215 @@
+/*** OVERALL: Layout rules ***/
+
+html{
+    height: 100%;
+    overflow: hidden;
+}
+
+body{
+  position: relative;
+  height: 100%;
+  overflow: auto;
+  box-sizing: border-box;
+}
+
+main {
+    display: flex;
+}
+
+section {
+    flex-direction: column;
+    width: 60%;
+    height: auto;
+}
+
+aside {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+
+
+/*** NAVIGATION: Menu formatting ***/
+
+header {
+    display: flex;
+    flex-direction: column;
+    min-height: 10vh;
+    font-size: 20px;
+}
+
+ul {
+    display: flex;  
+    justify-content: space-around;
+    list-style: none;   
+}
+
+#title {
+    color: black;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#other {
+    color: black;
+    text-decoration: none;
+    font-weight: lighter;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a:hover   {
+    font-weight:bold;
+    text-decoration: overline;
+    text-decoration-color: #f15f53;
+} 
+
+
+
+/*** CLASSES: Unique formatted sections in webpage ***/
+
+.bigBreak {
+    line-height: 50px;
+}
+
+.divisions {
+    margin: 20%;
+    color: grey;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.divisionsText {
+    margin: 20%;
+    color: grey;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.sectionRotatedTitle {
+    flex-direction: column;
+    width: 20%;
+    height: auto;
+}
+
+.asideCaption {
+    flex-direction: column;
+    width: 90%;
+    height: auto;
+}
+
+.descriptions {
+    margin-left: 5%;
+    margin-right: 10%;
+    margin-top: 10%;
+    font-size: 20px;
+    color: grey;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+/*** IDS: Unique object formatting in webpage ***/
+
+#meshWeb {
+    color: black;
+    margin-left: 5%;
+    text-transform: uppercase;
+    font-size: 75px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#openingShot {
+    transform: rotate(-90deg);
+    max-width: 100%;
+    margin-top: -20%;
+}
+
+#solidColor {
+    width: 100;;
+    background-color: #f15f53;
+}
+
+
+#axisLabels {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    text-transform:lowercase;
+}
+
+#map-container {
+    height: 70vh;
+    width: 98%;
+    /* flex-shrink: 50%;
+    align-self: flex-start; */
+}
+
+#map { 
+    position:relative; 
+    width:95%; 
+    height:90%;
+    margin-left: 1%;
+}
+
+#side-high-low {
+    margin-top: 15%;
+    max-width: 80%;
+}
+
+
+#viz-title {
+    margin-top: 65%;
+    margin-bottom: 50%;
+    font-family: Arial, Helvetica, sans-serif;
+    transform: rotate(-90deg);
+    text-transform: uppercase;
+}
+
+#titleImage {
+    margin:10%;
+    margin-left:40%;
+    max-width: 40%;
+}
+
+#enterClick {
+    position: fixed;
+    top:10em;
+    left:5em;
+    color: black;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40px;
+}
+
+
+/*** OVERALL: Formatting for the graphs ***/
+
+.yAxis {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+
+}
+
+.xAxis {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+
+#toolTip {
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-transform: lowercase;
+}
+
+.xLabel {
+    font-size: 20px;
+    font-weight:lighter;
+    text-transform: lowercase;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.yLabel {
+    font-size: 20px;
+    font-weight:lighter;
+    text-transform: lowercase;
+    font-family: Arial, Helvetica, sans-serif;
+}
