@@ -104,7 +104,33 @@ a:hover   {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+/* BUTTON specifc effects */
+.buttonToggle {
+	display: inline-block;
+	border: 10px;
+    border-color: blueviolet;
 
+	background-color: #f15f53;
+    color: white;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	font-weight: 400;
+	text-decoration: none;
+	text-align: center;
+
+    transition-duration: .5s;
+}
+
+.buttonToggle:hover {
+    background-color: #888; /* Grey */
+    color: white;
+  }
+
+.buttonToggle:active {
+    background-color: #888;
+    box-shadow: 0 5px gold;
+    transform: translateY(4px);
+  }
 
 /*** IDS: Unique object formatting in webpage ***/
 

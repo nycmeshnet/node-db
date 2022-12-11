@@ -1,79 +1,131 @@
 //NEW link new file
-Promise.all([d3.json('../Data/monthtotals.json'),d3.json("../Data/yeartotals.json")])
+Promise.all([d3.json('../data/monthtotals.json'),d3.json("../data/yeartotals.json")])
     .then(function(data){
     //NEW link new data and set old data as first item in data array and links to 2nd
     var dataset = data[0]
     var year = data[1]
-    console.log( d3.min(year, function(year) { return year.New_Nodes; }))
 
     //Width and height of svg
-    var w = 1600;
+    var w = 800;
     var h = 900;
     var padding = 60;
     var r = (h-(padding*4))/year.length;
-        
-    console.log(r)
+    //console.log(year.length)
+    //console.log(r)
+
     //Create scale functions
-    xScale = d3.scaleLinear()
+    xScaleYear = d3.scaleLinear()
                 .domain([
                     d3.min(year, function(year) { return year.New_Nodes; }),  
                     d3.max(year, function(year) { return year.New_Nodes; })
                 ])
                 .range([padding*2, w - padding]);
 
-    yScale = d3.scaleLinear()
+    yScaleYear = d3.scaleLinear()
                 .domain([
                     d3.min(year, function(year) { return year.Index_Value; }), 
                     d3.max(year, function(year) { return year.Index_Value; })
                 ])
-                .range([padding, h - (padding*4)]);
+                .range([padding, h - (padding*3)]);
 
     // Display scale
-    yScaleDisplay = d3.scaleLinear()
+    yScaleDisplayYear = d3.scaleLinear()
                 .domain([
                     d3.min(year, function(year) { return year.Date_Year; }), 
                     d3.max(year, function(year) { return year.Date_Year; })
                 ])
-                .range([padding, h - (padding*1.5)]);
+                .range([padding*1.5, h - (padding*2.5)]);
 
 
     //Define X axis
-    xAxis = d3.axisBottom()
-                .scale(xScale)
+    xAxisYear = d3.axisBottom()
+                .scale(xScaleYear)
                 .ticks(6)
 
     //Define Y axis
-    yAxis = d3.axisLeft()
-                .scale(yScaleDisplay)
+    yAxisYear = d3.axisLeft()
+                .scale(yScaleDisplayYear)
                 .ticks(8)
                 .tickFormat(d3.format("d"));
 
     //Create SVG element
-    var svg = d3.select("#line-svg")
+    var svg = d3.select("#bar-svg")
                 .append('g')
                 .append("svg")
                 .attr("class", "secondVis")
                 .attr("width", w)
                 .attr("height", h);
 
+    // Create bars
+    svg.selectAll('rect')
+            .data(year)
+            .enter()
+            .append('rect')
+            .attr("id", "year-bars")
+            .attr('x', padding*2)
+            .attr('y', function(year){
+                return yScaleYear(year.Index_Value);
+            })
+            .attr("height", r)
+            .attr("width", function(year){
+                //console.log(year.New_Nodes)
+                return 0;
+                //return xScale(year.New_Nodes);
+            })
+            .attr("fill", "black")
+            .on("mouseover",function(year){
+                    d3.select(this)
+                        .style("fill", '#f15f53')
+                        .style("opacity", 1)
+                })
+                .on("mouseout",function(year){
+                        d3.select(this)
+                            .style("fill","black")
+                });
+                
+                /*
+    // Append text number labels
+    svg.selectAll("text")
+            .data(year)
+            .enter()
+            .append("text")
+            .text(function(year) {
+                //console.log(year.New_Nodes)
+                return year.New_Nodes;
+            })
+            .attr("x", function(year){
+                return padding*3;
+            })
+            .attr("y", function(year, i) {
+                console.log(yScaleYear(year.Index_Value))
+                return (i *r*1.1875)+ (padding*1.5);
+            })
+            .attr("font-family", "sans-serif")
+            .attr("font-size", "20px")
+            .attr("font-weight", "bold")
+            .attr("fill", "white");
+            */
+
     //Create X axis
     svg.append("g")
         .attr("class", "xAxis")
+        .attr("id", "xAxisYear")
         .attr("transform", "translate(0," + (h - padding) + ")")
-        .call(xAxis);
+        .call(xAxisYear);
     
     //Create Y axis
     svg.append("g")
         .attr("class", "yAxis")
+        .attr("id", "yAxisYear")
         .attr("transform", "translate(" + (padding*1.5) + ",0)")
-        .call(yAxis);
+        .call(yAxisYear);
 
     // Add X axis label:
     svg.append("text")
         .attr("id", "axisLabels")
         .attr("text-anchor", "end")
         .attr("x", w/2)
-        .attr("y", h-(padding/4))
+        .attr("y", h-(padding/16))
         .text("Number of Nodes Requested")
 
     // Y axis label:
@@ -86,64 +138,28 @@ Promise.all([d3.json('../Data/monthtotals.json'),d3.json("../Data/yeartotals.jso
         .attr("y", padding/2)
         .text("")
 
-    // Create bars
-    svg.selectAll('rect')
-            .data(year)
-            .enter()
-            .append('rect')
-            .attr('x', padding*2)
-            .attr('y', function(year){
-                return yScale(year.Index_Value);
-            })
-            .attr("height", r)
-            .attr("width", function(year){
-                //console.log(year.New_Nodes)
-                return 0;
-                //return xScale(year.New_Nodes);
-            })
-            .attr("fill", "black")
-            .on("mouseover",function(year){
-                    var xPosition = xScale(year.New_Nodes);
-                    var yPosition = yScale(year.Index_Value);
-
-                    d3.select(this)
-                        .style("fill", '#f15f53')
-                        .style("opacity", 1)
-                    
-                    //Show tooltip here
-                    svg.append("text")
-                        .attr("id", "toolTip")
-                        .attr("x", xPosition)
-                        .attr("y", yPosition)
-                        .text("Nodes Added: " + year.New_Nodes);
-                })
-                .on("mouseout",function(d){
-                        d3.select(this)
-                            .style("fill","black")
-                        
-                        d3.select("#toolTip")
-                                .remove();
-                                
-                });
 
     // Create animation, moving across time in the X dimension
     svg.selectAll("rect")
             .transition()
-            .delay(function(d, i){
+            .delay(function(year, i){
                 return (i*5);
             })
             .duration(2000)
             .attr("width", function(year){
                 //console.log(yScale(d.Index_Value))
                 //return 0;
-                return xScale(year.New_Nodes);
+                return xScaleYear(year.New_Nodes) - (padding*1.75);
             })
 
-    //TODO: On click, update to turn graph sideways and also move the labels to the end of each bar
+
+    // TO DO: Create overall line, showing average
+
+    // SUMMARY: Create interactivity, allowing the user to click betwen monthly and yearly totals
+    //          Two buttons allow the user to switch between seeing node totals by month or by year
 
 
-    // Second graph set up
-
+    // BY MONTH A
     //Create scale functions
     xScaleMonth = d3.scaleLinear()
                 .domain([
@@ -166,23 +182,39 @@ Promise.all([d3.json('../Data/monthtotals.json'),d3.json("../Data/yeartotals.jso
 
     //Define Y axis
     yAxis = d3.axisLeft()
-        .scale(yScaleMonth)
-        .ticks(12)
+        .scale(yScaleDisplayYear)
+        .ticks(6)
         .tickFormat(d3.format("d"));
-        
-    d3.select("p")
+
+    // Button listener to toggle to average by month
+    d3.select("#month-event-listener")
     .on("click", function() {
 
-        svg.selectAll("path").remove()
+        //Remove existing graph
+        svg.selectAll("#xAxisYear").remove()
+        svg.selectAll("#yAxisYear").remove()
         svg.selectAll("rect").remove()
+
+        //Create X axis
+        svg.append("g")
+            .attr("class", "xAxis")
+            .attr("id", "xAxisMonth")
+            .attr("transform", "translate(0," + (h - padding) + ")")
+            .call(xAxis);
+    
+        //Create Y axis
+        svg.append("g")
+            .attr("class", "yAxis")
+            .attr("id", "yAxisMonth")
+            .attr("transform", "translate(" + (padding*1.5) + ",0)")
+            .call(yAxis);
 
         //Update all rects
         svg.selectAll("rect")
             .data(dataset)
             .enter()
             .append('rect')
-            //.transition()
-            //.duration(2000)
+            .attr("id", "month-bars")
             .attr("x", padding*2)
             .attr("y", function(d) {
                 return yScaleMonth(d.Index_Value);
@@ -191,7 +223,97 @@ Promise.all([d3.json('../Data/monthtotals.json'),d3.json("../Data/yeartotals.jso
                 return (h - (padding*5))/dataset.length;
             })
             .attr("width", function(d) {
+                return 0;
+                //return xScaleMonth(d.New_Nodes);
+            })
+            .on("mouseover",function(d){
+                d3.select(this)
+                    .style("fill", '#f15f53')
+                    .style("opacity", 1)
+            })
+            .on("mouseout",function(d){
+                    d3.select(this)
+                        .style("fill","black")
+            });
+
+        // Create animation, moving across time in the X dimension
+        svg.selectAll("rect")
+            .transition()
+            .delay(function(d, i){
+                return (i*5);
+            })
+            .duration(2000)
+            .attr("width", function(d){
+                //console.log(yScale(d.Index_Value))
+                //return 0;
                 return xScaleMonth(d.New_Nodes);
             })
         })
+
+
+
+
+    // BY YEAR
+    // Button listener to toggle to average by year
+    d3.select("#year-event-listener")
+        .on("click", function() {
+    
+            // Remove existing graph
+            svg.selectAll("#xAxisMonth").remove()
+            svg.selectAll("#yAxisMonth").remove()
+            svg.selectAll("rect").remove()
+    
+            //Create X axis
+            svg.append("g")
+                .attr("class", "xAxis")
+                .attr("id", "xAxisYear")
+                .attr("transform", "translate(0," + (h - padding) + ")")
+                .call(xAxisYear);
+        
+            //Create Y axis
+            svg.append("g")
+                .attr("class", "yAxis")
+                .attr("id", "yAxisYear")
+                .attr("transform", "translate(" + (padding*1.5) + ",0)")
+                .call(yAxisYear);
+
+            //Update all rects
+            svg.selectAll("rect")
+                .data(year)
+                .enter()
+                .append('rect')
+                .attr("id", "year-bars")
+                .attr("x", padding*2)
+                .attr("y", function(year) {
+                    return yScaleYear(year.Index_Value);
+                })
+                .attr("height", r)
+                .attr("width", function(year) {
+                    return 0;
+                    //return xScaleYear(year.New_Nodes);
+                })
+                .on("mouseover",function(year){
+                    d3.select(this)
+                        .style("fill", '#f15f53')
+                        .style("opacity", 1)
+                })
+                .on("mouseout",function(year){
+                        d3.select(this)
+                            .style("fill","black")
+                });
+
+
+            // Create animation, moving across time in the X dimension
+            svg.selectAll("rect")
+                .transition()
+                .delay(function(year, i){
+                    return (i*5);
+                })
+                .duration(2000)
+                .attr("width", function(year){
+                    //console.log(yScale(d.Index_Value))
+                    //return 0;
+                    return xScaleYear(year.New_Nodes) - (padding*1.75);
+                })
+            })
 })
