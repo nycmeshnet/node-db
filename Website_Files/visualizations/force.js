@@ -10,7 +10,7 @@
 		  nodeStroke = "#fff", // node stroke color
 		  nodeStrokeWidth = 1, // node stroke width, in pixels
 		  nodeStrokeOpacity = 1, // node stroke opacity
-		  nodeRadius, // given d in nodes, returns the elevation of the node (z)
+		  nodeRadius, // given d in nodes, returns the elevation of the node (z)		
 		  nodeStrength,
 		  linkSource = ({
 		    source
@@ -23,7 +23,8 @@
 		  linkStrokeWidth = .7, // given d in links, returns a stroke width in pixels
 		  linkStrokeLinecap = "round", // link stroke linecap
 		  linkStrength,
-		  colors = d3.schemeTableau10, // an array of color strings, for the node groups
+		//   colors = d3.schemeTableau10, // an array of color strings, for the node groups
+		  colors = ['#6D17E6', '#E64F17', '#0BE6BC'],
 		  width = 1280, // outer width, in pixels
 		  height = 800, // outer height, in pixels
 		  invalidation // when this promise resolves, stop the simulation
@@ -56,9 +57,10 @@
 
 		  // Construct the scales.
 		  const color = nodeGroup == null ? null : d3.scaleOrdinal(nodeGroups, colors);
+		  console.log(colors)
 
 		  // Construct the forces.
-		  const forceNode = d3.forceManyBody().strength(-3.5);
+		  const forceNode = d3.forceManyBody().strength(-5.0);
 		  const forceLink = d3.forceLink(links).id(({
 		    index: i
 		  }) => N[i]);
@@ -68,7 +70,6 @@
 		  const simulation = d3.forceSimulation(nodes)
 		    .force("link", forceLink)
 			.force("charge", forceNode)
-			// .force("center", d3.forceCenter(width / 2, height / 2))
 		    .force("center", d3.forceCenter().strength(.9))
   			.force("collide", d3.forceCollide().radius(3.5))
   			// .force("collide", d3.forceCollide().radius(d => d.r + 1)) // use the node's actual radius as buffer
@@ -97,8 +98,13 @@
 		    .selectAll("circle")
 		    .data(nodes)
 		    .join("circle")
-		    .attr("r", function(d){
-				return d.radius})
+			//scale node radius by num connections
+			.attr("r", function(d) {      
+				d.weight = link.filter(function(l) {
+				  return l.source.index == d.index || l.target.index == d.index
+				}).size();      
+				var minRadius = 2.5;
+				return minRadius + (d.weight/4)})
 		    .call(drag(simulation));
 
 		  if (W) link.attr("stroke-width", ({
@@ -122,8 +128,6 @@
 		    return value !== null && typeof value === "object" ? value.valueOf() : value;
 		  }
 
-
-
 		  function ticked() {
 
 		    link
@@ -136,6 +140,7 @@
 		      .attr("cx", d => d.x)
 		      .attr("cy", d => d.y);
 		  }
+
 
 		  function drag(simulation) {
 		    function dragstarted(event) {
