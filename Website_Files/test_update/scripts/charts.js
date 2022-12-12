@@ -45,7 +45,7 @@ function initialSetup() {
 	// Add in an image
 	d3.selectAll(".svgVis")
 		.append("image")
-		.attr("id", "openingImage")
+		.attr("class", "openingImage")
 		.attr("xlink:href", 'https://docs.nycmesh.net/img/nycmesh-570-227-link.png')
 		.attr("width", WIDTH / 1.25)
 		.attr("height", HEIGHT / 1.25)
@@ -68,6 +68,7 @@ function drawScatterPlot(){
 
 	// Hide other visualizations
 	svg.selectAll(".barchart")
+		.transition()
 		.style("opacity", 0)
 	d3.selectAll("image")
 		.transition()
@@ -525,13 +526,124 @@ function drawBarGraphs(){
 
 function insertPanos() {
 	svg.selectAll("#sticky-svg")
-	.data(Object.keys(scatgrid))
-	console.log("working!")
+		.data(Object.keys(scatgrid))
+		console.log("working!")
+
+	// Hide other visualizations
+	svg.selectAll(".barchart")
+		.transition()
+		.style("opacity", 0)
+	svg.selectAll(".scatterplot")
+		.style("opacity", 0)
+	d3.selectAll("image")
+		.transition()
+		.style("opacity", 0)
+	//Width and height of svg, as well as squares
+	var padding = 40;
+
+	var numPerRow = 50;
+	var size = 30;
+	var w = WIDTH;
+	var h = HEIGHT;
+
+	//Create extra scale functions
+	Scale = d3.scaleLinear()
+		.domain([0, numPerRow - 1])
+		.range([0, numPerRow * size]);
+
+	//Create grid
+	var grid = svg.selectAll(".square")
+					.data(scatgrid)
+					.enter()
+					.append("rect")
+					.attr("class", "square")
+					.attr("x", function(scatgrid){
+						const n = scatgrid.id % numPerRow;
+						//console.log(n)
+						return Scale(n);
+					})
+					.attr("y", function(scatgrid){
+						const n = Math.floor(scatgrid.id/numPerRow);
+						//console.log(n)
+						return Scale(n);
+					})
+					.attr("width", size)
+					.attr("height", size)
+					.attr("fill", "#dedede")
+					.style("opacity", .375)
+					.on("mouseover",function(scatgrid){                                        
+						if (scatgrid.panoramas != '') {
+							// Adjust color when selecting
+							d3.select(this).attr("fill","#f15f53")
+							.style("opacity", 1)
+						} else {
+							// Adjust color when selecting
+							d3.select(this).attr("fill","grey")
+							.style("opacity", 1)
+						}
+					})
+					.on("mouseout",function(scatgrid){
+						d3.select(this)
+								.transition()
+								.attr("fill","#dedede")
+								.attr("height", function(scatgrid){
+									return size;
+								})
+								.attr("width", function(scatgrid){
+									return size;
+								})
+								.style("opacity", 0.5);
+						
+						//d3.select("#toolTip")
+						//      .remove();
+					});
+	// Select rectangles for appending images
+	d3.selectAll("rect")
+			.data(scatgrid)
+			.on("click", function(scatgrid){
+
+				// Create variables
+				var imaSize = size * 20;
+				var panos = svg.append("g");
+
+				//console.log('working!');
+				// Swap circles
+				panos.append("image")
+					.attr("xlink:href", function(){
+						if (scatgrid.panoramas == ''){
+							
+						} else{
+							return '../../panoramas/' + scatgrid.id + '.jpg';
+						}
+					})
+					.attr("id", "panos")
+					.attr("width", imaSize)
+					.attr("height", imaSize)
+					.attr("x", function(){
+						const n = scatgrid.id % numPerRow;
+						//console.log(n)
+						return Scale(n - 5);
+					})
+					.attr("y", function(){
+						const n = Math.floor(scatgrid.id/numPerRow);
+						console.log(n)
+						console.log(Scale(n));
+						return Scale(n - 10);
+					});
+				
+				/*
+				d3.select("#panos")
+					.transition()
+					.delay(1000)
+					.remove();
+				*/
+			});
+
 }
 
 // Scrolling functions
 
-var scrollTop = 0
+var scrollTop = 100
 var newScrollTop = 0
 var listOfStepFunctions = [initialSetup, drawScatterPlot, drawBarGraphs, insertPanos]
 
@@ -548,14 +660,14 @@ function render(){
 		
 	  if (scrollTop !== newScrollTop) {//if the scroller has moved
 		  
-		  if(scrollTop<newScrollTop){//if the new value is smaller, then it is scrolling down
+		  if(scrollTop<(newScrollTop)){//if the new value is smaller, then it is scrolling down
 			  scrollTop = newScrollTop//set the scroller place to its new placement
 			  console.log("down")//if it is going down, we need to add 1 to the panel number because we want to trigger the next panel
-			  var panelNumber = Math.round(scrollTop/panelSize)//therefore which panel we are on is the scroller's place divided by panel height
+			  var panelNumber = Math.floor(scrollTop/panelSize)//therefore which panel we are on is the scroller's place divided by panel height
 		  }else{
 			  //console.log("up")
 			  scrollTop = newScrollTop//set the scroller place to its new placement
-			  var panelNumber = Math.round(scrollTop/panelSize)//therefore which panel we are on is the scroller's place divided by panel height
+			  var panelNumber = Math.floor(scrollTop/panelSize)//therefore which panel we are on is the scroller's place divided by panel height
 		  }
 		  
 		  if(panel!=panelNumber){//if this panel number has changed

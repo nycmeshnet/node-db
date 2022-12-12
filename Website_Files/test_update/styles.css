@@ -185,3 +185,19 @@ a:active {
 #bigBreak {
   line-height: 50px;
 }
+
+
+/*** IDs: Set z-index for continued interactivity ***/
+
+.openingImage {
+  z-index: 4;
+}
+
+.scatterplot {
+  z-index: 2;
+}
+
+.barchart {
+  z-index: 1;
+}
+
