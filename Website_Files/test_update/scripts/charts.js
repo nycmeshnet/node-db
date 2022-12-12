@@ -493,7 +493,7 @@ function drawBarGraphs(){
                 .attr("y", function(baryear, i) {
                     return yScaleYear(baryear.Index_Value) + (r * i);
                 })
-                .attr("height", r*6.25)
+                .attr("height", r*5)
                 .attr("width", function(baryear) {
                     return 0;
                     //return xScaleYear(year.New_Nodes);
