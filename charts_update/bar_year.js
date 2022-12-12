@@ -1,3 +1,7 @@
+var WIDTH = window.innerWidth * .75
+var HEIGHT = window.innerHeight
+
+
 //NEW link new file
 Promise.all([d3.json('../data/monthtotals.json'),d3.json("../data/yeartotals.json")])
     .then(function(data){
@@ -6,9 +10,9 @@ Promise.all([d3.json('../data/monthtotals.json'),d3.json("../data/yeartotals.jso
     var year = data[1]
 
     //Width and height of svg
-    var w = 800;
-    var h = 900;
     var padding = 60;
+    var w = WIDTH;
+    var h = HEIGHT - padding *2;
     var r = (h-(padding*4))/year.length;
     //console.log(year.length)
     //console.log(r)
@@ -82,35 +86,12 @@ Promise.all([d3.json('../data/monthtotals.json'),d3.json("../data/yeartotals.jso
                         d3.select(this)
                             .style("fill","black")
                 });
-                
-                /*
-    // Append text number labels
-    svg.selectAll("text")
-            .data(year)
-            .enter()
-            .append("text")
-            .text(function(year) {
-                //console.log(year.New_Nodes)
-                return year.New_Nodes;
-            })
-            .attr("x", function(year){
-                return padding*3;
-            })
-            .attr("y", function(year, i) {
-                console.log(yScaleYear(year.Index_Value))
-                return (i *r*1.1875)+ (padding*1.5);
-            })
-            .attr("font-family", "sans-serif")
-            .attr("font-size", "20px")
-            .attr("font-weight", "bold")
-            .attr("fill", "white");
-            */
 
     //Create X axis
     svg.append("g")
         .attr("class", "xAxis")
         .attr("id", "xAxisYear")
-        .attr("transform", "translate(0," + (h - padding) + ")")
+        .attr("transform", "translate(0," + (h - (padding*1.25)) + ")")
         .call(xAxisYear);
     
     //Create Y axis
@@ -124,7 +105,7 @@ Promise.all([d3.json('../data/monthtotals.json'),d3.json("../data/yeartotals.jso
     svg.append("text")
         .attr("id", "axisLabels")
         .attr("text-anchor", "end")
-        .attr("x", w/2)
+        .attr("x", w - padding)
         .attr("y", h-(padding/16))
         .text("Number of Nodes Requested")
 
@@ -153,7 +134,6 @@ Promise.all([d3.json('../data/monthtotals.json'),d3.json("../data/yeartotals.jso
             })
 
 
-    // TO DO: Create overall line, showing average
 
     // SUMMARY: Create interactivity, allowing the user to click betwen monthly and yearly totals
     //          Two buttons allow the user to switch between seeing node totals by month or by year
@@ -199,7 +179,7 @@ Promise.all([d3.json('../data/monthtotals.json'),d3.json("../data/yeartotals.jso
         svg.append("g")
             .attr("class", "xAxis")
             .attr("id", "xAxisMonth")
-            .attr("transform", "translate(0," + (h - padding) + ")")
+            .attr("transform", "translate(0," + (h - (padding*1.25)) + ")")
             .call(xAxis);
     
         //Create Y axis
@@ -267,7 +247,7 @@ Promise.all([d3.json('../data/monthtotals.json'),d3.json("../data/yeartotals.jso
             svg.append("g")
                 .attr("class", "xAxis")
                 .attr("id", "xAxisYear")
-                .attr("transform", "translate(0," + (h - padding) + ")")
+                .attr("transform", "translate(0," + (h - (padding*1.25)) + ")")
                 .call(xAxisYear);
         
             //Create Y axis

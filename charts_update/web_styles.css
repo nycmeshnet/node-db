@@ -109,7 +109,7 @@ a:hover   {
 	display: inline-block;
 	border: 10px;
     border-color: blueviolet;
-
+    margin-left: 10em;
 	background-color: #f15f53;
     color: white;
 	font-family: Arial, Helvetica, sans-serif;
@@ -118,7 +118,7 @@ a:hover   {
 	text-decoration: none;
 	text-align: center;
 
-    transition-duration: .5s;
+    transition-duration: .25s;
 }
 
 .buttonToggle:hover {

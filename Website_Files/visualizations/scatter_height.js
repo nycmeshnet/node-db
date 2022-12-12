@@ -1,11 +1,14 @@
+var WIDTH = window.innerWidth * .75
+var HEIGHT = window.innerHeight
+
 d3.json('data/nodes_cleanedsorted.json')
 				.then(function(dataset){
 	
 				//Width and height of svg
-				var w = 1400;
-				var h = 650;
-				var r = 7.5;
 				var padding = 60;
+				var w = WIDTH;
+				var h = HEIGHT;
+				var r = 7.5;
 				
 				
 				//Create scale functions
