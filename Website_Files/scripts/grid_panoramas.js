@@ -52,19 +52,6 @@ var grid = svg.selectAll(".square")
                         d3.select(this).attr("fill","grey")
                         .style("opacity", 1)
                     }
-                    
-                    /*
-                    //TODO: show tooltip here
-                    svg.append("text")
-                        .attr("id", "toolTip")
-                        .attr("x", function(d){
-                            return Scale(d.id);
-                        })
-                        .attr("y", function(d){
-                            return Scale(d.id);
-                        })
-                        .text("Node Elevation: " + d.Elevation + "'");
-                    */
                 })
                 .on("mouseout",function(d){
                     d3.select(this)
@@ -83,10 +70,11 @@ var grid = svg.selectAll(".square")
                 });
 
 // Select rectangles for appending images
-d3.selectAll("rect")
+svg.selectAll(".square")
         .data(dataset)
         .on("click", function(d){
 
+            console.log("working!")
             // Create variables
             var imaSize = size * 15;
             var panos = svg.append("g");
@@ -113,7 +101,7 @@ d3.selectAll("rect")
                     const n = Math.floor(d.id/numPerRow);
                     console.log(n)
                     console.log(Scale(n));
-                    return Scale(n);
+                    return Scale(n) - (size*5);
                 });
             
             /*

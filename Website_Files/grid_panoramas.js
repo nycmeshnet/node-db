@@ -45,6 +45,7 @@ var grid = svg.selectAll(".square")
                 .on("mouseover",function(d){                                        
                     if (d.panoramas != '') {
                         // Adjust color when selecting
+                        console.log(d.panoramas[0])
                         d3.select(this).attr("fill","#f15f53")
                         .style("opacity", 1)
                     } else {
@@ -83,9 +84,10 @@ var grid = svg.selectAll(".square")
                 });
 
 // Select rectangles for appending images
-d3.selectAll("rect")
+svg.selectAll(".square")
         .data(dataset)
         .on("click", function(d){
+            console.log("hello world!")
 
             // Create variables
             var imaSize = size * 15;
@@ -94,8 +96,8 @@ d3.selectAll("rect")
             //console.log('working!');
             panos.append("image")
                 .attr("xlink:href", function(){
-                    if (d.panoramas == ''){
-                        
+                    if (d.panoramas[0] == ''){
+                        console.log("nothin!")
                     } else{
                         console.log('panoramas/' + d.id + '.jpg')
                         return 'panoramas/' + d.id + '.jpg';

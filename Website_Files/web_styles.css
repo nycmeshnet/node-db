@@ -145,6 +145,10 @@ a:active {
     text-transform: lowercase;
 }
 
+#last-section {
+    background-color: #dedede;
+}
+
 /* CAPTIONS */
 #scatterText {
     margin-left: 20%;
@@ -180,21 +184,32 @@ a:active {
 
 #panoText {
     margin-left: 20%;
-    margin-top: -20%;
+    margin-top: 20%;
     width: 70%;
     height: auto;
 }
 
 #panoTextInstructions {
     margin-left: 0%;
-    margin-top: 20%;
-    width: 70%;
+    margin-top: 0%;
+    width: 100%;
     height: auto;
     font-size: 10px;
     font-weight: lighter;
     text-transform: uppercase;
 }
 
+#lastTitle {
+    transform: rotate(-90deg);
+    margin-top: 0%;
+    margin-left: -20%;
+    width: 80%;
+    height: auto;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #f15f53;
+    font-size: 10vh;
+}
 
 /*** GRAPHS: Formatting for the graphs ***/
 
@@ -250,10 +265,11 @@ a:active {
 
 
 /*** MAPBOX SCROLL: style for mb scrolling ***/
-
-/* a, a:hover, a:visited {
+/*
+a, a:hover, a:visited {
     color: #0071bc;
 }
+
 #map {
     top:0; 
     height: 100vh;
@@ -324,4 +340,4 @@ a:active {
         width: 90vw;
         margin: 0 auto;
     }
-} */
+}*/

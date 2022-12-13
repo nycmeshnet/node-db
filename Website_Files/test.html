@@ -5,16 +5,27 @@
 		<title>The NYC Mesh WiFi Network</title>
 		<script type="text/javascript" src="./d3.js"></script>
 		<link rel="stylesheet" href="web_styles.css">
+		<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+		<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.js'></script>
+		<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.css' rel='stylesheet' />
+		<script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+		<script src="https://unpkg.com/scrollama"></script>
 		<script src="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
 		<link href="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css" rel="stylesheet" />
 		<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.2/mapbox-gl-geocoder.min.js'></script>
 		<link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.2/mapbox-gl-geocoder.css' type='text/css' />
 	</head>
 	<body>
+		<!--Establishing scroller
+		<div id="map"></div>
+		<div id="story"></div>
+		<script src="visualizations/config.js"></script>
+		<script src="visualizations/storytelling.js"></script>-->
+
 		<!--Return button-->
 		<div>
-            <a id="topTitle" href="test.html">mesh!</a>
-        </div>
+			<a id="topTitle" href="test.html">mesh!</a>
+		</div>
 		<br class="bigBreak">
 
 		<!--Title-->
@@ -101,16 +112,16 @@
 		
 		<!--Panoramas-->
 		<main>
-			<section>
+			<section id="last-section">
 				<br class="bigBreak">
 				<div>
-					<h1 class="rotatedTitle">The View From Everywhere</h1>
-				</div>
-				<div class="descriptions" id="panoText">
-					<p> Though internet connection often feels abstract and intangible, the physical infrastructure behind the network is rigorous and nuanced. The seemingly invisible connections between our phones and computers are hidden behind the tops of buildings in tangles of cables and wires. The visualization below shows panoramic photos taken by NYC Mesh installation volunteers from the rooftops of different nodes across the network.</p>
+					<h1 class="rotatedTitle" id="lastTitle">A View From Everywhere?</h1>
 				</div>
 			</section>
 			<aside>
+				<div class="descriptions" id="panoText">
+					<p> Though internet connection often feels abstract and intangible, the physical infrastructure behind the network is rigorous and nuanced. The seemingly invisible connections between our phones and computers are hidden behind the tops of buildings in tangles of cables and wires. The visualization below shows panoramic photos taken by NYC Mesh installation volunteers from the rooftops of different nodes across the network.</p>
+				</div>
 				<div class="instructions">
 					<p id="panoTextInstructions">Drag your mouse around the squares below and click on a <em>red</em> square. A panorama will appear. Keep doing this until you've built your own DIY panorama of the mesh!
 					</p>
@@ -119,8 +130,11 @@
 	</main>
 	<br class="bigBreak">
 	<br class="bigBreak">
+
+	<!--Panorama images-->
 	<div id="grid-svg"></div>
-	<script src="grid_panoramas.js"></script>
+	<script src="scripts/grid_panoramas.js"></script>
+
 	</body>
 </html>
 
