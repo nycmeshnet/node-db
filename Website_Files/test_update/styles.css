@@ -78,7 +78,7 @@ body {
 
 .rotatedTitle {
   transform: rotate(-90deg);
-  margin-left:-5%;
+  margin-left: 5%;
   margin-bottom: -5%;
   flex-direction: column;
   width: 20%;

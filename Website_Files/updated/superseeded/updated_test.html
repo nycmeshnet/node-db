@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../web_styles.css">
+        <script type="text/javascript" src="../d3.js"></script>    
+        <link rel="shortcut icon" href="#">
+        <title>post-scroller test</title>
+	</head>
+	<body>
+        <div>
+            <a id="topTitle" href="updated_test.html">mesh!</a>
+        </div>
+		<br>
+        <main>
+			<section>
+                <div class="panel">
+                    <h1 id="primaryTitle">NYC Mesh: A Closer Look</h1>
+                    <p class="instructions">Project by: Eddie Joe Antonio, Matthew Heaton, and Mia Winther-Tamaki
+                        <br>
+                        A4892-1 Data Visualization | Professor Jia Zhang
+                    </p>
+                    <br id="bigBreak">
+                    <br id="bigBreak">
+                </div>
+            </section>
+            <aside>
+                <img id="side-high-low" src="https://docs.nycmesh.net/img/nycmesh-570-227-link.png">
+            </aside>
+		<main>
+			<section>
+				<div>
+					<h1 id="meshWeb">The Height of the City: Physical Infrastructure </h1>		
+				</div>
+				<div class="descriptions"  id="#descriptiveParagraphs">
+					<p>
+						Because Mesh WiFi routers transmit connection through a direct line of sight, the growth of Mesh nodes are highly dependent on the building heights within the urban fabric. Tall buildings are especially necessary for hubs and supernodes that distribute internet to thousands of other nodes. NYC Mesh prioritizes tall buildings such as NYCHA buildings, skyscrapers, churches, schools, libraries, existing antenna masts, and tall apartment buildings.
+					</p>
+				</div>
+			</section>
+		<aside>
+			<div>
+				<img id="side-high-low" src="https://docs.nycmesh.net/img/nycmesh-570-227-link.png">
+			</div>
+		</aside>
+		</main>
+		<br class="bigBreak">
+		<main>
+				<section class="sectionRotatedTitle">
+					<div>
+						<h1 id="viz-title"> Building Elevations</h1>
+					</div>
+				</section>
+				<aside class="asideCaption">
+					<div class="descriptions">
+						<p> <em></em>This visualization shows the sea-level elevation of each node along a temporal x-axis. Consistently throughout time, installations of NYC Mesh nodes, hubs, and supernodes have taken place on both low-elevation and high-elevation buildings. 
+						</p>
+						<p>The growth of NYC Mesh “embraces the fullness of hardware diversity and interconnectivity” to fill in the gaps present in incumbent ISP coverage (NYC Mesh, 2022).</p>
+						<p><em>
+							Observe below the NYC Mesh network expanding over time! Nodes animate across time and vertical space, arriving at 2022 in a few seconds. Hover over squares to see the heights of the nodes. 
+						</em></p>
+					</div>
+				</aside>
+			</main>
+			<br class="bigBreak">
+			<br class="bigBreak">
+			<div id="height-svg"></div>
+			<script src="visualizations/scatter_height.js"></script>
+			</script>
+		</main>
+		<br class="bigBreak">
+
+	</body>
+</html>
+
