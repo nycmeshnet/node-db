@@ -78,7 +78,7 @@ body {
 
 .rotatedTitle {
   transform: rotate(-90deg);
-  margin-left:-5%;
+  margin-left: 5%;
   margin-bottom: -5%;
   flex-direction: column;
   width: 20%;
@@ -201,3 +201,7 @@ a:active {
   z-index: 1;
 }
 
+#bottomTitle {
+  margin-top: 10%;
+  z-index: 200;
+}

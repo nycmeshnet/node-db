@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+	<script type="text/javascript" src="../d3.js"></script>    
+    <link rel="shortcut icon" href="#">
+    <title>Scroller test</title>
+</head>
+    <body>
+        <div>
+            <a id="topTitle" href="test.html">mesh!</a>
+        </div>
+        <!--VIZ: All charts will go into this div-->
+        <div id="sticky-svg"></div>
+
+        <!--CONTENT: All text will go into this div-->
+        <div id="container" style="height: 100vh; overflow: scroll">
+            
+            <div id="content">
+                <div class="panel">
+                    <p class="instructions">Project by: Eddie Joe Antonio, Matthew Heaton, and Mia Winther-Tamaki
+                        <br>
+                        A4892-1 Data Visualization | Professor Jia Zhang
+                    </p>
+                    <h1 id="primaryTitle">NYC Mesh: A Closer Look</h1>
+                    <br id="bigBreak">
+                    <br id="bigBreak">
+                </div>
+            </div>
+
+            <div id="content">
+                <div class="panel">
+                    <h2 class="rotatedTitle">Height over Time</h2>
+                    <p class="descriptions">Because Mesh WiFi routers transmit connection through a direct line of sight, the growth of Mesh nodes are highly dependent on the building heights within the urban fabric. 
+                        Tall buildings are especially necessary for hubs and supernodes that distribute internet to thousands of other nodes. NYC Mesh prioritizes tall buildings such as NYCHA buildings, skyscrapers, churches, schools, libraries, existing antenna masts, and tall apartment buildings.
+                    </p>
+                    <p class="instructions">
+                        This visualization shows the sea-level elevation of each node along a temporal x-axis. Consistently throughout time, installations of NYC Mesh nodes, hubs, and supernodes have taken place on both low-elevation and high-elevation buildings. The growth of NYC Mesh “embraces the fullness of hardware diversity and interconnectivity” to fill in the gaps present in incumbent ISP coverage (NYC Mesh, 2022).
+                        Observe below the NYC Mesh network expanding over time! Nodes animate across time and vertical space, arriving at 2022 in a few seconds. Hover over squares to see the heights of the nodes. 
+                    </p>
+                    </div>
+            </div>
+            
+            <div id="content">
+                <div class="panel">
+                    <h2 class="rotatedTitle">Growth Over Time</h2>
+                    <p class="descriptions">Growth has been somewhat inconsistent for the Mesh NYC system. Since 2015, certain months and years have resulted in significantly more growth for the system than others. 
+                        The volunteer, decentralized structure has likely affected the growth of the system since its start in Lower Manhattan. 
+                    </p>
+                    <p class="instructions">
+                        Select one of the two options below to view the total number of nodes requested by month or by year!
+                    </p>
+                    <!--Create a trigger for second animation-->
+                    <button type="button" class="buttonToggle" id="month-event-listener">By Month</button>
+                    <button type="button" class="buttonToggle" id="year-event-listener">By Year</button>
+                    </div>
+            </div>
+
+            <div id="content">
+                <div class="panel">
+                    <h2 class="rotatedTitle">The View From Everywhere</h2>
+                    <p class="descriptions"> Though internet connection often feels abstract and intangible, the physical infrastructure behind the network is rigorous and nuanced. The seemingly invisible connections between our phones and computers are hidden behind the tops of buildings in tangles of cables and wires. The visualization below shows panoramic photos taken by NYC Mesh installation volunteers from the rooftops of different nodes across the network.
+                    </p>
+                    <p class="instructions">
+                        Select one of the two options below to view the total number of nodes requested by month or by year!
+                    </p>
+                    <!--Create a trigger for second animation-->
+                    </div>
+            </div>
+        </div>
+
+        <script src="scripts/charts.js"></script>
+        <div>
+        </div>
+    </body>
+</html>
