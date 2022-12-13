@@ -48,14 +48,15 @@
 				<br class="mediumBreak">
 				<br class="bigBreak">
 				<div>
-					<h1 class="rotatedTitle"> Growth over Time</h1>
+					<h1 class="rotatedTitle">Height over Time</h1>
 				</div>
-				<div class="descriptions">
-					<p> Growth has been somewhat inconsistent for the Mesh NYC system. Since 2015, certain months and years have resulted in significantly more growth for the system than others. 
-						The volunteer, decentralized structure has likely affected the growth of the system since its start in Lower Manhattan. </p>
+				<div class="descriptions"  id="scatterText">
+					<p> Because Mesh WiFi routers transmit connection through a direct line of sight, the growth of Mesh nodes are highly dependent on the building heights within the urban fabric. 
+                        Tall buildings are especially necessary for hubs and supernodes that distribute internet to thousands of other nodes. NYC Mesh prioritizes tall buildings such as NYCHA buildings, skyscrapers, churches, schools, libraries, existing antenna masts, and tall apartment buildings.
+                    </p>
 				</div>
-				<div class="instructions">
-					<p>Select one of the two options below to view the total number of nodes requested by month or by year!
+				<div class="instructions" id="scatterTextInstructions">
+					<p>Interact with the animation at right to see how the elevation of nodes has changed over time with the growth of the system!
 					</p>
 				</div>
 			</section>
@@ -75,11 +76,11 @@
 					<div>
 						<h1 class="rotatedTitle"> Growth over Time</h1>
 					</div>
-					<div class="descriptions">
+					<div class="descriptions"  id="barText">
 						<p> Growth has been somewhat inconsistent for the Mesh NYC system. Since 2015, certain months and years have resulted in significantly more growth for the system than others. 
 							The volunteer, decentralized structure has likely affected the growth of the system since its start in Lower Manhattan. </p>
 					</div>
-					<div class="instructions">
+					<div class="instructions" id="barTextInstructions">
 						<p>Select one of the two options below to view the total number of nodes requested by month or by year!
 						</p>
 					</div>
@@ -103,7 +104,7 @@
 				<div>
 					<h1 class="rotatedTitle">The View From Everywhere</h1>
 				</div>
-				<div class="descriptions">
+				<div class="descriptions" id="panoText">
 					<p> Though internet connection often feels abstract and intangible, the physical infrastructure behind the network is rigorous and nuanced. The seemingly invisible connections between our phones and computers are hidden behind the tops of buildings in tangles of cables and wires. The visualization below shows panoramic photos taken by NYC Mesh installation volunteers from the rooftops of different nodes across the network.</p>
 				</div>
 			</section>
@@ -114,6 +115,7 @@
 				</div>
 			</aside>
 	</main>
+	<br class="bigBreak">
 	<div id="grid-svg"></div>
 	<script src="scripts/grid_panoramas.js"></script>
 	</body>

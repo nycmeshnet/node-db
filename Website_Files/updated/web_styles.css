@@ -19,12 +19,15 @@ section {
     flex-direction: column;
     overflow:visible;
     width: 50%;
+    z-index: 2;
 }
 
 aside {
     display: flex;
+    overflow: visible;
     flex-direction: column;
     width: 50%;
+    z-index: 1;
 }
 
 
@@ -77,9 +80,9 @@ aside {
 
 /* BUTTON specifc effects */
 .buttonToggle {
-    margin-left: 25%;
-    display: inline-block;
+    margin-left: 20%;
     border: none;
+    display:block;
     background-color: #f15f53;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
@@ -87,25 +90,25 @@ aside {
     font-weight: 400;
     text-decoration: none;
     text-align: center;
-    
     transition-duration: .25s;
-    }
+}
     
-    .buttonToggle:hover {
-      background-color: #888; /* Grey */
-      color: white;
-    }
+.buttonToggle:hover {
+    background-color: #888; /* Grey */
+    color: white;
+}
     
-    .buttonToggle:active {
-      background-color: #888;
-      box-shadow: 0 5px gold;
-      transform: translateY(4px);
-    }
+.buttonToggle:active {
+    background-color: #888;
+    box-shadow: 0 5px gold;
+    transform: translateY(4px);
+}
 
 
 /*** IDs: Unique object formatting for ids in webpage ***/
 
 #topTitle {
+    position: fixed;
     margin-left: 90%;
     text-decoration: none;
     color: black;
@@ -126,22 +129,54 @@ a:active {
 #openingShot {
     margin-right: 20%;
     max-height: 100%;
+    z-index: 1;
 }
 
 #primaryTitle {
     background-color: #666;
     color: white;
     box-shadow: 0 5px gold;
-
+    z-index: 2;
     margin-top: 0%;
     overflow: visible;
     margin-left: 20%;
-    margin-right: 40%;
+    margin-right: -10%;
     font-size: 50px;
     text-transform: lowercase;
 }
 
+/* CAPTIONS */
+#scatterText {
+    margin-left: 20%;
+    margin-top: -12%;
+    width: 70%;
+    height: auto;
+}
 
+#scatterTextInstructions {
+    margin-left: 20%;;
+    width: 70%;
+    height: auto;
+    font-size: 10px;
+    font-weight: lighter;
+    text-transform: uppercase;
+}
+
+#barText {
+    margin-left: 20%;
+    margin-top: -12%;
+    width: 70%;
+    height: auto;
+}
+
+#barTextInstructions {
+    margin-left: 20%;;
+    width: 70%;
+    height: auto;
+    font-size: 10px;
+    font-weight: lighter;
+    text-transform: uppercase;
+}
 
 /*** GRAPHS: Formatting for the graphs ***/
 
