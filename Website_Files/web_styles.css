@@ -2,14 +2,12 @@
 
 html{
     height: 100%;
-    overflow: hidden;
 }
 
 body{
   position: relative;
   height: 100%;
-  overflow: auto;
-  box-sizing: border-box;
+  top:0;right:0;bottom:0;left:0;
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -19,41 +17,60 @@ main {
 
 section {
     flex-direction: column;
-    width: 60%;
-    height: auto;
+    overflow:visible;
+    width: 50%;
+    z-index: 2;
 }
 
 aside {
     display: flex;
+    overflow: visible;
     flex-direction: column;
-    width: 40%;
+    width: 50%;
+    z-index: 1;
 }
 
 
 /*** CLASSES: Unique formatted sections in webpage ***/
 
+.mediumBreak {
+    line-height: 5vh;
+}
+
+
 .bigBreak {
-    line-height: 50px;
+    line-height: 15vh;
+}
+
+.biggestBreak {
+    line-height: 75vh;
 }
 
 .rotatedTitle {
     transform: rotate(-90deg);
-    margin-left:-5%;
-    margin-bottom: -5%;
-    flex-direction: column;
-    width: 20%;
+    margin-left: -15%;
+    width: 50%;
     height: auto;
     text-transform: uppercase;
 }
     
 .descriptions {
-    margin-left: 10%;
+    margin-left: 20%;
+    margin-right: 20%;
     font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
 }
     
 .instructions {
-    margin-left: 10%;
+    margin-left: 20%;
+    margin-right: 20%;
+    color: #666;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.openingInstructions {
+    margin-left: 20%;
     margin-top: 20%;
     color: #666;
     font-size: 15px;
@@ -63,9 +80,9 @@ aside {
 
 /* BUTTON specifc effects */
 .buttonToggle {
-    margin-left: 15%;
-    display: inline-block;
+    margin-left: 20%;
     border: none;
+    display:block;
     background-color: #f15f53;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
@@ -73,105 +90,162 @@ aside {
     font-weight: 400;
     text-decoration: none;
     text-align: center;
-    
     transition-duration: .25s;
-    }
+}
     
-    .buttonToggle:hover {
-      background-color: #888; /* Grey */
-      color: white;
-    }
+.buttonToggle:hover {
+    background-color: #888; /* Grey */
+    color: white;
+}
     
-    .buttonToggle:active {
-      background-color: #888;
-      box-shadow: 0 5px gold;
-      transform: translateY(4px);
-    }
+.buttonToggle:active {
+    background-color: #888;
+    box-shadow: 0 5px gold;
+    transform: translateY(4px);
+}
 
 
 /*** IDs: Unique object formatting for ids in webpage ***/
 
 #topTitle {
+    position: fixed;
     margin-left: 90%;
     text-decoration: none;
     color: black;
     font-size: 25px;
     font-family: Arial, Helvetica, sans-serif;
-    }
+}
     
-    a:hover {
+a:hover {
     font-weight: bold;
-    }
+}
     
-    a:active {
+a:active {
     background-color: #888;
     box-shadow: 0 5px gold;
     transform: translateY(4px);
-    }
+}
     
-    #primaryTitle {
-    margin-top: -5%;
-    font-size: 75px;
-    transform:rotateZ(-20deg);
+#openingShot {
+    margin-right: 20%;
+    max-height: 100%;
+    z-index: 1;
+}
+
+#primaryTitle {
+    background-color: #666;
+    color: white;
+    box-shadow: 0 5px gold;
+    z-index: 2;
+    margin-top: 0%;
+    overflow: visible;
+    margin-left: 20%;
+    margin-right: -10%;
+    font-size: 50px;
+    text-transform: lowercase;
+}
+
+/* CAPTIONS */
+#scatterText {
+    margin-left: 20%;
+    margin-top: -12%;
+    width: 70%;
+    height: auto;
+}
+
+#scatterTextInstructions {
+    margin-left: 20%;;
+    width: 70%;
+    height: auto;
+    font-size: 10px;
+    font-weight: lighter;
     text-transform: uppercase;
-    }
-    
-    #bigBreak {
-    line-height: 50px;
-    }
-    
+}
+
+#barText {
+    margin-left: 20%;
+    margin-top: -12%;
+    width: 70%;
+    height: auto;
+}
+
+#barTextInstructions {
+    margin-left: 20%;;
+    width: 70%;
+    height: auto;
+    font-size: 10px;
+    font-weight: lighter;
+    text-transform: uppercase;
+}
+
+#panoText {
+    margin-left: 20%;
+    margin-top: -20%;
+    width: 70%;
+    height: auto;
+}
+
+#panoTextInstructions {
+    margin-left: 0%;
+    margin-top: 20%;
+    width: 70%;
+    height: auto;
+    font-size: 10px;
+    font-weight: lighter;
+    text-transform: uppercase;
+}
+
 
 /*** GRAPHS: Formatting for the graphs ***/
 
 .barchart {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 10px;
-    }
+}
     
-    .yAxis {
+.yAxis {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 10px;
+}
     
-    }
-    
-    .xAxis {
+.xAxis {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 10px;
-    }
+}
     
     
-    #toolTip {
+#toolTip {
     font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     text-transform: lowercase;
-    }
+}
     
-    .xLabel {
+.xLabel {
     font-size: 10px;
     font-weight:lighter;
     text-transform: lowercase;
     font-family: Arial, Helvetica, sans-serif;
-    }
+}
     
-    .yLabel {
+.yLabel {
     font-size: 20px;
     font-weight:lighter;
     text-transform: lowercase;
     font-family: Arial, Helvetica, sans-serif;
-    }
+}
     
-    #axisLabels {
+#axisLabels {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
     text-transform:lowercase;
-    }
+}
     
-    #axisLabelsScat {
+#axisLabelsScat {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
     text-transform:lowercase;
-    }
+}
     
 
 
