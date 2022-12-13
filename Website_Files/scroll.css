@@ -1,4 +1,17 @@
 /*** MAPBOX SCROLL: style for mb scrolling ***/
+#title {
+    color: black;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#other {
+    color: black;
+    text-decoration: none;
+    font-weight: lighter;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 
 a, a:hover, a:visited {
     color: #0071bc;

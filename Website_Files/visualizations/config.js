@@ -11,13 +11,13 @@ var config = {
     chapters: [
         {
             id: 'chapter1',
-            title: 'The first node',
-            image: '',
-            description: 'blah blah',
+            title: '',
+            image: '/panoramas/3b.jpg',
+            description: 'Here is an early mesh node from the first round of network installations. Each node is a router attached to a NYCMesh’ member’s rooftop, installed by volunteers on a donation-based pricing scale.',
             location: {
                 center: [-73.989, 40.725],
-                zoom: 16.5,
-                pitch: 29,
+                zoom: 17.5,
+                pitch: 45,
                 bearing: 0.00
             },
             onChapterEnter: [
@@ -26,22 +26,28 @@ var config = {
                     opacity: .9,
                     // layer: 'data-driven-circles',
                     // opacity: 0,
+                },
+                {
+                    layer: 'data-driven-circles',
+                    opacity: 0
+                },
+                {
                     layer: 'data-driven-lines',
                     opacity: 0
-                }
+                },
             ],
             onChapterExit: [
                 {
-                    layer: 'node_3',
+                    layer: 'node-3',
                     opacity: 0.0
                 }
             ]
         },
         {
             id: 'chapter2',
-            title: 'Nodes multiply',
+            title: 'Nodes',
             image: '',
-            description: '',
+            description: '<p>The NYC Mesh WiFi network is a community driven internet network of activist-citizens building a freely accessible, open, wireless physical structure of interconnected routers.</p><p>Founded in 2014, NYC Mesh is based in lower Manhattan and Brooklyn. The volunteer-run organization currently provides New Yorkers with over 623 active connections, bypassing the need for provision by conventional Internet Service Providers (ISPs) that constitute an oligopoly of internet service in NYC.</p>',
             location: {
                 center: [-73.99, 40.722],
                 zoom: 14.5,
@@ -52,6 +58,10 @@ var config = {
                 {
                     layer: 'data-driven-circles',
                     opacity: 1
+                },
+                {
+                    layer: 'data-driven-lines',
+                    opacity: .0
                 }
             ],
             onChapterExit: [
@@ -63,9 +73,9 @@ var config = {
         },
         {
             id: 'chapter3',
-            title: 'A network emerges',
+            title: 'Linkages',
             image: '',
-            description: '',
+            description: 'Since network distribution is dependent on clear lines of sight, distribution points called supernodes and hubs are placed at highly visible locations: tall buildings.',
             location: {
                 center: [-73.99, 40.722],
                 zoom: 14.5,
@@ -80,16 +90,16 @@ var config = {
             ],
             onChapterExit: [
                 {
-                    // layer: 'pennypack',
+                    // layer: 'data-driven-lines',
                     // opacity: 0
                 }
             ]
         },
         {
             id: 'chapter4',
-            title: 'The whole shebang',
+            title: '',
             image: '',
-            description: 'blah blah',
+            description: '<p>Supernodes and hubs can support more traffic distributing connections and access to surrounding smaller nodes over time. </p><p>See how a web of connections is woven invisibly through the city, anchored by some of its tallest structures.</p>',
             location: {
                 center: [-74.023640, 40.704771],//(Williamsburg Bk map center of gravity)
                 zoom: 11.1,
@@ -105,8 +115,8 @@ var config = {
             ],
             onChapterExit: [
                 {
-                    // layer: 'phl-city-limits',
-                    // opacity: 0
+                    layer: 'all-installed-nodes',
+                    opacity: .0,
                 }
             ]
         },
