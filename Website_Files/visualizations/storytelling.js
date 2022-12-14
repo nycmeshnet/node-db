@@ -25,6 +25,17 @@ function setLayerOpacity(layer) {
     });
 }
 
+// function turnMapOff(map) {
+//     map.getStyle().layers.map((layer) => {
+//         if (layer.type === 'symbol')  {
+//             map.setPaintProperty(layer.id, `icon-opacity`, 0);
+//             map.setPaintProperty(layer.id, `text-opacity`, 0);
+//         } else {
+//             map.setPaintProperty(layer.id, `${layer.type}-opacity`, 0);
+//         }
+//     })
+// }
+
 var story = document.getElementById('story');
 var features = document.createElement('div');
 features.classList.add(alignments[config.alignment]);
