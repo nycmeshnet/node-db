@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<title>The NYC Mesh WiFi Network</title>
-		<script type="text/javascript" src="../d3.js"></script>
+		<script type="text/javascript" src="./d3.js"></script>
 		<link rel="stylesheet" href="web_styles.css">
 		<script src="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
 		<link href="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css" rel="stylesheet" />
@@ -41,6 +41,7 @@
 		
 		</main>
 		<br class="bigBreak">
+		<br class="bigBreak">
 
 		<!--Scatterplot-->
 		<main>
@@ -66,8 +67,9 @@
 			</aside>
 
 		</main>
-		<br class="biggestBreak">
-
+		<br class="bigBreak">
+		<br class="bigBreak">
+		
 		<!--Bar chart-->
 		<main>
 				<section>
@@ -94,8 +96,8 @@
 				</aside>
 
 		</main>
-		<br class="biggestBreak">
-	
+		<br class="bigBreak">
+		<br class="bigBreak">	
 		
 		<!--Panoramas-->
 		<main>
@@ -110,11 +112,12 @@
 			</section>
 			<aside>
 				<div class="instructions">
-					<p>Drag your mouse around the grids at right and click on a <em>red</em> square. A panorama will appear. Keep doing this until you've built your own DIY panorama of the mesh!
+					<p id="panoTextInstructions">Drag your mouse around the squares below and click on a <em>red</em> square. A panorama will appear. Keep doing this until you've built your own DIY panorama of the mesh!
 					</p>
 				</div>
 			</aside>
 	</main>
+	<br class="bigBreak">
 	<br class="bigBreak">
 	<div id="grid-svg"></div>
 	<script src="scripts/grid_panoramas.js"></script>

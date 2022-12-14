@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>The NYC Mesh WiFi Network</title>
+		<script type="text/javascript" src="./d3.js"></script>
+		<link rel="stylesheet" href="web_styles.css">
+		<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+		<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.js'></script>
+		<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.css' rel='stylesheet' />
+		<script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+		<script src="https://unpkg.com/scrollama"></script>
+		<script src="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
+		<link href="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css" rel="stylesheet" />
+		<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.2/mapbox-gl-geocoder.min.js'></script>
+		<link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.2/mapbox-gl-geocoder.css' type='text/css' />
+	</head>
+	<body>
+		<!--Establishing scroller
+		<div id="map"></div>
+		<div id="story"></div>
+		<script src="visualizations/config.js"></script>
+		<script src="visualizations/storytelling.js"></script>-->
+
+		<!--Return button-->
+		<div>
+			<a id="topTitle" href="index.html">mesh!</a>
+		</div>
+		<br class="bigBreak">
+
+		<!--Title-->
+		<main>
+			<section>
+				<div class="openingInstructions">
+					<p>
+						Project by: Eddie-Joe Antonio, Matthew Heaton, and Mia Winther-Tamaki<br>
+						A4892-1 Data Visualization | Professor Jia Zhang
+					</p>
+				</div>
+				<div>
+					<h1 id="primaryTitle">NYC Mesh: A Closer Look</h1>
+				
+				</div>
+				<br class="bigBreak">
+
+			</section>
+		<aside>
+			<img id="openingShot" src="https://docs.nycmesh.net/img/nycmesh-570-227-link.png">
+			<div id="map" id="map-container">
+			</div>
+		</aside>
+		
+		</main>
+		<br class="bigBreak">
+		<br class="bigBreak">
+
+		<!--Scatterplot-->
+		<main>
+			<section>
+				<br class="mediumBreak">
+				<br class="bigBreak">
+				<div>
+					<h1 class="rotatedTitle">Height over Time</h1>
+				</div>
+				<div class="descriptions"  id="scatterText">
+					<p> Because Mesh WiFi routers transmit connection through a direct line of sight, the growth of Mesh nodes are highly dependent on the building heights within the urban fabric. 
+                        Tall buildings are especially necessary for hubs and supernodes that distribute internet to thousands of other nodes. NYC Mesh prioritizes tall buildings such as NYCHA buildings, skyscrapers, churches, schools, libraries, existing antenna masts, and tall apartment buildings.
+                    </p>
+				</div>
+				<div class="instructions" id="scatterTextInstructions">
+					<p>Interact with the animation at right to see how the elevation of nodes has changed over time with the growth of the system!
+					</p>
+				</div>
+			</section>
+			<aside>
+				<div id="scatter-svg"></div>
+				<script src="scripts/scatter_height.js"></script>
+			</aside>
+
+		</main>
+		<br class="bigBreak">
+		<br class="bigBreak">
+		
+		<!--Bar chart-->
+		<main>
+				<section>
+					<br class="mediumBreak">
+					<br class="bigBreak">
+					<div>
+						<h1 class="rotatedTitle"> Growth over Time</h1>
+					</div>
+					<div class="descriptions"  id="barText">
+						<p> Growth has been somewhat inconsistent for the Mesh NYC system. Since 2015, certain months and years have resulted in significantly more growth for the system than others. 
+							The volunteer, decentralized structure has likely affected the growth of the system since its start in Lower Manhattan. </p>
+					</div>
+					<div class="instructions" id="barTextInstructions">
+						<p>Select one of the two options below to view the total number of nodes requested by month or by year!
+						</p>
+					</div>
+					<!--Create a trigger for second animation-->
+					<button type="button" class="buttonToggle" id="month-event-listener">By Month</button>
+					<button type="button" class="buttonToggle" id="year-event-listener">By Year</button>
+				</section>
+				<aside>
+					<div id="bar-svg"></div>
+					<script src="scripts/bar_time.js"></script>
+				</aside>
+
+		</main>
+		<br class="bigBreak">
+		<br class="bigBreak">	
+		
+		<!--Panoramas-->
+		<main>
+			<section id="last-section">
+				<br class="bigBreak">
+				<div>
+					<h1 class="rotatedTitle" id="lastTitle">Views from the Mesh</h1>
+				</div>
+			</section>
+			<aside>
+				<div class="descriptions" id="panoText">
+					<p> Though internet connection often feels abstract and intangible, the physical infrastructure behind the network is rigorous and nuanced. The seemingly invisible connections between our phones and computers are hidden behind the tops of buildings in tangles of cables and wires. The visualization below shows panoramic photos taken by NYC Mesh installation volunteers from the rooftops of different nodes across the network.</p>
+				</div>
+				<div class="instructions">
+					<p id="panoTextInstructions">Drag your mouse around the squares below and click on a <em>red</em> square. A panorama will appear. Keep doing this until you've built your own DIY panorama of the mesh!
+					</p>
+				</div>
+			</aside>
+	</main>
+	<br class="bigBreak">
+	<br class="bigBreak">
+
+	<!--Panorama images-->
+	<div id="grid-svg"></div>
+	<script src="scripts/grid_panoramas.js"></script>
+
+	</body>
+</html>
+
