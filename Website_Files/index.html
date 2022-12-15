@@ -3,9 +3,11 @@
 	<head>
 		<meta charset="utf-8">
 		<title>The NYC Mesh WiFi Network</title>
+		<!--FILES: Local styles and D3-->
 		<script type="text/javascript" src="./d3.js"></script>
 		<link rel="stylesheet" href="web_styles.css">
 		<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+		<!--MAPBOX: API links-->
 		<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.js'></script>
 		<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.css' rel='stylesheet' />
 		<script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
@@ -16,14 +18,14 @@
 		<link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.2/mapbox-gl-geocoder.css' type='text/css' />
 	</head>
 	<body>
-		<!--Establishing scroller
+		<!--Establishing scroller>-->
 		<div id="map"></div>
 		<div id="story"></div>
 		<script src="visualizations/config.js"></script>
-		<script src="visualizations/storytelling.js"></script>-->
+		<script src="visualizations/storytelling.js"></script>
 
 		<!--Return button-->
-		<div>
+		<div class="navMenu">
 			<a id="topTitle" href="index.html">mesh!</a>
 		</div>
 		<br class="bigBreak">
@@ -31,21 +33,23 @@
 		<!--Title-->
 		<main>
 			<section>
+				<div>
+					<h1 id="primaryTitle">NYC - Mesh</h1>
+				
+				</div>
 				<div class="openingInstructions">
 					<p>
-						Project by: Eddie-Joe Antonio, Matthew Heaton, and Mia Winther-Tamaki<br>
+						Project by: Eddie Joe Antonio, Matthew Heaton, and Mia Winther-Tamaki<br>
 						A4892-1 Data Visualization | Professor Jia Zhang
 					</p>
-				</div>
-				<div>
-					<h1 id="primaryTitle">NYC Mesh: A Closer Look</h1>
-				
 				</div>
 				<br class="bigBreak">
 
 			</section>
 		<aside>
-			<img id="openingShot" src="https://docs.nycmesh.net/img/nycmesh-570-227-link.png">
+			<!--<img id="openingShot" src="https://docs.nycmesh.net/img/nycmesh-570-227-link.png">-->
+			<div id="map" id="map-container">
+			</div>
 		</aside>
 		</main>
 		<br class="bigBreak">
@@ -71,7 +75,7 @@
 				<br class="mediumBreak">
 				<br class="bigBreak">
 				<div>
-					<h1 class="rotatedTitle">Height over Time</h1>
+					<h1 class="rotatedTitle">Height</h1>
 				</div>
 				<div class="descriptions"  id="scatterText">
 					<p> Because Mesh WiFi routers transmit connection through a direct line of sight, the growth of Mesh nodes are highly dependent on the building heights within the urban fabric. 
@@ -98,7 +102,7 @@
 					<br class="mediumBreak">
 					<br class="bigBreak">
 					<div>
-						<h1 class="rotatedTitle"> Growth over Time</h1>
+						<h1 class="rotatedTitle">Time</h1>
 					</div>
 					<div class="descriptions"  id="barText">
 						<p> Growth has been somewhat inconsistent for the Mesh NYC system. Since 2015, certain months and years have resulted in significantly more growth for the system than others. 
@@ -125,11 +129,15 @@
 		<main>
 			<section id="last-section">
 				<br class="bigBreak">
+				<div class="descriptions">
+					<p>04:</p>
+					<p> a view from everywhere</p>
+				</div>
 				<div>
-					<h1 class="rotatedTitle" id="lastTitle">Views from the Mesh</h1>
+					<h1 class="rotatedTitle" id="lastTitle">A View</h1>
 				</div>
 			</section>
-			<aside>
+			<aside id="last-aside">
 				<div class="descriptions" id="panoText">
 					<p> Though internet connection often feels abstract and intangible, the physical infrastructure behind the network is rigorous and nuanced. The seemingly invisible connections between our phones and computers are hidden behind the tops of buildings in tangles of cables and wires. The visualization below shows panoramic photos taken by NYC Mesh installation volunteers from the rooftops of different nodes across the network.</p>
 				</div>
