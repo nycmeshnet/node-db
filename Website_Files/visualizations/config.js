@@ -12,7 +12,7 @@ var config = {
         {
             id: 'chapter1',
             title: '',
-            image: '/panoramas/3b.jpg',
+            image: 'panoramas/3b.jpg',
             description: 'Here is an early mesh node from the first round of network installations. Each node is a router attached to a NYCMesh’ member’s rooftop, installed by volunteers on a donation-based pricing scale.',
             location: {
                 center: [-73.989, 40.725],
