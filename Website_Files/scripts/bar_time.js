@@ -102,8 +102,7 @@ svg.append("g")
 
 // Add X axis label:
 svg.append("text")
-    .attr("class", "barchart")
-    .attr("id", "axisLabels")
+    .attr("class", "axisLabels")
     .attr("text-anchor", "end")
     .attr("x", w - padding)
     .attr("y", h-(padding/16))

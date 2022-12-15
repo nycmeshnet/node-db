@@ -52,7 +52,6 @@ xAxisDisplay = d3.axisBottom()
 //Create SVG element
 var svg = d3.select("#scatter-svg")
 			.append("svg")
-			.attr("class", "secondVis")
 			.attr("width", w)
 			.attr("height", h)
 			.append("g");
@@ -80,7 +79,7 @@ svg.append("text")
 
 // Add Y axis label:
 svg.append("text")
-	.attr("id", "axis-labels")
+	.attr("class", "axisLabels")
 	.attr("text-anchor", "end")
 	.attr("transform", "rotate(-90)")
 	.attr("x", (-h + padding)/3)

@@ -123,22 +123,20 @@ aside {
 
 /* BUTTON specifc effects */
 .buttonToggle {
-    margin-left: 20%;
+    margin-left: 25%;
     border: none;
-    display:block;
-    background-color: #f15f53;
+    display:inline;
+    background-color: #888;
     color: white;
     font-size: 20px;
     font-weight: 400;
     text-decoration: none;
     text-align: center;
-    font-family: "vhs";
     transition-duration: .25s;
 }
     
 .buttonToggle:hover {
-    background-color: #888; /* Grey */
-    color: white;
+    background-color: #0071bc;
 }
     
 .buttonToggle:active {
@@ -158,6 +156,8 @@ a:active {
     background-color: #888;
     box-shadow: 0 5px gold;
     transform: translateY(4px);
+    transition-duration: .25s;
+
 }
     
 #openingShot {
@@ -239,10 +239,15 @@ a:active {
     text-transform: uppercase;
 }
 
-#grid-svg {
-}
 
 /*** GRAPHS: Formatting for the graphs ***/
+
+.axisLabels {
+    font-family: "grotesk";
+    color: white;
+    font-size: 10vh;
+    text-transform:lowercase;
+}
 
 .barchart {
     font-family: "grotesk";
@@ -285,20 +290,6 @@ a:active {
     font-weight:lighter;
     text-transform: lowercase;
     font-family: "grotesk";
-}
-    
-.axisLabels {
-    font-family: "grotesk";
-    color: white;
-    font-size: 20px;
-    text-transform:lowercase;
-}
-    
-#axisLabelsScat {
-    font-family: "grotesk";
-    color: white;
-    font-size: 20px;
-    text-transform:lowercase;
 }
 
 /*** MAPBOX SCROLL: style for mb scrolling ***/
