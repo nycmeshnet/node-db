@@ -23,7 +23,7 @@ var config = {
             onChapterEnter: [
                 {
                     layer: 'node-3',
-                    opacity: .9,
+                    opacity: 1,
                     // layer: 'data-driven-circles',
                     // opacity: 0,
                 },
@@ -85,7 +85,7 @@ var config = {
             onChapterEnter: [
                 {
                     layer: 'data-driven-lines',
-                    opacity: .75
+                    opacity: .85,
                 }
             ],
             onChapterExit: [
@@ -110,7 +110,7 @@ var config = {
             onChapterEnter: [
                 {
                     layer: 'all-installed-nodes',
-                    opacity: .7,
+                    opacity: 1
                 }
             ],
             onChapterExit: [
