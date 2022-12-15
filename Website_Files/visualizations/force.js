@@ -21,7 +21,8 @@
 		  linkStroke = "#999", // link stroke color
 		  linkStrokeOpacity = 0.3, // link stroke opacity
 		  linkStrokeWidth = .7, // given d in links, returns a stroke width in pixels
-		  linkStrokeLinecap = "round", // link stroke linecap
+		//   linkStrokeLinecap = "round", // link stroke linecap
+		  linkStrokeLinecap = "square", // link stroke linecap
 		  linkStrength,
 		//   colors = d3.schemeTableau10, // an array of color strings, for the node groups
 		  colors = ['#6D17E6', '#E64F17', '#0BE6BC'],
