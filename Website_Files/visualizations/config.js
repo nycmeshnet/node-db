@@ -2,7 +2,7 @@ var config = {
     style: 'mapbox://styles/mjh2241/clbgpc5ed000w15o7marj9y8v',
     accessToken: 'pk.eyJ1IjoibWpoMjI0MSIsImEiOiJjbDZhNWdtdWcwemYwM2Nyejg4azR6MjdtIn0.jcFs6eofGMkSv7Gokq_b6A',
     showMarkers: false,
-    theme: 'light',
+    theme: 'dark',
     alignment: 'left',
     title: '',
     subtitle: '',
