@@ -72,7 +72,7 @@ svg.append("g")
 
 // Add X axis label:
 svg.append("text")
-	.attr("id", "axisLabels")
+	.attr("class", "axisLabels")
 	.attr("text-anchor", "end")
 	.attr("x", w/2)
 	.attr("y", h-(padding/4))
@@ -80,7 +80,7 @@ svg.append("text")
 
 // Add Y axis label:
 svg.append("text")
-	.attr("id", "axisLabels")
+	.attr("id", "axis-labels")
 	.attr("text-anchor", "end")
 	.attr("transform", "rotate(-90)")
 	.attr("x", (-h + padding)/3)

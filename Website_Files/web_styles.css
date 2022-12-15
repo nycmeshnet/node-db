@@ -17,7 +17,7 @@ body{
     position: relative;
     height: 100%;
     top:0;right:0;bottom:0;left:0;
-    font-family: "vhs";
+    font-family: "grotesk";
     /*background-color: black;*/
     background-size: 50%;
     background-image: url('images/Rectangle 1.png');
@@ -66,6 +66,7 @@ aside {
     position: fixed; /* Set the navbar to fixed position */
     top: 0; /* Position the navbar at the top of the page */
     width: 100%; /* Full width */
+    font-family: "vhs";
     font-size: 25px;
     z-index: 3;
 }
@@ -88,6 +89,7 @@ aside {
     text-transform: uppercase;
     font-weight: bold;
     color: black;
+    font-family: "vhs";
     text-shadow: 0vmax 1vmax #a1fc03;
     font-size: 4vh;
 }
@@ -97,7 +99,6 @@ aside {
     margin-right: 20%;
     font-size: 20px;
     color: white;
-    font-family: "grotesk";
     z-index: 30;
 }
     
@@ -105,7 +106,6 @@ aside {
     margin-left: 20%;
     margin-right: 20%;
     color: #666;
-    font-family: "grotesk";
     font-size: 15px;
 }
 
@@ -116,6 +116,7 @@ aside {
     width: 90%;
     font-size: 2vh;
     font-weight: thin;
+    font-family: "vhs";
     text-transform: uppercase;
 }
 
@@ -173,6 +174,7 @@ a:active {
     margin-left: 55%;
     font-size: 10vw;
     font-weight: bold;
+    font-family: "vhs";
     text-transform: lowercase;
     text-shadow: 0vmax 1vmax #a1fc03;
 }
@@ -243,24 +245,28 @@ a:active {
 /*** GRAPHS: Formatting for the graphs ***/
 
 .barchart {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "grotesk";
+    color: white;
     font-size: 10px;
 }
     
 .yAxis {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "grotesk";
+    color: white;
     font-size: 10px;
 }
     
 .xAxis {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "grotesk";
+    color: white;
     font-size: 10px;
 }
     
     
 #toolTip {
     font-size: 20px;
-    color:#a1fc03;
+    font-family: "grotesk";
+    color: white;
     font-weight: bold;
     text-transform: lowercase;
 }
@@ -269,24 +275,28 @@ a:active {
     font-size: 10px;
     font-weight:lighter;
     text-transform: lowercase;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "grotesk";
+    color: white;
 }
     
 .yLabel {
+    color: white;
     font-size: 20px;
     font-weight:lighter;
     text-transform: lowercase;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "grotesk";
 }
     
-#axisLabels {
-    font-family: Arial, Helvetica, sans-serif;
+.axisLabels {
+    font-family: "grotesk";
+    color: white;
     font-size: 20px;
     text-transform:lowercase;
 }
     
 #axisLabelsScat {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "grotesk";
+    color: white;
     font-size: 20px;
     text-transform:lowercase;
 }
