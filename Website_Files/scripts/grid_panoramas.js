@@ -40,8 +40,8 @@ var grid = svg.selectAll(".square")
                 })
                 .attr("width", size)
                 .attr("height", size)
-                .attr("fill", "#dedede")
-                .style("opacity", .375)
+                .attr("fill", "#031837")
+                .style("opacity", 1)
                 .on("mouseover",function(d){                                        
                     if (d.panoramas != '') {
                         // Adjust color when selecting
