@@ -143,7 +143,7 @@ svg.selectAll("rect")
 //Create scale functions
 xScaleMonth = d3.scaleLinear()
             .domain([
-                d3.min(dataset, function(dataset) { return dataset.New_Nodes; }),  
+                0,  
                 d3.max(dataset, function(dataset) { return dataset.New_Nodes; })
             ])
             .range([padding*2, w - padding]);
@@ -156,7 +156,7 @@ yScaleMonth = d3.scaleLinear()
             .range([padding, h - (padding*1.5)]);
 
 //Define X axis
-xAxis = d3.axisBottom()
+xAxisMonth = d3.axisBottom()
     .scale(xScaleMonth)
     .ticks(6)
 
@@ -172,7 +172,7 @@ d3.select("#month-event-listener")
 
     //Remove existing graph
     svg.selectAll("#xAxisYear").remove()
-    svg.selectAll("#yAxisYear").remove()
+    //svg.selectAll("#yAxisYear").remove()
     svg.selectAll("rect").remove()
 
     //Create X axis
@@ -180,14 +180,14 @@ d3.select("#month-event-listener")
         .attr("class", "barchart")
         .attr("id", "xAxisMonth")
         .attr("transform", "translate(0," + (h - (padding*1.25)) + ")")
-        .call(xAxis);
+        .call(xAxisMonth);
 
-    //Create Y axis
+    /*Create Y axis
     svg.append("g")
         .attr("class", "barchart")
         .attr("id", "yAxisMonth")
         .attr("transform", "translate(" + (padding*1.5) + ",0)")
-        .call(yAxis);
+        .call(yAxis);*/
 
     //Update all rects
     svg.selectAll("rect")
