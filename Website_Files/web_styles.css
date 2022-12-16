@@ -113,7 +113,7 @@ aside {
 .instructions {
     margin-left: 20%;
     margin-right: 20%;
-    color: #666;
+    color: #0071bc;
     font-size: 15px;
 }
 
@@ -141,6 +141,7 @@ aside {
     text-decoration: none;
     text-align: center;
     transition-duration: .25s;
+    font-family: vhs;
 }
     
 .buttonToggle:hover {
@@ -199,7 +200,7 @@ a:active {
     font-weight: bold;
     font-family: "vhs";
     text-transform: lowercase;
-    text-shadow: 0vmax .5vmax #0071bc;
+    text-shadow: 0vmax .5vmax #a1fc03;
 }
 
 #last-section {

@@ -93,14 +93,6 @@
 		    .data(links)
 		    .join("line");
 
-		//   tooltip = d3
-		// 	.select("body")
-		// 	.append("div") // the tooltip always "exists" as its own html div, even when not visible
-		// 	.style("position", "absolute") // the absolute position is necessary so that we can manually define its position later
-		// 	// .style("visibility", "hidden") // hide it from default at the start so it only appears on hover
-		// 	.style("background-color", "white")
-		// 	.attr("class", "tooltip")
-
 		  const node = svg.append("g")
 		    .attr("fill", nodeFill)
 		    .attr("stroke", nodeStroke)
@@ -109,8 +101,6 @@
 		    .selectAll("circle")
 		    .data(nodes)
 		    .join("circle")
-			.text(function(d) { console.log(d.boroughCode) }
-			)
 			.on('mouseover', function () {
 				d3.select(this).transition()
 					 .duration('50')
@@ -119,7 +109,6 @@
 					d3.select(this).transition()
 						.duration('50')
 						.attr('opacity', '1')})
-			// .on("mouseout", tooltip_out) // when the mouse stops hovering a node, call the tooltip_out function to get rid of the tooltip
 
 			//scale node radius by num connections
 			.attr("r", function(d) {      
