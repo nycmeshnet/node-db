@@ -5,7 +5,7 @@
 		<title>The NYC Mesh WiFi Network</title>
 		<!--FILES: Local styles and D3-->
 		<script type="text/javascript" src="./d3.js"></script>
-		<script type="text/javascript" src="./d3v7.js"></script>
+		<!-- <script type="text/javascript" src="./d3v7.js"></script> -->
 		<link rel="stylesheet" href="web_styles.css">
 		<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 		<!--MAPBOX: API links-->
@@ -32,6 +32,8 @@
 					<h1 id="primaryTitle">NYC - Mesh</h1>
 				
 				</div>
+				<div>					
+					<h2 id="subtitle">*-*-*-*-*-*-*</h2></div>
 				<div class="openingInstructions">
 					<p>
 						Project by: Eddie Joe Antonio, Matthew Heaton, and Mia Winther-Tamaki<br>
@@ -132,7 +134,6 @@
 				<p> This visualization shows clusters within the network structure of NYC Mesh as they relate to relative location and hierarchy. 
 						
 					The size of points indicate their centrality as a distribution hub: the larger the node, the more connections it links in <span style="color: #a1fc03">Brooklyn, </span><span style="color: #ffffff">Manhattan, </span><span style="color: #f15f53;">& Queens.</span>
-					<!-- Additionally, each node appears on the network in the chronological order at which the associated router was added to the WiFi network.  -->
 				</p>
 				<p id="forceBorough">
 					
@@ -143,10 +144,19 @@
 		</main>
 		<br class="bigBreak">
 		<br class="bigBreak">
-		<main>
+		<iframe
+		src="./force.html"
+		frameborder="0" 
+		cellspacing="0"
+		width="100%"
+		height="100%"
+		style="border-style: none;"
+	  ></iframe>
+		
+		<!-- <main>
 			<div id="forceChart"></div>
 			<script  src="visualizations/force.js"></script>
-		</main>
+		</main> -->
 
 		<!--Panoramas-->
 		<main>

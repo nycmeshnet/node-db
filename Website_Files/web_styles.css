@@ -111,7 +111,7 @@ aside {
 
 .openingInstructions {
     margin-left: 75%;
-    margin-top: -40%;
+    margin-top: -20%;
     color: #dedede;
     width: 90%;
     font-size: 2vh;
@@ -173,11 +173,25 @@ a:active {
     position: relative;
     margin-top: 0%;
     margin-left: 55%;
+    /* width:75%; */
     font-size: 10vw;
     font-weight: bold;
     font-family: "vhs";
     text-transform: lowercase;
     text-shadow: 0vmax 1vmax #a1fc03;
+}
+
+#subtitle{
+    color: white;
+    z-index: 2;
+    position: relative;
+    margin-left: 55%;
+    width:100%;
+    font-size: 3vw;
+    font-weight: bold;
+    font-family: "vhs";
+    text-transform: lowercase;
+    text-shadow: 0vmax .5vmax #a1fc03;
 }
 
 #last-section {
@@ -322,7 +336,7 @@ a, a:hover, a:visited {
     width:100%;
     height:98%;
     border-style: none;
-    margin-top:27%;
+    margin-top:15%;
     /* position: fixed; */
     /* margin-left: 50px; */
 }
@@ -372,7 +386,7 @@ a, a:hover, a:visited {
 }
 .dark {
     color: #fafafa;
-    background-color: #444;
+    background-color: #173158;
 }
 .step {
     padding-bottom: 50vh;
@@ -391,6 +405,14 @@ a, a:hover, a:visited {
 .step img {
     width: 100%;
 }
+
+.tooltip {
+    fill: white;
+    font-family: sans-serif;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid grey;
+  }
 
 @media (max-width: 750px) {
     #features {

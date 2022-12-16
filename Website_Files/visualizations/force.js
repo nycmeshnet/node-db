@@ -52,6 +52,31 @@
 		    target: LT[i]
 		  }));
 
+		  tooltip = d3
+		  .select("body")
+		  .append("div") // the tooltip always "exists" as its own html div, even when not visible
+		  .style("position", "absolute") // the absolute position is necessary so that we can manually define its position later
+		  .style("visibility", "hidden") // hide it from default at the start so it only appears on hover
+		  .style("background-color", "white")
+		  .attr("class", "tooltip")
+
+			  //name a tooltip_in function to call when the mouse hovers a node
+		tooltip_in = function(event, d) { // pass event and d to this function so that it can access d for our data
+			return tooltip
+			.html("<h4>" + d.id + "</h4>") // add an html element with a header tag containing the name of the node.  This line is where you would add additional information like: "<h4>" + d.name + "</h4></br><p>" + d.type + "</p>"  Note the quote marks, pluses and </br>--these are necessary for javascript to put all the data and strings within quotes together properly.  Any text needs to be all one line in .html() here
+			.style("visibility", "visible") // make the tooltip visible on hover
+			.style("top", event.pageY + "px") // position the tooltip with its top at the same pixel location as the mouse on the screen
+			.style("left", event.pageX + "px"); // position the tooltip just to the right of the mouse location
+		  }
+
+		  // name a tooltip_out function to call when the mouse stops hovering
+		tooltip_out = function() {
+			  return tooltip
+			  .transition()
+			  .duration(50) // give the hide behavior a 50 milisecond delay so that it doesn't jump around as the network moves
+			  .style("visibility", "hidden"); // hide the tooltip when the mouse stops hovering
+		  }
+
 
 		  // Compute default domains.
 		  if (G && nodeGroups === undefined) nodeGroups = d3.sort(G);
@@ -101,6 +126,7 @@
 		    .selectAll("circle")
 		    .data(nodes)
 		    .join("circle")
+			.on("mouseover", tooltip_in) // when the mouse hovers a node, call the tooltip_in function to create the tooltip
 			.on('mouseover', function (d, i) {
 				d3.select(this).transition()
 					 .duration('50')
@@ -109,8 +135,9 @@
 					d3.select(this).transition()
 						.duration('50')
 						.attr('opacity', '1')})
-						// .attr('fill', color(G[i]))})
+			.on("mouseout", tooltip_out) // when the mouse stops hovering a node, call the tooltip_out function to get rid of the tooltip
 
+						// .attr('fill', color(G[i]))})
 			//scale node radius by num connections
 			.attr("r", function(d) {      
 				d.weight = link.filter(function(l) {
@@ -154,7 +181,7 @@
 		      .attr("cy", d => d.y);
 		  }
 
-
+	
 		  function drag(simulation) {
 		    function dragstarted(event) {
 		      if (!event.active) simulation.alphaTarget(0.3).restart();
