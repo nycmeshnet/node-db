@@ -244,7 +244,7 @@ a:active {
     color: white;
 }
 
-#forceBorough{
+#forceBorough {
     /* margin-left: 20%; */
     /* rotate: -90deg; */
     height: 100%;
@@ -252,6 +252,15 @@ a:active {
     top:20%;
     position:sticky;
     z-index:-5;
+
+}
+
+#forceChart {
+    
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
 
 }
 
