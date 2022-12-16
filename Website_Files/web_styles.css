@@ -245,26 +245,25 @@ a:active {
 }
 
 #forceText {
-    margin-left: 20%;
+    margin-left: 10%;
     margin-top: 20%;
-    width: 100%;
+    width: 80%;
     height: auto;
     color: white;
 }
 
 #forceBorough {
-    /* margin-left: 20%; */
-    /* rotate: -90deg; */
-    height: 100%;
-    /* width: 2%; */
-    top:20%;
-    position:sticky;
-    z-index:-5;
+    margin-left: 0%;
+    margin-top: 0%;
+    width: 70%;
+    height: auto;
+    font-size: 10px;
+    font-weight: lighter;
+    text-transform: uppercase;
 
 }
 
 #forceChart {
-
     overflow: hidden;
     height: 100%;
     width: 100%;
@@ -296,7 +295,7 @@ a:active {
 .axisLabels {
     font-family: "vhs";
     color: white;
-    font-size: 10vh;
+    font-size: 3.5vh;
     text-transform:lowercase;
 }
 
