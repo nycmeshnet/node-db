@@ -195,6 +195,7 @@ a:active {
     z-index: 2;
     position: relative;
     margin-left: 55%;
+    margin-bottom:10%;
     width:100%;
     font-size: 3vw;
     font-weight: bold;

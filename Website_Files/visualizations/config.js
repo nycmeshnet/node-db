@@ -47,7 +47,7 @@ var config = {
             id: 'chapter2',
             title: 'Nodes',
             image: '',
-            description: '<p>The NYC Mesh WiFi network is a community driven internet network of activist-citizens building a freely accessible, open, wireless physical structure of interconnected routers.</p><p>Founded in 2014, NYC Mesh is based in lower Manhattan and Brooklyn. The volunteer-run organization currently provides New Yorkers with over 623 active connections, bypassing the need for provision by conventional Internet Service Providers (ISPs) that constitute an oligopoly of internet service in NYC.</p>',
+            description: '<p>Each network “node” point consists of at least one router connection. Most nodes are recipient connections: NYC Mesh users who receive web access through the network.</p><p>Access is distributed by hubs, or clusters of routers and servers, and supernodes, which serve as high-bandwidth thresholds to the Internet at large.</p>',
             location: {
                 center: [-73.9873, 40.721],
                 zoom: 14.3,
