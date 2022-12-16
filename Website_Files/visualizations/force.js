@@ -18,14 +18,14 @@
 		  linkTarget = ({
 		    target
 		  }) => target, // given d in links, returns a node identifier string
-		  linkStroke = "#a1fc03", // link stroke color
-		  linkStrokeOpacity = 0.666, // link stroke opacity
-		  linkStrokeWidth = .4, // given d in links, returns a stroke width in pixels
+		  linkStroke = '#91E302', // link stroke color
+		  linkStrokeOpacity = 0.5, // link stroke opacity
+		  linkStrokeWidth = .1, // given d in links, returns a stroke width in pixels
 		//   linkStrokeLinecap = "round", // link stroke linecap
 		  linkStrokeLinecap = "square", // link stroke linecap
 		  linkStrength,
 		//   colors = d3.schemeTableau10, // an array of color strings, for the node groups
-		  colors = ['#a1fc03', '#FEE70A', '#0AFE17'],
+		  colors = ['#ffffff', '#a1fc03', '#f15f53'],
 		  width = 1280, // outer width, in pixels
 		  height = 800, // outer height, in pixels
 		  invalidation // when this promise resolves, stop the simulation
@@ -60,7 +60,8 @@
 		  const color = nodeGroup == null ? null : d3.scaleOrdinal(nodeGroups, colors);
 
 		  // Construct the forces.
-		  const forceNode = d3.forceManyBody().strength(-5.0);
+		  // negative many body strength pulls nodes towards one another
+		  const forceNode = d3.forceManyBody().strength(-3.0);
 		  const forceLink = d3.forceLink(links).id(({
 		    index: i
 		  }) => N[i]);
@@ -70,9 +71,11 @@
 		  const simulation = d3.forceSimulation(nodes)
 		    .force("link", forceLink)
 			.force("charge", forceNode)
-		    .force("center", d3.forceCenter().strength(.9))
-  			.force("collide", d3.forceCollide().radius(3.5))
-  			// .force("collide", d3.forceCollide().radius(d => d.r + 1)) // use the node's actual radius as buffer
+			// force center pulls node gravity to the center of the viewport
+		    .force("center", d3.forceCenter().strength(.6))
+			// collide radius gives buffer of two pixels(?) between each node
+  			.force("collide", d3.forceCollide().radius(2))
+  			// .force("collide", d3.forceCollide().radius(d => d.r + 1)) // todo: use the node's actual radius as buffer
 		    .on("tick", ticked);
 
 		  const svg = d3.create("svg")
@@ -104,7 +107,7 @@
 				  return l.source.index == d.index || l.target.index == d.index
 				}).size();      
 				var minRadius = 2.5;
-				return minRadius + (d.weight/4)})
+				return minRadius + (d.weight/6)})
 		    .call(drag(simulation));
 
 		  if (W) link.attr("stroke-width", ({
