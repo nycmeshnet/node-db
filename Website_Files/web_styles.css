@@ -111,7 +111,7 @@ aside {
 
 .openingInstructions {
     margin-left: 75%;
-    margin-top: -55%;
+    margin-top: -40%;
     color: #dedede;
     width: 90%;
     font-size: 2vh;
@@ -170,6 +170,7 @@ a:active {
     color: white;
     rotate: 0deg;
     z-index: 2;
+    position: relative;
     margin-top: 0%;
     margin-left: 55%;
     font-size: 10vw;
@@ -227,6 +228,17 @@ a:active {
     width: 100%;
     height: auto;
     color: white;
+}
+
+#forceBorough{
+    /* margin-left: 20%; */
+    /* rotate: -90deg; */
+    height: 100%;
+    /* width: 2%; */
+    top:20%;
+    position:sticky;
+    z-index:-5;
+
 }
 
 #panoText {
@@ -308,9 +320,11 @@ a, a:hover, a:visited {
 
 #map-frame {
     width:100%;
-    height:100%;
+    height:98%;
     border-style: none;
-    margin-left: 50px;
+    margin-top:27%;
+    /* position: fixed; */
+    /* margin-left: 50px; */
 }
 
 #map {

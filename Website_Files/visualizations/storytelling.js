@@ -120,10 +120,6 @@ mapboxgl.accessToken = config.accessToken;
 
 // map.addControl(new mapboxgl.NavigationControl());
 
-// map.on("load",function(){
-//     d3.selectAll(".mapboxgl-ctrl-logo").remove()
-//     d3.selectAll(".mapboxgl-ctrl-attrib").remove()
-// });
 
 const transformRequest = (url) => {
     const hasQuery = url.indexOf("?") !== -1;	  
@@ -142,6 +138,11 @@ var map = new mapboxgl.Map({
     pitch: config.chapters[0].location.pitch,
     scrollZoom: false,
     transformRequest: transformRequest
+});
+
+map.on("load",function(){
+    d3.selectAll(".mapboxgl-ctrl-logo").remove()
+    d3.selectAll(".mapboxgl-ctrl-attrib").remove()
 });
 
 var marker = new mapboxgl.Marker();

@@ -44,6 +44,7 @@
 		</main>
 		<br class="bigBreak">
 		<br class="bigBreak">
+
 		<!--Establishing scroller>-->
 		<main id="map-frame">
 			<iframe
@@ -51,15 +52,16 @@
 			frameborder="0" 
 			cellspacing="0"
 			width="100%"
-			height="100%"
-			padding-bottom="25px"
+			height="98%"
 			style="border-style: none;"
 		  ></iframe>
+
 		</main>
 		<script src="visualizations/config.js"></script>
 		<script src="visualizations/storytelling.js"></script>
 		<br class="bigBreak">
 		<br class="bigBreak">
+		
 		<!--Scatterplot-->
 		<main>
 			<section>
@@ -115,6 +117,8 @@
 		</main>
 		<br class="bigBreak">
 		<br class="bigBreak">	
+
+		<!-- Force diagram -->
 		<main>
 			<section>
 				<br class="mediumBreak">
@@ -125,13 +129,15 @@
 			<br class="bigBreak">
 			<br class="bigBreak">	
 			<div class="descriptions" id="forceText">
-				<p> This visualization shows the clusters within the network structure of NYC Mesh as they relate to location and hierarchy. 
+				<p> This visualization shows clusters within the network structure of NYC Mesh as they relate to relative location and hierarchy. 
 						
-					The size of nodes indicate their centrality as a distribution hub: the larger the node, the taller the building that the node is attached to, and the more node connections it serves. 
+					The size of points indicate their centrality as a distribution hub: the larger the node, the more connections it links in <span style="color: #a1fc03">Brooklyn, </span><span style="color: #ffffff">Manhattan, </span><span style="color: #f15f53;">& Queens.</span>
 					<!-- Additionally, each node appears on the network in the chronological order at which the associated router was added to the WiFi network.  -->
 				</p>
-				<p>Green : Manhattan, White : Brooklyn, Orange : Queens</p>
-				<p><em>Try clicking and holding on a node to disentangle its web of local connections.</em></p>
+				<p id="forceBorough">
+					
+				</p>
+				<p id="forceBorough"><em>Try clicking and holding on a node to disentangle its web of local connections.</em></p>
 			</div>
 			</section>
 		</main>
@@ -141,6 +147,7 @@
 			<div id="forceChart"></div>
 			<script  src="visualizations/force.js"></script>
 		</main>
+
 		<!--Panoramas-->
 		<main>
 			<section id="last-section">
