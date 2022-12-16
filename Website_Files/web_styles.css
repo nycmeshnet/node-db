@@ -8,16 +8,24 @@ html{
     font-family: "vhs";
     src: url("font/VCR_OSD_MONO_1.001.ttf");
 }
-@font-face {
+/* @font-face {
     font-family: "grotesk";
-    src: url("font/Akzidenz-grotesk-roman.ttf");
+    src: url("font/Akzidenz-vhs-roman.ttf");
+} */
+/* @font-face {
+    font-family: "inconsolata";
+    src: url("font/Inconsolata-Regular.ttf");
 }
+@font-face {
+    font-family: "ibm";
+    src: url("font/IBMPlexSans-Light.ttf");
+} */
 
 body{
     position: relative;
     height: 100%;
     top:0;right:0;bottom:0;left:0;
-    font-family: "grotesk";
+    font-family: "vhs";
     /*background-color: black;*/
     background-size: 50%;
     background-image: url('images/Rectangle 1.png');
@@ -256,7 +264,7 @@ a:active {
 }
 
 #forceChart {
-    
+
     overflow: hidden;
     height: 100%;
     width: 100%;
@@ -286,26 +294,26 @@ a:active {
 /*** GRAPHS: Formatting for the graphs ***/
 
 .axisLabels {
-    font-family: "grotesk";
+    font-family: "vhs";
     color: white;
     font-size: 10vh;
     text-transform:lowercase;
 }
 
 .barchart {
-    font-family: "grotesk";
+    font-family: "vhs";
     color: white;
     font-size: 10px;
 }
     
 .yAxis {
-    font-family: "grotesk";
+    font-family: "vhs";
     color: white;
     font-size: 10px;
 }
     
 .xAxis {
-    font-family: "grotesk";
+    font-family: "vhs";
     color: white;
     font-size: 10px;
 }
@@ -313,7 +321,7 @@ a:active {
     
 #toolTip {
     font-size: 20px;
-    font-family: "grotesk";
+    font-family: "vhs";
     color: white;
     font-weight: bold;
     text-transform: lowercase;
@@ -323,7 +331,7 @@ a:active {
     font-size: 10px;
     font-weight:lighter;
     text-transform: lowercase;
-    font-family: "grotesk";
+    font-family: "vhs";
     color: white;
 }
     
@@ -332,7 +340,7 @@ a:active {
     font-size: 20px;
     font-weight:lighter;
     text-transform: lowercase;
-    font-family: "grotesk";
+    font-family: "vhs";
 }
 
 /*** MAPBOX SCROLL: style for mb scrolling ***/
