@@ -221,6 +221,14 @@ a:active {
     text-transform: uppercase;
 }
 
+#forceText {
+    margin-left: 20%;
+    margin-top: 20%;
+    width: 100%;
+    height: auto;
+    color: white;
+}
+
 #panoText {
     margin-left: 20%;
     margin-top: 20%;

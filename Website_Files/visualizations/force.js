@@ -205,7 +205,7 @@ Promise.all([d3.csv('data/nodes_linksOnly_NTAjoin_20221130.csv'),d3.csv("data/li
         nodeGroup: d => d.boroughCode,
         nodeTitle: d => `${d.id}\n`,
 		// nodeTitle: d => d.neighborhood,
-		nodeRadius: d => Math.abs(d.point_radius),
+		nodeRadius: d => Math.abs(d.weight),
 		// nodeRadius: 2.5,
         linkStrokeWidth: l => Math.sqrt(l.value),
         width: 1280,

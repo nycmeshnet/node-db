@@ -116,21 +116,24 @@
 		<br class="bigBreak">
 		<br class="bigBreak">	
 		<main>
-				<section class="sectionRotatedTitle">
-					<div>
-						<h1 id="viz-title"> Centrality & Decentrality </h1>
-					</div>
-				</section>
-				<aside class="asideCaption">
-					<div class="descriptions">
-						<p> This visualization shows the clusters within the network structure of NYC Mesh as they relate to location and hierarchy. 
-							The different node colors indicate which borough the node is located in: White is Manhattan, Green is Brooklyn, and Orange is Queens. 
-							The size of nodes indicate building height: the larger the node, the taller the building that the node is attached to. 
-							<!-- Additionally, each node appears on the network in the chronological order at which the associated router was added to the WiFi network.  -->
-						</p>
-						<p><em>Try clicking and holding on a node to disentangle its web of local connections.</em></p>
-					</div>
-				</aside>
+			<section>
+				<br class="mediumBreak">
+				<br class="bigBreak">
+			<div>
+				<h1 class="rotatedTitle">Centrality<br>/ Decentrality</h1>
+			</div>
+			<br class="bigBreak">
+			<br class="bigBreak">	
+			<div class="descriptions" id="forceText">
+				<p> This visualization shows the clusters within the network structure of NYC Mesh as they relate to location and hierarchy. 
+						
+					The size of nodes indicate their centrality as a distribution hub: the larger the node, the taller the building that the node is attached to, and the more node connections it serves. 
+					<!-- Additionally, each node appears on the network in the chronological order at which the associated router was added to the WiFi network.  -->
+				</p>
+				<p>Green : Manhattan, White : Brooklyn, Orange : Queens</p>
+				<p><em>Try clicking and holding on a node to disentangle its web of local connections.</em></p>
+			</div>
+			</section>
 		</main>
 		<br class="bigBreak">
 		<br class="bigBreak">
