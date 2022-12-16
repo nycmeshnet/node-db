@@ -13,7 +13,7 @@ var config = {
             id: 'chapter1',
             title: '',
             image: 'panoramas/3b.jpg',
-            description: 'Here is the view from an early mesh node from the first round of network installations. Each node is a router attached to a NYCMesh’ member’s rooftop, installed by volunteers on a donation-based pricing scale.',
+            description: 'Here is the view from an early mesh node installation. Each node is a router attached to a NYCMesh’ member’s rooftop, installed by volunteers on a donation-based pricing scale.',
             location: {
                 center: [-73.989, 40.725],
                 zoom: 17.5,
@@ -66,8 +66,6 @@ var config = {
             ],
             onChapterExit: [
                 {
-                    // layer: 'pennypack',
-                    // opacity: 0
                 }
             ]
         },
@@ -103,7 +101,6 @@ var config = {
             location: {
                 center: [-74.023640, 40.704771],//(Williamsburg Bk map center of gravity)
                 zoom: 11.1,
-                // maxBounds: bounds, // Sets bounds as max
                 pitch:40,
                 bearing:29
             },

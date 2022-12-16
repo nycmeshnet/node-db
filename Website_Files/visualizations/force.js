@@ -5,7 +5,7 @@
 		  nodeId = d => d.id, // given d in nodes, returns a unique identifier (string)
 		  nodeGroup, // given d in nodes, returns an (ordinal) value for color
 		  nodeGroups, // an array of ordinal values representing the node groups
-		  nodeTitle, // given d in nodes, a title string
+		  nodeTitle = d => d.neighborhood, // given d in nodes, a title string
 		  nodeFill = "#0a2752", // node stroke fill (if not using a group color encoding)
 		  nodeStroke = "#0a2752", // node stroke color
 		  nodeStrokeWidth = 1, // node stroke width, in pixels
@@ -51,33 +51,7 @@
 		    source: LS[i],
 		    target: LT[i]
 		  }));
-
-		  tooltip = d3
-		  .select("body")
-		  .append("div") // the tooltip always "exists" as its own html div, even when not visible
-		  .style("position", "absolute") // the absolute position is necessary so that we can manually define its position later
-		  .style("visibility", "hidden") // hide it from default at the start so it only appears on hover
-		  .style("background-color", "white")
-		  .attr("class", "tooltip")
-
-			  //name a tooltip_in function to call when the mouse hovers a node
-		tooltip_in = function(event, d) { // pass event and d to this function so that it can access d for our data
-			return tooltip
-			.html("<h4>" + d.id + "</h4>") // add an html element with a header tag containing the name of the node.  This line is where you would add additional information like: "<h4>" + d.name + "</h4></br><p>" + d.type + "</p>"  Note the quote marks, pluses and </br>--these are necessary for javascript to put all the data and strings within quotes together properly.  Any text needs to be all one line in .html() here
-			.style("visibility", "visible") // make the tooltip visible on hover
-			.style("top", event.pageY + "px") // position the tooltip with its top at the same pixel location as the mouse on the screen
-			.style("left", event.pageX + "px"); // position the tooltip just to the right of the mouse location
-		  }
-
-		  // name a tooltip_out function to call when the mouse stops hovering
-		tooltip_out = function() {
-			  return tooltip
-			  .transition()
-			  .duration(50) // give the hide behavior a 50 milisecond delay so that it doesn't jump around as the network moves
-			  .style("visibility", "hidden"); // hide the tooltip when the mouse stops hovering
-		  }
-
-
+		  
 		  // Compute default domains.
 		  if (G && nodeGroups === undefined) nodeGroups = d3.sort(G);
 
@@ -86,7 +60,7 @@
 
 		  // Construct the forces.
 		  // negative many body strength pulls nodes towards one another
-		  const forceNode = d3.forceManyBody().strength(-3.0);
+		  const forceNode = d3.forceManyBody().strength(-3.2);
 		  const forceLink = d3.forceLink(links).id(({
 		    index: i
 		  }) => N[i]);
@@ -103,6 +77,7 @@
   			// .force("collide", d3.forceCollide().radius(d => d.r + 1)) // todo: use the node's actual radius as buffer
 		    .on("tick", ticked);
 
+
 		  const svg = d3.create("svg")
 		    .attr("width", width)
 		    .attr("height", height)
@@ -118,6 +93,14 @@
 		    .data(links)
 		    .join("line");
 
+		//   tooltip = d3
+		// 	.select("body")
+		// 	.append("div") // the tooltip always "exists" as its own html div, even when not visible
+		// 	.style("position", "absolute") // the absolute position is necessary so that we can manually define its position later
+		// 	// .style("visibility", "hidden") // hide it from default at the start so it only appears on hover
+		// 	.style("background-color", "white")
+		// 	.attr("class", "tooltip")
+
 		  const node = svg.append("g")
 		    .attr("fill", nodeFill)
 		    .attr("stroke", nodeStroke)
@@ -126,18 +109,18 @@
 		    .selectAll("circle")
 		    .data(nodes)
 		    .join("circle")
-			.on("mouseover", tooltip_in) // when the mouse hovers a node, call the tooltip_in function to create the tooltip
-			.on('mouseover', function (d, i) {
+			.text(function(d) { console.log(d.boroughCode) }
+			)
+			.on('mouseover', function () {
 				d3.select(this).transition()
 					 .duration('50')
-					 .attr('opacity', '.9')})
-			.on('mouseout', function (d, i) {
+					 .attr('opacity', '.88')})
+			.on('mouseout', function () {
 					d3.select(this).transition()
 						.duration('50')
 						.attr('opacity', '1')})
-			.on("mouseout", tooltip_out) // when the mouse stops hovering a node, call the tooltip_out function to get rid of the tooltip
+			// .on("mouseout", tooltip_out) // when the mouse stops hovering a node, call the tooltip_out function to get rid of the tooltip
 
-						// .attr('fill', color(G[i]))})
 			//scale node radius by num connections
 			.attr("r", function(d) {      
 				d.weight = link.filter(function(l) {
@@ -146,6 +129,7 @@
 				var minRadius = 2.5;
 				return minRadius + (d.weight/6)})
 		    .call(drag(simulation));
+
 
 		  if (W) link.attr("stroke-width", ({
 		    index: i
@@ -158,10 +142,10 @@
 		  }) => color(G[i]));
 		  if (T) node.append("title").text(({
 		    index: i
-			}) => W[i]);
+			}) => T[i]);
 		  if (L) link.attr("stroke", ({
 		    index: i
-		  }) => T[i]);
+		  }) => L[i]);
 		  if (invalidation != null) invalidation.then(() => simulation.stop());
 
 		  function intern(value) {
@@ -180,6 +164,7 @@
 		      .attr("cx", d => d.x)
 		      .attr("cy", d => d.y);
 		  }
+
 
 	
 		  function drag(simulation) {
@@ -230,8 +215,7 @@ Promise.all([d3.csv('data/nodes_linksOnly_NTAjoin_20221130.csv'),d3.csv("data/li
     const chart = ForceGraph(dataset, {
         nodeId: d => d.id,
         nodeGroup: d => d.boroughCode,
-        nodeTitle: d => `${d.id}\n`,
-		// nodeTitle: d => d.neighborhood,
+		nodeTitle: d => d.neighborhood,
 		nodeRadius: d => Math.abs(d.weight),
 		// nodeRadius: 2.5,
         linkStrokeWidth: l => Math.sqrt(l.value),
