@@ -18,8 +18,8 @@
 		  linkTarget = ({
 		    target
 		  }) => target, // given d in links, returns a node identifier string
-		  linkStroke = '#91E302', // link stroke color
-		  linkStrokeOpacity = 0.5, // link stroke opacity
+		  linkStroke = '#008EED', // link stroke color
+		  linkStrokeOpacity = 0.666, // link stroke opacity
 		  linkStrokeWidth = .1, // given d in links, returns a stroke width in pixels
 		//   linkStrokeLinecap = "round", // link stroke linecap
 		  linkStrokeLinecap = "square", // link stroke linecap
