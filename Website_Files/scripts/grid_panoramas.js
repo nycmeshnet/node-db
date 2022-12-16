@@ -7,7 +7,7 @@ console.log(dataset)
 var size = 30;
 var w = window.innerWidth;
 var h = window.innerHeight;
-var numPerRow = 70;
+var numPerRow = w/size;
 
 //Create extra scale functions
 Scale = d3.scaleLinear()
@@ -20,7 +20,7 @@ var svg = d3.select("#grid-svg")
             .append("svg")
             .attr("class", "firstVis")
             .attr("width", numPerRow * size)
-            .attr("height", numPerRow * size);
+            .attr("height", numPerRow * size/2);
 
 //Create grid
 var grid = svg.selectAll(".square")
@@ -85,8 +85,8 @@ svg.selectAll(".square")
                     if (d.panoramas == ''){
                         
                     } else{
-                        console.log('panoramas/' + d.id + '.jpg')
-                        return 'panoramas/' + d.id + '.jpg';
+                        console.log('test_panoramas/' + d.id + '.jpg')
+                        return 'test_panoramas/' + d.id + '.jpg';
                     }
                 })
                 .attr("id", "panos")

@@ -86,8 +86,8 @@ svg.selectAll(".square")
                         
                     } else{
                         console.log(d.id)
-                        console.log('panoramas/' + d.id + '.jpg')
-                        return 'panoramas/' + d.id + '.jpg';
+                        console.log('test_panoramas/' + d.id + '.jpg')
+                        return 'test_panoramas/' + d.id + '.jpg';
                     }
                 })
                 .attr("id", "panos")
