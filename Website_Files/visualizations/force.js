@@ -6,8 +6,8 @@
 		  nodeGroup, // given d in nodes, returns an (ordinal) value for color
 		  nodeGroups, // an array of ordinal values representing the node groups
 		  nodeTitle, // given d in nodes, a title string
-		  nodeFill = "currentColor", // node stroke fill (if not using a group color encoding)
-		  nodeStroke = "#fff", // node stroke color
+		  nodeFill = "#0a2752", // node stroke fill (if not using a group color encoding)
+		  nodeStroke = "#0a2752", // node stroke color
 		  nodeStrokeWidth = 1, // node stroke width, in pixels
 		  nodeStrokeOpacity = 1, // node stroke opacity
 		  nodeRadius, // given d in nodes, returns the elevation of the node (z)		
@@ -18,14 +18,14 @@
 		  linkTarget = ({
 		    target
 		  }) => target, // given d in links, returns a node identifier string
-		  linkStroke = "#999", // link stroke color
-		  linkStrokeOpacity = 0.3, // link stroke opacity
-		  linkStrokeWidth = .7, // given d in links, returns a stroke width in pixels
+		  linkStroke = "#a1fc03", // link stroke color
+		  linkStrokeOpacity = 0.666, // link stroke opacity
+		  linkStrokeWidth = .4, // given d in links, returns a stroke width in pixels
 		//   linkStrokeLinecap = "round", // link stroke linecap
 		  linkStrokeLinecap = "square", // link stroke linecap
 		  linkStrength,
 		//   colors = d3.schemeTableau10, // an array of color strings, for the node groups
-		  colors = ['#6D17E6', '#E64F17', '#0BE6BC'],
+		  colors = ['#a1fc03', '#FEE70A', '#0AFE17'],
 		  width = 1280, // outer width, in pixels
 		  height = 800, // outer height, in pixels
 		  invalidation // when this promise resolves, stop the simulation
@@ -58,7 +58,6 @@
 
 		  // Construct the scales.
 		  const color = nodeGroup == null ? null : d3.scaleOrdinal(nodeGroups, colors);
-		  console.log(colors)
 
 		  // Construct the forces.
 		  const forceNode = d3.forceManyBody().strength(-5.0);

@@ -85,7 +85,7 @@ var config = {
             onChapterEnter: [
                 {
                     layer: 'data-driven-lines',
-                    opacity: .85,
+                    opacity: 1,
                 }
             ],
             onChapterExit: [
@@ -111,12 +111,20 @@ var config = {
                 {
                     layer: 'all-installed-nodes',
                     opacity: 1
+                },
+                {
+                    layer: 'data-driven-lines',
+                    opacity: .85,
                 }
             ],
             onChapterExit: [
                 {
                     layer: 'all-installed-nodes',
                     opacity: .0,
+                },
+                {
+                    layer: 'data-driven-lines',
+                    opacity: 1,
                 }
             ]
         },
