@@ -175,6 +175,12 @@ a:active {
     z-index: 1;
 }
 
+#introText {
+    margin-left:10%;
+    margin-right: 10%;;
+    color: white;
+}
+
 #primaryTitle {
     color: white;
     rotate: 0deg;
