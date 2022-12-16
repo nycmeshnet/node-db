@@ -101,6 +101,16 @@
 		    .selectAll("circle")
 		    .data(nodes)
 		    .join("circle")
+			.on('mouseover', function (d, i) {
+				d3.select(this).transition()
+					 .duration('50')
+					 .attr('opacity', '.9')})
+			.on('mouseout', function (d, i) {
+					d3.select(this).transition()
+						.duration('50')
+						.attr('opacity', '1')})
+						// .attr('fill', color(G[i]))})
+
 			//scale node radius by num connections
 			.attr("r", function(d) {      
 				d.weight = link.filter(function(l) {
@@ -175,6 +185,7 @@
 		    }
 		  });
 		}
+
 
 //load NYC mesh data jsons reformatted as CSV
 Promise.all([d3.csv('data/nodes_linksOnly_NTAjoin_20221130.csv'),d3.csv("data/links_cleaned_20221130.csv")])
