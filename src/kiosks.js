@@ -31,7 +31,9 @@ function rowToKiosk(row) {
   return {
     id: row.cb_link_id,
     coordinates,
-    status
+    status,
+    street_address: row.street_address,
+    type: row.planned_kiosk_type,
   };
 }
 
