@@ -29,11 +29,11 @@ function rowToKiosk(row) {
   const coordinates = [parseFloat(row.longitude), parseFloat(row.latitude)];
   const status = STATUS_TYPES[row.link_installation_status];
   return {
-    id: row.cb_link_id,
-    coordinates,
-    status,
     street_address: row.street_address,
     type: row.planned_kiosk_type,
+    id: row.link_site_id,
+    coordinates,
+    status
   };
 }
 
