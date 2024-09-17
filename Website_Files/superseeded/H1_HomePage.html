@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>The NYC Mesh WiFi Network</title>
+		<script type="text/javascript" src="./d3.js"></script>
+		<link rel="stylesheet" href="web_styles.css">
+		<script src="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
+		<link href="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css" rel="stylesheet" />
+		<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.2/mapbox-gl-geocoder.min.js'></script>
+		<link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.2/mapbox-gl-geocoder.css' type='text/css' />
+	</head>
+	<body>
+		<div class="header">
+			<header>
+				<br>
+				<nav>
+					<ul>
+						<li><a id="title" href="H1_HomePage.html">1. The NYC Mesh Ecosystem</a></li>
+						<li><a id="title" href="H2.html">2. The Network Structure</a></li>
+						<li><a id="title" href="H3.html">3. The Growth Over Time </a></li>
+						<li><a id="title" href="H4.html">4. The Connections Over Time </a></li>
+						<li><a id="title" href="H5.html">5. Takeaways</a></li>
+					</ul>
+				</nav>
+			</header>
+		</div>
+		<br>
+		<main>
+			<section>
+				<div>
+					<h1 id="meshWeb">The NYC Mesh Network: A Closer Look</h1>
+				
+				</div>
+				<div class="descriptions">
+
+					<p>
+						Project by: Eddie-Joe Antonio, Matthew Heaton, and Mia Winther-Tamaki
+						<p>
+							A4892-1 Data Visualization
+						</p>
+						<p>
+							Professor Jia Zhang
+						</p>
+						<p>	
+					<p>
+						This project investigates the spatial and temporal makeup of the NYC Mesh WiFi network, a community driven internet network of activist-citizens building a freely accessible, open,
+						 wireless physical structure of interconnected routers. Founded in 2014, NYC Mesh is based in lower Manhattan and Brooklyn. The volunteer-run organization currently provides
+						  New Yorkers with over 623 active connections, bypassing the need for provision by conventional Internet Service Providers (ISPs) that constitute an oligopoly of internet service in NYC.
+						   Through D3 data visualizations, this project will seek to understand how and when the NYC Mesh WiFi network spread and gained momentum. 												
+					</p>
+				</div>
+			</section>
+		<aside>
+			
+			<div id="map" id="map-container">
+			</div>
+		</aside>
+		</main>
+		<br class="wideBreak">
+		<main>
+				<section class="sectionRotatedTitle">
+					<div>
+						<h1 id="viz-title"> Map of NYC Mesh Ecosystem</h1>
+					</div>
+				</section>
+				<aside class="asideCaption">
+					<div class="descriptions">
+						
+						<p> Profit-seeking ISPs such as Spectrum and Optimum have a stranglehold on internet infrastructure, allowing them to charge high prices, provide poor service, and distribute uneven quality—especially for lower income New Yorkers. NYC Mesh intervenes in this market by connecting to the internet backbone (a data center in Chinatown), and distributing internet directly to NYC Mesh members without having to go through an ISP. 
+						</p>
+						<p> This map shows the current ecosystem of the NYC Mesh Network. Yellow points represent Mesh WiFi nodes, hubs, and supernodes, and grey linkages represent distribution of the internet from one node to another. Each node is a router attached to a NYCMesh’ member’s rooftop, installed by volunteers at the price of a suggested donation. Supernodes or hubs are types of nodes that can support more traffic distributing connections and access to surrounding smaller nodes over time.</p>
+
+					</div>
+				</aside>
+				<script src="visualizations/mapbox_home.js"></script>
+		</main>
+		<br class="bigBreak">
+	</body>
+</html>
+
