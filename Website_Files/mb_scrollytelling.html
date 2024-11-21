@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title>NYCmesh links</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.css' rel='stylesheet' />
+    <script type="text/javascript" src="./d3.js"></script>
+    <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+    <script src="https://unpkg.com/scrollama"></script>
+    <link rel="stylesheet" href="web_styles.css">
+</head>
+<body>
+<main id="map-container">
+<div id="map"></div>
+<div id="story"></div>
+</main>
+<script>
+    map.on("load",function(){
+        d3.selectAll(".mapboxgl-ctrl-logo").remove()
+        d3.selectAll(".mapboxgl-ctrl-attrib").remove()
+    });
+    </script>
+<script src="visualizations/config.js"></script>
+<script src="visualizations/storytelling.js"></script>
+</body>
+</html>
