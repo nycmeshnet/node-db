@@ -1,0 +1,446 @@
+/*** OVERALL: Layout rules ***/
+
+html{
+    height: 100%;
+}
+
+@font-face {
+    font-family: "vhs";
+    src: url("font/VCR_OSD_MONO_1.001.ttf");
+}
+/* @font-face {
+    font-family: "grotesk";
+    src: url("font/Akzidenz-vhs-roman.ttf");
+} */
+/* @font-face {
+    font-family: "inconsolata";
+    src: url("font/Inconsolata-Regular.ttf");
+}
+@font-face {
+    font-family: "ibm";
+    src: url("font/IBMPlexSans-Light.ttf");
+} */
+
+body{
+    position: relative;
+    height: 100%;
+    top:0;right:0;bottom:0;left:0;
+    font-family: "vhs";
+    /*background-color: black;*/
+    background-size: 50%;
+    background-image: url('images/Rectangle 1.png');
+
+}
+
+main {
+    display: flex;
+}
+
+section {
+    flex-direction: column;
+    width: 50%;
+    z-index: 2;
+    margin-top: 30px;
+}
+
+aside {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    z-index: 1;
+    margin-top: 30px;
+}
+
+
+/*** CLASSES: Unique formatted sections in webpage ***/
+
+.mediumBreak {
+    line-height: 5vh;
+}
+
+.bigBreak {
+    line-height: 15vh;
+}
+
+.biggestBreak {
+    line-height: 75vh;
+}
+
+.navMenu {
+    overflow: hidden;
+    padding: .5%;
+    background-image: url('images/Rectangle 1.png');
+    /*background-color: black;*/
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+    font-family: "vhs";
+    font-size: 25px;
+    z-index: 3;
+}
+
+.navMenu a {
+    float: right;
+    display: block;
+    color: white;
+    margin-right: 5%;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.rotatedTitle {
+    margin-top: 0%;
+    margin-left: 0%;
+    width: 80%;
+    height: auto;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: black;
+    font-family: "vhs";
+    text-shadow: 0vmax 1vmax #a1fc03;
+    font-size: 4vh;
+}
+    
+.descriptions {
+    margin-left: 20%;
+    margin-right: 20%;
+    font-size: 20px;
+    color: white;
+    z-index: 30;
+}
+    
+.instructions {
+    margin-left: 20%;
+    margin-right: 20%;
+    color: #0071bc;
+    font-size: 15px;
+}
+
+.openingInstructions {
+    margin-left: 75%;
+    margin-top: -20%;
+    color: #dedede;
+    width: 90%;
+    font-size: 2vh;
+    font-weight: thin;
+    font-family: "vhs";
+    text-transform: uppercase;
+}
+
+
+/* BUTTON specifc effects */
+.buttonToggle {
+    margin-left: 25%;
+    border: none;
+    display:inline;
+    background-color: #888;
+    color: white;
+    font-size: 20px;
+    font-weight: 400;
+    text-decoration: none;
+    text-align: center;
+    transition-duration: .25s;
+    font-family: vhs;
+}
+    
+.buttonToggle:hover {
+    background-color: #0071bc;
+}
+    
+.buttonToggle:active {
+    background-color: #888;
+    box-shadow: 0 5px gold;
+    transform: translateY(4px);
+}
+
+
+/*** IDs: Unique object formatting for ids in webpage ***/
+
+a:hover {
+    color: #dedede;
+}
+    
+a:active {
+    background-color: #888;
+    box-shadow: 0 5px gold;
+    transform: translateY(4px);
+    transition-duration: .25s;
+
+}
+    
+#openingShot {
+    margin-right: 20%;
+    max-height: 100%;
+    z-index: 1;
+}
+
+#introText {
+    margin-left:10%;
+    margin-right: 10%;;
+    color: white;
+}
+
+#primaryTitle {
+    color: white;
+    rotate: 0deg;
+    z-index: 2;
+    position: relative;
+    margin-top: 0%;
+    margin-left: 55%;
+    /* width:75%; */
+    font-size: 10vw;
+    font-weight: bold;
+    font-family: "vhs";
+    text-transform: lowercase;
+    text-shadow: 0vmax 1vmax #a1fc03;
+}
+
+#subtitle{
+    color: white;
+    z-index: 2;
+    position: relative;
+    margin-left: 55%;
+    margin-bottom:10%;
+    width:100%;
+    font-size: 3vw;
+    font-weight: bold;
+    font-family: "vhs";
+    text-transform: lowercase;
+    text-shadow: 0vmax .5vmax #a1fc03;
+}
+
+#last-section {
+    /*background-color: black;*/
+    /*background-image: url('images/Rectangle 1.png');*/
+}
+
+#last-aside {
+    /*background-image: url('images/Rectangle 1.png');*/
+}
+
+/* CAPTIONS */
+#scatterText {
+    margin-left: 20%;
+    margin-top: -12%;
+    width: 70%;
+    height: auto;
+}
+
+#scatterTextInstructions {
+    margin-left: 20%;;
+    width: 70%;
+    height: auto;
+    font-size: 10px;
+    font-weight: lighter;
+    text-transform: uppercase;
+}
+
+#barText {
+    margin-left: 20%;
+    margin-top: -12%;
+    width: 70%;
+    height: auto;
+}
+
+#barTextInstructions {
+    margin-left: 20%;;
+    width: 70%;
+    height: auto;
+    font-size: 10px;
+    font-weight: lighter;
+    text-transform: uppercase;
+}
+
+#forceText {
+    margin-left: 10%;
+    margin-top: 20%;
+    width: 80%;
+    height: auto;
+    color: white;
+}
+
+#forceBorough {
+    margin-left: 0%;
+    margin-top: 0%;
+    width: 70%;
+    height: auto;
+    font-size: 10px;
+    font-weight: lighter;
+    text-transform: uppercase;
+
+}
+
+#forceChart {
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+
+}
+
+#panoText {
+    margin-left: 20%;
+    margin-top: 20%;
+    width: 70%;
+    height: auto;
+    color: white;
+}
+
+#panoTextInstructions {
+    margin-left: 0%;
+    margin-top: 0%;
+    width: 100%;
+    height: auto;
+    font-size: 10px;
+    font-weight: lighter;
+    text-transform: uppercase;
+}
+
+
+/*** GRAPHS: Formatting for the graphs ***/
+
+.axisLabels {
+    font-family: "vhs";
+    color: white;
+    font-size: 3.5vh;
+    text-transform:lowercase;
+}
+
+.barchart {
+    font-family: "vhs";
+    color: white;
+    font-size: 10px;
+}
+    
+.yAxis {
+    font-family: "vhs";
+    color: white;
+    font-size: 10px;
+}
+    
+.xAxis {
+    font-family: "vhs";
+    color: white;
+    font-size: 10px;
+}
+    
+    
+#toolTip {
+    font-size: 20px;
+    font-family: "vhs";
+    color: white;
+    font-weight: bold;
+    text-transform: lowercase;
+}
+    
+.xLabel {
+    font-size: 10px;
+    font-weight:lighter;
+    text-transform: lowercase;
+    font-family: "vhs";
+    color: white;
+}
+    
+.yLabel {
+    color: white;
+    font-size: 20px;
+    font-weight:lighter;
+    text-transform: lowercase;
+    font-family: "vhs";
+}
+
+/*** MAPBOX SCROLL: style for mb scrolling ***/
+
+a, a:hover, a:visited {
+    color: #0071bc;
+}
+
+#map-frame {
+    width:100%;
+    height:98%;
+    border-style: none;
+    margin-top:15%;
+    /* position: fixed; */
+    /* margin-left: 50px; */
+}
+
+#map {
+    top:0; 
+    height: 100vh;
+    width:100vw;
+    position: fixed;
+    z-index: -5;
+}
+#header {
+    margin: 3vh auto;
+    width: 90vw;
+    padding: 2vh;
+    text-align: center;
+}
+#footer {
+    width: 100%;
+    min-height: 5vh;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    text-align: center;
+    line-height: 25px;
+    font-size: 13px;
+}
+#features {
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    z-index: 100;
+}
+.centered {
+    width: 50vw;
+    margin: 0 auto;
+}
+.lefty {
+    width: 33vw;
+    margin-left: 5vw;
+}
+.righty {
+    width: 33vw;
+    margin-left: 62vw;
+}
+.light {
+    color: #444;
+    background-color: #fafafa;
+}
+.dark {
+    color: #fafafa;
+    background-color: #173158;
+}
+.step {
+    padding-bottom: 50vh;
+    opacity: 0.25;
+}
+.step.active {
+    opacity: 0.9;
+}
+
+.step div {
+    padding:  25px 50px;
+    line-height: 25px;
+    font-size: 13px;
+}
+
+.step img {
+    width: 100%;
+}
+
+.tooltip {
+    fill: white;
+    font-family: sans-serif;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid grey;
+  }
+
+@media (max-width: 750px) {
+    #features {
+        width: 90vw;
+        margin: 0 auto;
+    }
+}
