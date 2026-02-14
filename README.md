@@ -2,23 +2,10 @@
 
 This repo stores the data used for our [node map](https://nycmesh.net/map).
 
-[Nodes](https://node-db.netlify.com/nodes.json)  
-[Links](https://node-db.netlify.com/links.json)  
-[Kiosks](https://node-db.netlify.com/kiosks.json)  
-
-Commits made here will trigger a rebuild of the website with the latest data.
-
-### Nodes
-
-```bash
-yarn update-data
-```
-Pulls down the latest data from MeshDB. You do not need to run this locally to update the website. This script is automatically run server side on an hourly basis to update the map to changes made in MeshDB.
-
 ### Panoramas
 
 Panoramas go in `data/panoramas` and are named according to their node number (227.jpg).
 For new installs (which don't have a node number yet) they are named with the install number of the request. (Ie 17754.jpg)
 To add multiple panoramas, add a letter to the end of the name (227.jpg, 227a.jpg, 227b.jpg, etc.).
 
-You can access the panoramas at https://node-db.netlify.com/panoramas/227.jpg
+You can access the panoramas at https://node-db.netlify.app/panoramas/227.jpg
