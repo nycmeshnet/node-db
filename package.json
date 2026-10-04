@@ -5,11 +5,8 @@
   "license": "GPL-3.0-only",
   "scripts": {
     "update-data":
-      "node src/index.js"
+      "echo nop"
   },
   "dependencies": {
-    "date-fns": "^1.29.0",
-    "dotenv": "^6.0.0",
-    "node-fetch": "^2.2.0"
   }
 }
